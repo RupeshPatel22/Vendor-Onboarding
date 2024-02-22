@@ -1,0 +1,187 @@
+<div class="content">
+    <header class="heading">Rider Details
+        <p class="mandatory-txt">(All fields are mandatory.)</p>
+    </header>
+
+    <form [formGroup]="riderDetailsForm" autocomplete="off">
+        <label class="input-heading">Rider Name</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="riderName" formControlName="riderName" placeholder="Enter name">
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.riderName"></app-form-error-msg>
+        </div>
+        <label class="input-heading">Rider Type</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="riderType" formControlName="riderType" placeholder="Enter name">
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.riderType"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">Rider Contact</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="riderContact" formControlName="riderContact"
+                    placeholder="Enter Contact no">
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.riderContact"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">Date of Birth</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput (click)="dob.open()" [matDatepicker]="dob" [readonly]="true" formControlName="riderDob"
+                    matInput name="riderDob" placeholder="Select date">
+                <mat-datepicker-toggle matSuffix [for]="dob" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #dob></mat-datepicker>
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.riderDob"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">Account Number</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="accountNumber" formControlName="accountNumber"
+                    placeholder="Enter account number">
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.accountNumber"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">IFSC Code</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="ifscCode" formControlName="ifscCode" placeholder="Enter IFSC code">
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.ifscCode"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">Rider Photograph</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input [hidden]="true" (click)="$event.target.value = null"
+                    (change)="getFileUploadUrl($event.target.files, 'riderPhotoDoc')" type="file" accept="all/*"
+                    #riderPhotoDoc>
+                <input type="text" readonly matInput formControlName="riderPhotoDoc" />
+                <button matSuffix *ngIf="!disableAll" (click)="riderPhotoDoc.click();" mat-raised-button
+                    class="upload-button">
+                    upload
+                </button>
+                <button matSuffix *ngIf="disableAll" (click)="viewFile('riderPhotoUrl');" mat-raised-button
+                    class="upload-button">
+                    View
+                </button>
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.riderName"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">PAN Document</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input [hidden]="true" (click)="$event.target.value = null"
+                    (change)="getFileUploadUrl($event.target.files, 'panDoc')" type="file" accept="all/*" #panDoc>
+                <input type="text" readonly matInput formControlName="panDoc" />
+                <button matSuffix *ngIf="!disableAll" (click)="panDoc.click();" mat-raised-button class="upload-button">
+                    upload
+                </button>
+                <button matSuffix *ngIf="disableAll" (click)="viewFile('panDocUrl');" mat-raised-button
+                    class="upload-button">
+                    View
+                </button>
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.panDoc"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">Aadhar Document (Front)</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input [hidden]="true" (click)="$event.target.value = null"
+                    (change)="getFileUploadUrl($event.target.files, 'aadharFrontDoc')" type="file" accept="all/*"
+                    #aadharFrontDoc>
+                <input type="text" readonly matInput formControlName="aadharFrontDoc" />
+                <button matSuffix *ngIf="!disableAll" (click)="aadharFrontDoc.click();" mat-raised-button
+                    class="upload-button">
+                    upload
+                </button>
+                <button matSuffix *ngIf="disableAll" (click)="viewFile('aadharFrontUrl');" mat-raised-button
+                    class="upload-button">
+                    View
+                </button>
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.aadharFrontDoc"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">Aadhar Document (Back)</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input [hidden]="true" (click)="$event.target.value = null"
+                    (change)="getFileUploadUrl($event.target.files, 'aadharBackDoc')" type="file" accept="all/*"
+                    #aadharBackDoc>
+                <input type="text" readonly matInput formControlName="aadharBackDoc" />
+                <button matSuffix *ngIf="!disableAll" (click)="aadharBackDoc.click();" mat-raised-button
+                    class="upload-button">
+                    upload
+                </button>
+                <button matSuffix *ngIf="disableAll" (click)="viewFile('aadharBackUrl');" mat-raised-button
+                    class="upload-button">
+                    View
+                </button>
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.aadharBackDoc"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">Driving License</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input [hidden]="true" (click)="$event.target.value = null"
+                    (change)="getFileUploadUrl($event.target.files, 'drivingLicenseDoc')" type="file" accept="all/*"
+                    #drivingLicenseDoc>
+                <input type="text" readonly matInput formControlName="drivingLicenseDoc" />
+                <button matSuffix *ngIf="!disableAll" (click)="drivingLicenseDoc.click();" mat-raised-button
+                    class="upload-button">
+                    upload
+                </button>
+                <button matSuffix *ngIf="disableAll" (click)="viewFile('drivingLicenseUrl');" mat-raised-button
+                    class="upload-button">
+                    View
+                </button>
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.drivingLicenseDoc"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">Cancelled Cheque</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input [hidden]="true" (click)="$event.target.value = null"
+                    (change)="getFileUploadUrl($event.target.files, 'cancelledChequeDoc')" type="file" accept="all/*"
+                    #cancelledChequeDoc>
+                <input type="text" readonly matInput formControlName="cancelledChequeDoc" />
+                <button matSuffix *ngIf="!disableAll" (click)="cancelledChequeDoc.click();" mat-raised-button
+                    class="upload-button">
+                    upload
+                </button>
+                <button matSuffix *ngIf="disableAll" (click)="viewFile('cancelledChequeUrl');" mat-raised-button
+                    class="upload-button">
+                    View
+                </button>
+            </mat-form-field>
+            <app-form-error-msg [control]="riderDetailsForm.controls.cancelledChequeDoc"></app-form-error-msg>
+        </div>
+
+        <footer class="btn-grp">
+            <button class="white-btn red" mat-button (click)="rejectRiderDetails()"
+                *ngIf="currentRiderStatus === 'pending'">
+                Reject
+            </button>
+            <button class="white-btn green" mat-button (click)="approveRiderDetails()"
+                *ngIf="currentRiderStatus === 'pending'">
+                Approve
+            </button>
+
+            <button class="white-btn" mat-button (click)="goToHome()" *ngIf="currentRiderStatus !== 'pending'">
+                go to home
+            </button>
+        </footer>
+
+    </form>
+</div>

@@ -1,0 +1,113 @@
+<div class="vendor-wrapper">
+    <header class="vendor-wrapper__header">
+        <figure class="logo">
+            <img src="assets/speedyy-logo.svg" (click)="goToVendorsPage()" width="57" height="57">
+        </figure>
+        <div class="profile-progress" *ngIf="!disableAll">
+            <div>Profile Completed</div>
+            <div class="progressbar">
+                <div [ngStyle]="{width: ((step)*12) + '%' }"></div>
+            </div>
+            <div>{{(step) * 12}}%</div>
+        </div>
+        <label for="check" class="menu">
+            <mat-icon>menu</mat-icon>
+        </label>
+        <section class="user">
+            <span class="user-text">{{userName}}</span>
+            <mat-icon (click)="logout()">power_settings_new</mat-icon>
+        </section>
+    </header>
+
+    <main class="vendor-wrapper__main">
+        <input #checkbox type="checkbox" id="check">
+        <nav class="nav-bar">
+            <div class="top-menu">
+                <header class="nav-header">{{service !== services.Rider ? 'Setup your outlet' : 'Rider Approval'}}
+                </header>
+                <section class="nav-item" *ngFor="let nav of navBarList;let i=index">
+                    <div class="nav-link-local" (click)="goToSelectedTab(i)"
+                        [ngClass]="currentTab[step] === nav ? 'nav-item-active' :''">{{nav}}
+                    </div>
+                </section>
+                <header class="nav-title">Quick Links</header>
+                <section class="nav-item">
+                    <div class="nav-link-local" (click)="goToVendorsPage()">{{service !== services.Rider ? 'View All
+                        Outlets' : 'View All Riders'}}</div>
+                </section>
+                <section class="nav-item">
+                    <div class="nav-link-local"><a href="mailto:customercare@speedyy.com"
+                            style="color: #8d9da8; text-decoration:none;">Help</a> </div>
+                </section>
+                <section class="nav-item d-xl-none">
+                    <div class="nav-link-local" (click)="logout()">Logout ({{userName}})</div>
+                </section>
+            </div>
+            <!-- <div class="bottom-menu">
+                <div class="profile-progress">
+                    <section class="profile-completed">
+                        <div class="nav-link-local">Profile Completed</div>
+                    </section>
+                    <div class="progressbar">
+                        <div [ngStyle]="{width: ((step)*12) + '%' }"></div>
+                    </div>
+                    <div class="percentage">{{(step) * 12}}%</div>
+                </div>
+                <header class="nav-title">Quick Links</header>
+                <section class="nav-item">
+                    <div class="nav-link-local" (click)="vendors()">View All Restaurants</div>
+                </section>
+                <section class="nav-item">
+                    <div class="nav-link-local">Help </div>
+                </section>
+                <section class="nav-item d-xl-none">
+                    <div class="nav-link-local" (click)="logout()">Logout</div>
+                </section>
+            </div> -->
+        </nav>
+        <div>
+            <mat-tab-group animationDuration="0ms" [selectedIndex]="step">
+                <mat-tab *ngIf="FormsToShowForService[FormsList.OutletDetails].includes(service)">
+                    <app-outlet-details #outletDet [disableAll]="disableAll"
+                        (changeTab)="switchTab($event)"></app-outlet-details>
+                </mat-tab>
+                <mat-tab *ngIf="FormsToShowForService[FormsList.FssaiDetails].includes(service)">
+                    <app-fssai-details #fssaiDet [disableAll]="disableAll" (changeTab)="switchTab($event)">
+                    </app-fssai-details>
+                </mat-tab>
+                <mat-tab *ngIf="FormsToShowForService[FormsList.SubcriptionDetails].includes(service)">
+                    <app-commision-onboarding #commisionOnboarding [disableAll]="disableAll"
+                        (changeTab)="switchTab($event)"></app-commision-onboarding>
+                </mat-tab>
+                <mat-tab *ngIf="FormsToShowForService[FormsList.OwnerLocationDetails].includes(service)">
+                    <app-owner-location-details #ownerLocationDet [disableAll]="disableAll"
+                        (changeTab)="switchTab($event)"></app-owner-location-details>
+                </mat-tab>
+                <mat-tab *ngIf="FormsToShowForService[FormsList.GstPanDetails].includes(service)">
+                    <app-gst-pan-details #gstPanDet [disableAll]="disableAll" (changeTab)="switchTab($event)">
+                    </app-gst-pan-details>
+                </mat-tab>
+                <mat-tab *ngIf="FormsToShowForService[FormsList.BankDetails].includes(service)">
+                    <app-bank-details #bankDet [disableAll]="disableAll" (changeTab)="switchTab($event)">
+                    </app-bank-details>
+                </mat-tab>
+                <mat-tab *ngIf="FormsToShowForService[FormsList.ESignDetails].includes(service)">
+                    <app-e-sign #eSign [disableAll]="disableAll" (changeTab)="switchTab($event)"> </app-e-sign>
+                </mat-tab>
+                <mat-tab *ngIf="FormsToShowForService[FormsList.OnboardingDetails].includes(service)">
+                    <app-onboarding-form #onboardingForm [disableAll]="disableAll" (changeTab)="switchTab($event)">
+                    </app-onboarding-form>
+                </mat-tab>
+                <mat-tab *ngIf="FormsToShowForService[FormsList.RiderDetails].includes(service)">
+                    <app-rider-details #riderDet [disableAll]="disableAll"></app-rider-details>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+        <div *ngIf="(currentOutletStatus === 'approvalPending' || currentRiderStatus === 'pending') && role !== roles.Partner"
+            class="remarks d-none d-xl-block d-lg-block">
+            <h3><b>Remarks & Comments</b></h3>
+            <textarea [formControl]="remarks" class="remarks-container">
+        </textarea>
+        </div>
+    </main>
+</div>

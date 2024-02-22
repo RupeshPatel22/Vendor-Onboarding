@@ -1,0 +1,62 @@
+<div class="content">
+    <header class="heading">E-Sign
+        <p class="mandatory-txt">(All fields are mandatory.)</p>
+    </header>
+    <div class="input-field flex-btns">
+        <button class="flex-btn-box" (click)="readMou()" matTooltip="Read LOU" matTooltipClass="custom-tooltip" [matTooltipPosition]="'above'">read lou</button>
+        <button class="flex-btn-box" (click)="getDocuments('gst_declaration')" *ngIf="!hideGstDeclarationBtn" matTooltip="View GST Declaration" matTooltipClass="custom-tooltip" [matTooltipPosition]="'above'"> view GST
+            declaration</button>
+            <button class="flex-btn-box bg-dark text-white d-flex align-items-center justify-content-center" (click)="generateLouPdf(outletId)" matTooltip="Download LOU" matTooltipClass="custom-tooltip" [matTooltipPosition]="'above'">
+                <mat-icon class="me-3">cloud_download</mat-icon>
+               <span class="mt-1">Download LOU </span> 
+              </button>
+
+        <!-- <button class="flex-btn-box"> read bank document</button> -->
+        <!-- <button class="flex-btn-box"> read the gst category document</button> -->
+    </div>
+
+    <form [formGroup]="eSignForm" autocomplete="off" (keydown.enter)="$event.preventDefault()">
+        <!-- <mat-checkbox (click)="$event.stopPropagation()" formControlName="checkbox" > </mat-checkbox>
+    <span >I HAVE READ THE MOU</span><br> -->
+        <div class="checkbox e-sign">
+            <input type="checkbox" formControlName="readMou" />
+            <span>I HAVE READ THE LOU</span>
+        </div><br>
+        <!-- <label class="input-heading">OWNER NO. TO SIGN THE DOCUMENT</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="contactNumber" formControlName="contactNumber" placeholder="Enter Contact No." (input)="contactNumberValueChanges()">
+                <a matSuffix (click)="canGenerateOtp ? generateOtp() : ''"> {{generateOtpText}}</a>
+            </mat-form-field>
+            <app-form-error-msg [control]="eSignForm.controls.contactNumber"></app-form-error-msg>
+        </div> -->
+
+
+        <div class="mb-3" *ngIf="!contactNumberVerified">
+            <span>OTP will be sent to {{displayPartialContactNumber}}</span>
+            <a class="send-otp text-uppercase ms-3 " matSuffix (click)="canGenerateOtp ? generateOtp() : ''">
+                {{generateOtpText}}</a>
+        </div>
+        <div class="mb-3" *ngIf="contactNumberVerified">
+            <img src="assets/approve.svg" alt="" width="20" height="20"> Owner contact number {{displayPartialContactNumber}} is Verified for E-Sign
+        </div>
+        <label *ngIf="!contactNumberVerified" class="input-heading">ENTER OTP</label>
+        <div *ngIf="!contactNumberVerified" class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="otp" formControlName="otp" placeholder="Enter OTP.">
+                <a matSuffix (click)="verifyOtp()"> {{verifyOtpText}}</a>
+            </mat-form-field>
+            <app-form-error-msg [control]="eSignForm.controls.otp"></app-form-error-msg>
+        </div>
+
+        <footer class="btn-grp">
+            <button class="white-btn" mat-button (click)="previous()">
+                Back
+            </button>
+            <button class="black-btn" mat-raised-button (click)="next()">
+                {{buttonText}}
+            </button>
+        </footer>
+
+    </form>
+</div>

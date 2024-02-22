@@ -1,0 +1,26 @@
+<div class="nav-is-default">
+    <header class="nav-top d-flex justify-content-between position-fixed top-0 w-100 align-items-center">
+        <img src="../../../assets/Speedyy logo.svg" class="logo-image" alt="Speedyy" width="57" height="57" />
+        <section class="user d-flex">
+            <div class="user-text">{{ username }}</div>
+            <mat-icon (click)="logout()">power_settings_new</mat-icon>
+        </section>
+    </header>
+    <aside class="nav-side position-fixed top-0 h-100">
+        <ul class="nav-side-links">
+            <li class="text-center m-2" *ngIf="role === roles.Partner">
+                <button class="black-btn" mat-raised-button (click)="openModal()">Add new Outlet</button>
+            </li>
+            <li *ngFor="let link of navLinks; let i=index">
+                <a class="d-flex align-items-center" [routerLink]="[link.route]" [ngClass]="{'nav-link-active': currentActiveNavbar === i}" (click)="currentActiveNavbar = i" *ngIf="link.allowedRouteAccessTo.includes(role)">
+                    <img width="40" height="40" [src]="link.icon">
+                    <span class="ms-2 w-100">{{link.name}}</span>
+                </a>
+            </li>
+        </ul>
+
+    </aside>
+    <section class="main-content">
+        <router-outlet></router-outlet>
+    </section>
+</div>

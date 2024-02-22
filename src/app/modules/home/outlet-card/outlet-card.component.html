@@ -1,0 +1,26 @@
+<div class="container d-flex justify-content-center w-100 h-100 flex-wrap">
+    <div class="outlet-card top-0 position-relative overflow-hidden">
+        <div class="d-flex align-items-center gap-2 mb-3">
+            <img width="75" height="75" class="rounded-circle" *ngIf="outlet.imgUrl" src="{{outlet.imgUrl}}" alt="">
+            <div>
+                <h3> {{outlet.name}} </h3>
+                <!-- <span> (Service : {{outlet.service}})</span> -->
+            </div>
+        </div>
+        <p class="small m-0">Created on: {{ outlet.createdAt | date:'MMM d, y, hh:mm a' }}</p>
+        <p class="small m-0">Updated on: {{ outlet.updatedAt | date:'MMM d, y, hh:mm a' }}</p>
+
+        <div class="d-flex justify-content-between align-items-end">
+            <div class="status mt-3" [ngClass]="outlet.status === 'active' ? 'status--green' : 'status--orange'">
+                <ng-container *ngIf="outlet.status === 'active'; else otherStatus">
+                    <img width="16" height="16" src="assets/approve.svg" class="align-text-top me-1" />
+                </ng-container>
+                {{ outlet.status === 'catalogPending' ? 'Approval Pending' : outletCardStatusList[outlet.status] }}
+            </div>
+            <mat-icon (click)="navigateToVendorFormPage(outlet)">{{outlet.status === 'draft' || outlet.status === 'approvalRejected' ? 'edit' : 'visibility'}}</mat-icon>
+        </div>
+    </div>
+    <ng-template #otherStatus>
+        <img width="16" height="16" src="assets/exclamation-circle.svg" class="align-text-top me-1" />
+    </ng-template>
+</div>

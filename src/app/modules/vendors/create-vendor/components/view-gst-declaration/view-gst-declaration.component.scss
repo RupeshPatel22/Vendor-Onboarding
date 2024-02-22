@@ -1,0 +1,19 @@
+.dialog-wrapper {
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+    &__content {
+        padding: 1.5em;
+        .heading {
+            color: #0d1d28;
+            font-size: 1.5em;
+            // margin: 1.8em 0;
+            font-weight: 600;
+        }
+        .sub-heading {
+            color: #0d1d28;
+            font-size: 1em;
+            font-weight: 400;
+        }
+    }
+}

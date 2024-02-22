@@ -1,0 +1,242 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import '~ngx-toastr/toastr';
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Poppins, "Helvetica Neue", sans-serif !important;
+    background-color: #f2f5f8 !important;
+    height: 100%;
+    width: 100%;
+}
+
+/*body scroll starts*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #a8aaa7;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #535452;
+    height: 50px;
+}
+
+/*body scroll ends*/
+
+.mat-tab-group {
+    font-family: Poppins, "Helvetica Neue", sans-serif;
+
+    .mat-tab-header {
+        display: none;
+    }
+}
+
+.ng-select.ng-select-single {
+    .ng-select-container {
+        height: 3.375em;
+        border-radius: 8px;
+
+        .ng-value-container {
+            .ng-input {
+                top: auto;
+            }
+        }
+    }
+}
+
+.ng-select.ng-select-multiple {
+    .ng-select-container {
+        min-height: 3.375em;
+        max-height: fit-content;
+        border-radius: 8px;
+
+        .ng-value-container {
+            .ng-placeholder {
+                top: auto;
+            }
+        }
+    }
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+    border: 2px solid #0d1d28 !important;
+    box-shadow: none;
+}
+
+.ng-select.ng-invalid.ng-touched .ng-select-container {
+    border: 2px solid #f44336;
+}
+
+.ng-select.ng-select-disabled>.ng-select-container {
+    color: rgba(0, 0, 0, .38);
+}
+
+app-form-error-msg ul {
+    list-style-type: none;
+    padding: 5px 0px 5px 12px;
+    font-size: 12px;
+    margin: 0px;
+}
+
+.mat-form-field {
+    line-height: unset !important;
+    font-family: Poppins, "Helvetica Neue", sans-serif !important;
+    width: 100% !important;
+
+    .mat-form-field-wrapper {
+        padding-bottom: 0 !important;
+
+        .mat-form-field-flex {
+            align-items: center !important;
+        }
+    }
+
+    a {
+        color: #0d1d28 !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        font-size: 0.9em;
+        cursor: pointer;
+    }
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.5em 0 1em 0 !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline .mat-form-field-outline-start {
+    border-radius: 8px 0 0 8px !important;
+    background-color: #fff;
+
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline .mat-form-field-outline-end {
+    border-radius: 0 8px 8px 0 !important;
+    background-color: #fff;
+
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #0d1d28 !important;
+}
+
+.mat-form-field-disabled .mat-form-field-outline {
+
+    .mat-form-field-outline-end,
+    .mat-form-field-outline-start {
+        background-color: #f9f9f9;
+    }
+}
+
+.mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+    color: #ccc;
+}
+
+.mat-calendar-body-selected {
+    background-color: #fcd400;
+    border: 1px solid #0d1d28;
+    color: #0d1d28;
+}
+
+.mat-datepicker-toggle-active {
+    color: #0d1d28;
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected),
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+    background-color: #fcd400 !important;
+    color: #0d1d28 !important;
+}
+
+.timepicker {
+    border: 2px solid #0d1d28;
+}
+
+.timepicker__header {
+    background-color: #fcd400 !important;
+}
+
+.clock-face {
+    --clock-hand-color: #fcd400;
+}
+
+input[type="time"]::-webkit-clear-button,
+input[type="time"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="time"]::-webkit-inner-spin-button {
+    display: none;
+    background-color: #fcd400;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    font-size: larger;
+    color: #fcd400;
+}
+
+.timepicker-dial__item_active {
+    color: #0d1d28 !important;
+}
+
+.clock-face__number>span.active,
+.timepicker-button {
+    color: #0d1d28 !important;
+}
+
+.mat-dialog-container {
+    padding: 0 !important;
+    border-radius: 2em !important;
+    box-shadow: none !important;
+    margin: auto !important;
+}
+
+.toast-container .ngx-toastr {
+    box-shadow: none;
+}
+
+.mat-paginator {
+    font-size: 1em;
+    background: transparent;
+
+    .mat-paginator-container {
+        border-radius: 1em;
+        margin-left: 4em;
+        background: #fff;
+        width: 32%;
+
+        .mat-form-field {
+            width: 3em !important;
+
+            .mat-form-field-wrapper {
+                padding-bottom: 1.25em !important;
+            }
+        }
+    }
+}
+
+.ngx-pagination {
+    font-size: 1.2em;
+    margin: 0 !important;
+
+    a {
+        text-decoration: none;
+    }
+
+    .current {
+        background-color: #00838d !important;
+    }
+}

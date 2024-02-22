@@ -1,0 +1,41 @@
+<div class="hero">
+    <div class="heading justify-content-between align-items-end d-flex">
+        <label class="all-outlet-text">History</label>
+        <div class="d-flex">
+            <button class="black-btn me-2" mat-raised-button [routerLink]="'/home/pharmacy'"> approve-pharmacy </button>
+            <pagination-controls class="text-end"
+                (pageChange)="currentPage = $event;showHistoryOutletList()"></pagination-controls>
+        </div>
+    </div>
+    <ng-container>
+        <div class="input-field mt-3 ms-5 ps-3">
+            <mat-form-field appearance="outline" class="w-50">
+                <input matInput type="text" name="search" [(ngModel)]="search" placeholder="Search..."
+                    (keyup.enter)="showHistoryOutletList(true)">
+                <a matSuffix (click)="showHistoryOutletList(true)"><mat-icon>search</mat-icon></a>
+            </mat-form-field>
+        </div>
+        <table class="rwd-table ">
+            <tr>
+                <th>Sr No</th>
+                <th> STORE NAME</th>
+                <th>STATUS</th>
+                <th>APPROVED BY</th>
+                <th>ACTIONS</th>
+            </tr>
+            <tr *ngFor="let historyRestaurant of historyPharmacyList | paginate: {itemsPerPage: pageSize,  currentPage: currentPage,totalItems: totalRecords };
+                 let i = index">
+                <td data-th="Sr No">{{ ((currentPage - 1) * pageSize) + (i + 1) }}</td>
+                <td data-th="RESTAURANT NAME">{{historyRestaurant.name}}</td>
+                <td data-th="STATUS">{{outletStatusList[historyRestaurant.status]}}</td>
+                <td data-th="APPROVED BY">{{historyRestaurant.approvedBy}}</td>
+                <td data-th="ACTIONS">
+                    <mat-icon (click)="viewOutlet(historyRestaurant.id)">remove_red_eye</mat-icon>
+                </td>
+            </tr>
+            <tr *ngIf="!historyPharmacyList.length">
+                <td colspan="5">No Data Available</td>
+            </tr>
+        </table>
+    </ng-container>
+</div>

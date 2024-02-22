@@ -1,0 +1,182 @@
+<div class="content">
+    <header class="heading">GST & PAN Details
+        <p class="mandatory-txt">(All fields are mandatory.)</p>
+    </header>
+
+    <form [formGroup]="gstPanDetailsForm" autocomplete="off" (keydown.enter)="$event.preventDefault()">
+        <ng-container *ngIf="showGstCategoryField">
+            <label class="input-heading">GST CATEGORY</label>
+            <div class="input-field">
+                <ng-select id="gstCategory" name="gstCategory" formControlName="gstCategory" [items]="gstCategoryList" bindLabel="name" bindValue="id" placeholder="Select category">
+                </ng-select>
+                <app-form-error-msg [control]="gstPanDetailsForm.controls.gstCategory"></app-form-error-msg>
+            </div>
+        </ng-container>
+
+        <label class="input-heading">DO YOU HAVE GSTIN?</label>
+        <div class="input-field">
+            <div class="radio-btn">
+                <div class="checkbox radio">
+                    <input type="radio" [value]="true" name="hasGST" formControlName="hasGST" (change)="haveGST()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">Yes</div>
+                <div class="checkbox radio">
+                    <input type="radio" [value]="false" name="hasGST" formControlName="hasGST" (change)="haveGST()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">No</div>
+            </div>
+        </div>
+
+        <div *ngIf="showGSTFields">
+            <label class="input-heading">OUTLET GSTIN NO.</label>
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" oninput="this.value = this.value.toUpperCase()" name="gstNumber" formControlName="gstNumber" placeholder="Enter GST No.">
+                    <!-- <a matSuffix (click)="verifyGST()">{{verifyGstText}}</a> -->
+                </mat-form-field>
+                <app-form-error-msg [control]="gstPanDetailsForm.controls.gstNumber"></app-form-error-msg>
+            </div>
+
+            <!-- <label class="input-heading">GSTIN CERTIFICATE UPLOAD TYPE</label>
+            <div class="input-field">
+                <ng-select id="panDocType" name="gstDocType" formControlName="gstDocType" [items]="docType" bindLabel="name" bindValue="id" placeholder="Select type" (change)="uploadFileTypeChange('gstDoc',$event.id)">
+                </ng-select>
+                <app-form-error-msg [control]="gstPanDetailsForm.controls.gstDocType"></app-form-error-msg>
+            </div> -->
+
+            <label class="input-heading">GSTIN DOCUMENT UPLOAD</label><span class="upload-format-info">{{allowedUploadFormat}}</span>
+            <div class="input-field">
+                <!-- <ngx-img></ngx-img> -->
+                <mat-form-field appearance="outline">
+                    <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files,'gstDoc')" type="file" accept="all/*" #gstDoc>
+                    <input type="text" readonly matInput formControlName="gstDoc" />
+                    <button matSuffix *ngIf="!disableAll" (click)="gstDoc.click();" mat-raised-button class="upload-button">
+                        upload
+                    </button>
+                    <button matSuffix *ngIf="disableAll" (click)="viewFile('gstDocUrl');" mat-raised-button class="upload-button">
+                        view
+                    </button>
+                </mat-form-field>
+                <app-form-error-msg [control]="gstPanDetailsForm.controls.gstDoc"></app-form-error-msg>
+            </div>
+        </div>
+
+        <div *ngIf = "service === services.Paan || service === services.Flower">
+            <label class="input-heading">DO YOU HAVE SHOP ESTABLISHMENT NUMBER?</label>
+        <div class="input-field">
+            <div class="radio-btn">
+                <div class="checkbox radio">
+                    <input type="radio" [value]="true" name="hasRegistration" formControlName="hasRegistration" (change)="haveReg()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">Yes</div>
+                <div class="checkbox radio">
+                    <input type="radio" [value]="false" name="hasRegistration" formControlName="hasRegistration" (change)="haveReg()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">No</div>
+            </div>
+        </div>
+        </div>
+        <div *ngIf="showRegFields">
+            <label class="input-heading">SHOP ESTABLISHMENT NUMBER</label>
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" oninput="this.value = this.value.toUpperCase()" name="registrationNumber" formControlName="registrationNumber" placeholder="Enter Registration No.">
+                    <!-- <a matSuffix (click)="verifyGST()">{{verifyGstText}}</a> -->
+                </mat-form-field>
+                <app-form-error-msg [control]="gstPanDetailsForm.controls.registrationNumber"></app-form-error-msg>
+            </div>
+
+            <label class="input-heading">SHOP ESTABLISHMENT DOCUMENT UPLOAD</label><span class="upload-format-info">{{allowedUploadFormat}}</span>
+            <div class="input-field">
+                <!-- <ngx-img></ngx-img> -->
+                <mat-form-field appearance="outline">
+                    <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files,'registrationDocument')" type="file" accept="all/*" #registrationDocument>
+                    <input type="text" readonly matInput formControlName="registrationDocument" />
+                    <button matSuffix *ngIf="!disableAll" (click)="registrationDocument.click();" mat-raised-button class="upload-button">
+                        upload
+                    </button>
+                    <button matSuffix *ngIf="disableAll" (click)="viewFile('registrationDocUrl');" mat-raised-button class="upload-button">
+                        view
+                    </button>
+                </mat-form-field>
+                <app-form-error-msg [control]="gstPanDetailsForm.controls.registrationDocument"></app-form-error-msg>
+            </div>
+        </div>
+
+
+
+
+
+        <label class="input-heading">ENTER PAN NO.</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" oninput="this.value = this.value.toUpperCase()" name="pan" formControlName="pan" placeholder="Enter PAN No.">
+                <!-- <a matSuffix (click)="verifyPAN()">{{verifyPanText}}</a> -->
+            </mat-form-field>
+            <app-form-error-msg [control]="gstPanDetailsForm.controls.pan"></app-form-error-msg>
+        </div>
+
+
+        <label class="input-heading">PAN OWNER NAME</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="panOwnerName" formControlName="panOwnerName" placeholder="PAN owner name">
+            </mat-form-field>
+        </div>
+
+        <!-- <label class="input-heading">PAN DOCUMENT</label>
+        <div class="input-field">
+            <ng-select id="panDocType" name="panDocType" formControlName="panDocType" [items]="docType" bindLabel="name" bindValue="id" placeholder="Select type" (change)="uploadFileTypeChange('panDoc',$event.id)">
+            </ng-select>
+            <app-form-error-msg [control]="gstPanDetailsForm.controls.panDocType"></app-form-error-msg>
+        </div> -->
+
+        <label class="input-heading">PAN DOCUMENT UPLOAD</label><span class="upload-format-info">{{allowedUploadFormat}}</span>
+        <div class="input-field ">
+            <!-- <ngx-img></ngx-img> -->
+            <mat-form-field appearance="outline">
+                <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files,'panDoc')" type="file" accept="all/*" #panDoc>
+                <input type="text" readonly matInput formControlName="panDoc" />
+                <button matSuffix *ngIf="!disableAll" (click)="panDoc.click();" mat-raised-button class="upload-button">
+                    upload
+                </button>
+                <button matSuffix *ngIf="disableAll" (click)="viewFile('panDocUrl');" mat-raised-button class="upload-button">
+                    view
+                </button>
+            </mat-form-field>
+            <app-form-error-msg [control]="gstPanDetailsForm.controls.panDoc"></app-form-error-msg>
+            <!-- <input type="text" name="panDoc" formControlName="panDoc" placeholder="Enter name"> -->
+        </div>
+
+
+
+        <div *ngIf="!showGSTFields">
+            <label class="input-heading">BUSINESS ENTITY NAME</label>
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" name="businessEntityName" formControlName="businessEntityName" placeholder="Enter title">
+                </mat-form-field>
+                <app-form-error-msg [control]="gstPanDetailsForm.controls.businessEntityName"></app-form-error-msg>
+            </div>
+
+            <label class="input-heading">BUSINESS ENTITY ADDRESS</label>
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <!-- <input matInput type="text" name="businessEntityAddress" formControlName="businessEntityAddress" placeholder="Enter address"> -->
+                    <textarea matInput type="text" name="businessEntityAddress" formControlName="businessEntityAddress" placeholder="Enter address"></textarea>
+                </mat-form-field>
+                <app-form-error-msg [control]="gstPanDetailsForm.controls.businessEntityAddress"></app-form-error-msg>
+            </div>
+        </div>
+
+        <footer class="btn-grp">
+            <button class="white-btn" mat-button (click)="previous()">
+                Back
+            </button>
+            <button class="black-btn" mat-raised-button (click)="next()">
+                {{buttonText}}
+            </button>
+        </footer>
+
+    </form>
+</div>

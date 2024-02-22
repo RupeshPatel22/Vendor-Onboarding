@@ -1,0 +1,68 @@
+h3 {
+    color: #262626;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    font-weight: 700;
+    width: 12em;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #666666;
+}
+
+.outlet-card {
+    display: block;
+    max-width: 25rem;
+    max-height: fit-content;
+    background-color: #fff;
+    margin: 1rem;
+    text-decoration: none;
+    border: 1px solid #f2f8f9;
+    padding: 2rem;
+    border-radius: 25px;
+
+    p {
+        color: #6d7e8b;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    .edit-view-corner {
+        opacity: 0.7;
+    }
+
+    &:hover {
+        border-bottom: 3px solid #00838d;
+    }
+
+    .status {
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 1em;
+        padding: 8px;
+        border-radius: 4px;
+    }
+
+    .status--green {
+        color: #04A971;
+        background-color: #e6fef6;
+    }
+
+    .status--orange {
+        color: #EA7407;
+        background-color: #fde5ce;
+    }
+
+    .action-text {
+        text-decoration: underline;
+        color: #000;
+        cursor: pointer;
+    }
+
+    mat-icon {
+        cursor: pointer;
+    }
+}

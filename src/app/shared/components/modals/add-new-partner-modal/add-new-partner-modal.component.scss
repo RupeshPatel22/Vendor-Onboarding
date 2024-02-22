@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  grid-gap: 1.5rem;
+  padding: 2rem 2rem;
+
+  .header {
+    justify-content: space-between;
+
+    .modal-cancel-button {
+      color: dimgrey;
+      border: none;
+      background-color: none;
+      background: none;
+      float: right;
+
+      .crossButton {
+        font-size: 1.6em;
+      }
+    }
+  }
+}
+
+.modal-action-button {
+  width: 100%;
+  height: 3.7em;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  background-color: #0d1d28;
+  color: white;
+}

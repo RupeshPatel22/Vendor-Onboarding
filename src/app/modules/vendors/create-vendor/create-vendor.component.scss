@@ -1,0 +1,373 @@
+// @media only screen and (min-device-width: 320px) and (max-device-width: 767px){}: media query for phone (orientation: landscape or potrait)
+// @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}: media query for iPad and Tablet (orientation: landscape or potrait)
+
+.vendor-wrapper {
+  &__header {
+    height: 6.32em;
+    background-color: #2d2a2e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgb(0 0 0 / 3%);
+    backdrop-filter: blur(2.25em);
+    margin-bottom: 2.7em;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 99;
+
+    .logo {
+      margin-left: 3%;
+      margin-bottom: 0;
+      cursor: pointer;
+
+      @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+        min-width: 0;
+        // margin-left: 0;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      @media only screen and (min-device-width: 1025px) and (max-device-width: 1800px) {
+        min-width: 19%;
+        // margin-left: 15.5em;
+        margin-bottom: 0;
+      }
+    }
+
+    .profile-progress {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      grid-gap: 0.6em;
+      flex-wrap: wrap;
+
+      :nth-child(1) {
+        font-size: 14px;
+      }
+
+      .progressbar {
+        background-color: #e7ecef;
+        border-radius: 13px;
+        width: 24.81em;
+        height: 0.37em;
+        background-color: #aaa;
+        display: inline-block;
+
+        div {
+          background-color: #04a971;
+          width: 3em;
+          height: 100%;
+          border-radius: 10px;
+        }
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+          max-width: 100%;
+        }
+      }
+
+      @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+        grid-gap: 0;
+        max-width: 13.5em;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+
+        :nth-child(1) {
+          font-size: 14px;
+        }
+
+        :nth-child(2n-1) {
+          order: 1;
+        }
+
+        :nth-child(2) {
+          order: 2;
+        }
+
+        :nth-child(3) {
+          width: 43%;
+          margin-top: 0.14em;
+        }
+      }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+        grid-gap: 0;
+        max-width: 25em;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+
+        :nth-child(2n-1) {
+          order: 1;
+        }
+
+        :nth-child(2) {
+          order: 2;
+        }
+
+        :nth-child(3) {
+          width: 64%;
+          margin-top: 0.14em;
+        }
+      }
+    }
+
+    .help-btn {
+      width: 4.5em;
+      height: 2.5em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background-color: #fcd400;
+      border: none;
+      font-weight: 600;
+      font-size: 0.9em;
+      border-radius: 6px;
+      margin-right: 13%;
+
+      @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+        display: none;
+      }
+
+      @media only screen and (min-device-width: 1025px) and (max-device-width: 1800px) {
+        margin-right: 6em;
+      }
+    }
+
+    .menu {
+      display: none;
+      margin-top: 0.5em;
+
+      mat-icon {
+        font-size: 2.5em;
+        margin-right: 0.5em;
+      }
+
+      @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+        display: block;
+        margin-right: 3%;
+      }
+    }
+
+    .user {
+      display: flex;
+      margin-right: 3%;
+      font-size: 1.2em;
+      color: #fff;
+      font-weight: 600;
+      margin-top: 0.5rem;
+
+      @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+        display: none;
+      }
+
+      .user-text {
+        padding-right: 0.5em;
+      }
+
+      mat-icon {
+        font-size: 1.4em;
+        cursor: pointer;
+        margin-top: 1px;
+      }
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+      // justify-content: space-evenly;
+      height: 4.5rem;
+      position: fixed;
+    }
+  }
+
+  &__main {
+    // margin-top: 8em;
+    display: flex;
+    grid-gap: 2%;
+    justify-content: center;
+
+    #check {
+      display: none;
+
+      @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+        &:checked~.nav-bar {
+          top: 0%;
+        }
+      }
+    }
+
+    .nav-bar {
+      border-radius: 12px;
+      width: 22em;
+      height: 36.5em;
+      background-color: #ffffff;
+      position: sticky;
+      top: 9em;
+
+      .top-menu {
+        height: 29.5em;
+        border-radius: 12px;
+        background-color: #ffffff;
+      }
+
+      .bottom-menu {
+        height: 14.5em;
+        border-radius: 12px;
+        background-color: #ffffff;
+        margin-top: 2em;
+        padding: 0.5em 0;
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+          margin-top: 0;
+        }
+
+        .profile-progress {
+          @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+            display: none;
+          }
+
+          .profile-completed {
+            padding-left: 2.5em;
+            line-height: 1.5em;
+            margin-top: 1.43em;
+            font-style: normal;
+            font-weight: 550;
+            font-size: 0.9em;
+            color: black;
+          }
+        }
+
+        .progressbar {
+          background-color: #e7ecef;
+          border-radius: 13px;
+          width: 14.8em;
+          height: 0.37em;
+          margin: 0.5em 0 0 2.2em;
+          display: inline-block;
+
+          div {
+            background-color: #04a971;
+            width: 3em;
+            height: 100%;
+            border-radius: 10px;
+          }
+        }
+
+        .percentage {
+          float: right;
+          line-height: 1.7em;
+          font-style: normal;
+          font-weight: 550;
+          font-size: 0.9em;
+          color: black;
+          margin: 0 2.2em 0 0;
+        }
+      }
+
+      .nav-header {
+        padding: 2.5em 0 0 1.7em;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.25em;
+      }
+
+      .nav-title {
+        padding: 1em 0 0 1.7em;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.25em;
+      }
+
+      .nav-item {
+        padding: 0;
+        margin-top: 1.43em;
+        font-style: normal;
+        font-weight: 550;
+        font-size: 0.9em;
+        color: #8d9da8;
+        cursor: pointer;
+
+        :hover {
+          color: #3e4e59;
+        }
+
+        .nav-link-local {
+          padding-left: 2.5em;
+          line-height: 1.5em;
+        }
+
+        .nav-item-active {
+          border-left: 5px solid #fcd400;
+          color: #0d1d28;
+          font-weight: 600;
+          font-size: 1em;
+          padding-left: 2.1em;
+
+          @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+            font-size: 1em;
+          }
+        }
+
+        .help-link {
+          display: none;
+
+          @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+            display: block;
+          }
+        }
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+          font-size: 1em;
+        }
+      }
+
+      @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+        position: fixed;
+        top: -200%;
+        z-index: 12;
+        height: 100vh;
+        padding: 10% 0;
+        min-width: 100vw;
+        transition: all 0.5s;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+      margin-top: 4.1em;
+    }
+  }
+
+  .remarks {
+    flex-direction: column;
+    position: sticky;
+    top: 9em;
+    max-height: 20rem;
+
+    .remarks-container {
+      border: none;
+      resize: both;
+      overflow: auto;
+      max-height: 20rem;
+      border-radius: 12px;
+      padding: 1em;
+      background-color: #ffffff;
+      max-width: 43em;
+      width: 20rem;
+      height: 10rem;
+    }
+  }
+}
+
+.content-wrapper::-webkit-scrollbar {
+  display: none;
+}

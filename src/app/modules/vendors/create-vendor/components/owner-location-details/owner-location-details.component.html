@@ -1,0 +1,265 @@
+<div class="content">
+    <header class="heading">Owner & Location Details
+        <p class="mandatory-txt">(All fields are mandatory.)</p>
+    </header>
+
+    <form [formGroup]="ownerDetailsForm" autocomplete="off" (keydown.enter)="$event.preventDefault()">
+
+        <label class="input-heading">OWNER FULL NAME</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="ownerName" formControlName="ownerName" placeholder="Enter name">
+            </mat-form-field>
+            <app-form-error-msg [control]="ownerDetailsForm.controls.ownerName"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">OWNER CONTACT NUMBER </label>
+        <!-- <span class="checkbox">
+            <input type="checkbox" class="checkbox-right" formControlName="sameAsContactNumber"
+                (change)="contactNumberSameAsOwnerNumber($event)" />
+            <span class="same-as">SAME AS CONTACT NO.</span>
+        </span> -->
+
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="ownerContactNumber" formControlName="ownerContactNumber" placeholder="Contact No." (input)="verificationFieldValueChanges('ownerContact')">
+                <a matSuffix (click)="sendOtpToOwnerContactNumber()">{{fieldsForVerification['ownerContact'].sendOtpText}}</a>
+            </mat-form-field>
+            <app-form-error-msg [control]="ownerDetailsForm.controls.ownerContactNumber"></app-form-error-msg>
+        </div>
+
+        <label *ngIf="!fieldsForVerification['ownerContact'].isVerified" class="input-heading">VERIFY
+            OTP</label>
+        <div *ngIf="!fieldsForVerification['ownerContact'].isVerified" class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="otp" formControlName="ownerContactOtp" placeholder="Enter OTP">
+                <a matSuffix (click)="verifyOtpForOwnerContactNumber()">{{verifyOtpText}}</a>
+            </mat-form-field>
+            <app-form-error-msg [control]="ownerDetailsForm.controls.ownerContactOtp"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">OWNER EMAIL ID</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="email" name="ownerEmailId" formControlName="ownerEmailId" placeholder="Enter email ID" (input)="verificationFieldValueChanges('ownerEmail')">
+                <a matSuffix (click)="sendOtpToOwnerEmail()">{{fieldsForVerification['ownerEmail'].sendOtpText}}</a>
+            </mat-form-field>
+            <app-form-error-msg [control]="ownerDetailsForm.controls.ownerEmailId"></app-form-error-msg>
+        </div>
+
+        <label *ngIf="!fieldsForVerification['ownerEmail'].isVerified" class="input-heading">VERIFY OTP</label>
+        <div *ngIf="!fieldsForVerification['ownerEmail'].isVerified" class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="otp" formControlName="ownerEmailOtp" placeholder="Enter OTP">
+                <a matSuffix (click)="verifyOtpForOwnerEmail()">{{verifyOtpText}}</a>
+            </mat-form-field>
+            <app-form-error-msg [control]="ownerDetailsForm.controls.ownerEmailOtp"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">IS OWNER AND MANAGER THE SAME?</label>
+        <div class="input-field">
+
+            <div class="radio-btn">
+                <div class="checkbox radio">
+                    <input type="radio" [value]="true" name="ownerManager" formControlName="ownerManager" (change)="isOwnerManagerSame()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">Yes</div>
+                <div class="checkbox radio">
+                    <input type="radio" [value]="false" name="ownerManager" formControlName="ownerManager" (change)="isOwnerManagerSame()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">No</div>
+            </div>
+        </div>
+        <div *ngIf="showManagerFields">
+            <label class="input-heading">MANAGER FULL NAME</label>
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" name="managerName" formControlName="managerName" placeholder="Enter name">
+                </mat-form-field>
+                <app-form-error-msg [control]="ownerDetailsForm.controls.managerName"></app-form-error-msg>
+            </div>
+
+            <label class="input-heading">MANAGER CONTACT NO</label>
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" name="managerContactNumber" formControlName="managerContactNumber" placeholder="Enter Contact No">
+                    <!-- <a matSuffix (click)="sendOtpToManagerContact()">{{fieldsForVerification['managerContact'].sendOtpText}}</a> -->
+                </mat-form-field>
+                <app-form-error-msg [control]="ownerDetailsForm.controls.managerContactNumber"></app-form-error-msg>
+            </div>
+
+            <!-- <label *ngIf="!fieldsForVerification['managerContact'].isVerified" class="input-heading">VERIFY OTP</label>
+            <div *ngIf="!fieldsForVerification['managerContact'].isVerified" class="input-field">
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" name="otp" formControlName="managerContactOtp" placeholder="Enter OTP">
+                    <a matSuffix (click)="verifyOtpForManagerContact()">{{verifyOtpText}}</a>
+                </mat-form-field>
+                <app-form-error-msg [control]="ownerDetailsForm.controls.managerContactOtp"></app-form-error-msg>
+            </div> -->
+
+            <label class="input-heading">MANAGER EMAIL ID</label>
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <input matInput type="email" name="managerEmailId" formControlName="managerEmailId" placeholder="Enter email ID">
+                    <!-- <a matSuffix (click)="sendOtpToManagerEmail()">{{fieldsForVerification['managerEmail'].sendOtpText}}</a> -->
+                </mat-form-field>
+                <app-form-error-msg [control]="ownerDetailsForm.controls.managerEmailId"></app-form-error-msg>
+            </div>
+
+            <!-- <label *ngIf="!fieldsForVerification['managerEmail'].isVerified" class="input-heading">VERIFY OTP</label>
+            <div *ngIf="!fieldsForVerification['managerEmail'].isVerified" class="input-field">
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" name="otp" formControlName="managerEmailOtp" placeholder="Enter OTP">
+                    <a matSuffix (click)="verifyOtpForManagerEmail()">{{verifyOtpText}}</a>
+                </mat-form-field>
+                <app-form-error-msg [control]="ownerDetailsForm.controls.managerEmailOtp"></app-form-error-msg>
+            </div> -->
+        </div>
+
+        <label class="input-heading">INVOICE EMAIL ID </label>
+        <span class="checkbox">
+            <input type="checkbox" class="checkbox-right" formControlName="sameAsOwnerEmailId"
+                (change)="invoiceEmailSameAsOwnerEmail($event)">
+            <span class="same-as">SAME AS OWNER'S EMAIL ID</span>
+        </span>
+
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="email" name="invoiceEmailId" formControlName="invoiceEmailId" placeholder="Invoice email ID">
+                <!-- <a matSuffix (click)="sendOtpForInvoiceEmail()">{{fieldsForVerification['invoiceEmail'].sendOtpText}}</a> -->
+            </mat-form-field>
+            <app-form-error-msg [control]="ownerDetailsForm.controls.invoiceEmailId"></app-form-error-msg>
+        </div>
+
+
+        <label class="input-heading">POC DETAILS</label>
+        <div class="input-heading d-flex flex-column" formArrayName="pocList">
+            <div *ngFor="let poc of pocListArray.controls; let i = index" [formGroupName]="i">
+                <div class="row mt-2">
+                    <hr *ngIf="i > 0">
+                    <p class="heading heading--grey d-flex align-items-center"
+                        *ngIf="ownerDetailsForm.controls['pocList'].length > 1 && !disableAll">
+                        <mat-icon class="cursor-enabled" matTooltip="Delete Slot" (click)="removePocEntry(i)">delete</mat-icon> POC {{i+1}}
+                    </p>
+                    <div class="input-details col-6 mt-2">
+                        <label for="name" class="input-heading">Name</label>
+                        <mat-form-field appearance="outline">
+                            <input matInput type="text" name="name" formControlName="name" placeholder="Enter name">
+                        </mat-form-field>
+                        <app-form-error-msg
+                            [control]="pocListArray.controls[i].controls.name"></app-form-error-msg>
+                    </div>
+                    <div class="input-details col-6  mt-2">
+                        <label for="name" class="input-heading">POC Number</label>
+                        <mat-form-field appearance="outline">
+                            <input matInput type="text" name="pocNumber" formControlName="pocNumber" placeholder="Enter POC Number">
+                        </mat-form-field>
+                        <app-form-error-msg
+                            [control]="pocListArray.controls[i].controls.pocNumber"></app-form-error-msg>
+                    </div>
+                    <div class="input-details col-6  mt-2">
+                        <label class="input-heading">Is Primary</label>
+                        <div class="input-field">
+                            <div class="radio-btn">
+                                <div class="checkbox radio">
+                                    <input type="radio" [value]="true" formControlName="isPrimary"/>
+                                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                                <div class="radio-btn__name">Yes</div>
+                                <div class="checkbox radio">
+                                    <input type="radio" [value]="false" formControlName="isPrimary"/>
+                                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                                <div class="radio-btn__name">No</div>
+                            </div>
+                        </div>
+                        <app-form-error-msg
+                            [control]="pocListArray.controls[i].controls.isPrimary"></app-form-error-msg>
+                    </div>
+                    <div class="input-details col-6  mt-2">
+                        <label for="name" class="input-heading">Designation</label>
+                        <ng-select class="mt-2" [items]="restaurantPocDesignation | keyvalue"
+                            [dropdownPosition]="'down'" bindLabel="value" bindValue="key"
+                            placeholder="Select Designation" formControlName="designation">
+                        </ng-select>
+                        <app-form-error-msg
+                            [control]="pocListArray.controls[i].controls.designation"></app-form-error-msg>
+                    </div>
+                </div>
+               
+            </div>
+           
+            <button class="add-more-btn text-uppercase col-6" type="button" *ngIf="!disableAll" (click)="addPocEntry()" mat-raised-button>
+                Add More POC Details
+            </button>
+        </div>
+        
+        <!-- <label *ngIf="!fieldsForVerification['invoiceEmail'].isVerified" class="input-heading">VERIFY OTP</label>
+        <div *ngIf="!fieldsForVerification.invoiceEmail.isVerified" class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="otp" formControlName="invoiceEmailOtp" placeholder="Enter OTP">
+                <a matSuffix (click)="verifyOtpForInvoiceEmail()">{{verifyOtpText}}</a>
+            </mat-form-field>
+            <app-form-error-msg [control]="ownerDetailsForm.controls.invoiceEmailOtp"></app-form-error-msg>
+        </div> -->
+
+        <label class="input-heading mt-5">OUTLET LOCATION</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <!-- <input matInput type="text" (keydown.enter)="$event.preventDefault()" formControlName="searchLocation" name="location" #search placeholder="Search location"> -->
+                <textarea matInput type="text" formControlName="searchLocation" name="location" #search placeholder="Search location" id="location"></textarea>
+            </mat-form-field>
+        </div>
+        <p class="sub-heading">Please place the pin accurately at your outlet's location on the map
+        </p>
+
+        <agm-map [latitude]="lat" [longitude]="long" [zoom]="zoom">
+            <agm-marker [latitude]="lat" [longitude]="long" [markerDraggable]="disableAll ? false : true" (dragEnd)="markerDragged($event)">
+            </agm-marker>
+        </agm-map>
+        <br>
+        <div class="row ">
+            <div class="col-sm-6">
+                <label class="input-heading">LATITUDE</label>
+                <div class="input-field">
+                    <mat-form-field appearance="outline">
+                        <input matInput type="text" name="latitude" formControlName="latitude" placeholder="Latitude" (blur)="latLongChange('lat')">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label class="input-heading">LONGITUDE</label>
+                <div class="input-field">
+                    <mat-form-field appearance="outline">
+                        <input matInput type="text" name="longitude" formControlName="longitude" placeholder="Longitude" (blur)="latLongChange('long')">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label class="input-heading">POSTAL CODE</label>
+                <div class="input-field">
+                    <mat-form-field appearance="outline">
+                        <input matInput type="text" name="postalCode" formControlName="postalCode" placeholder="Postal Code">
+                        <!-- <a matSuffix *ngIf="!isPostalCodeVerified" (click)="verifyPostalCode()">verify</a> -->
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label class="input-heading">STATE</label>
+                <div class="input-field">
+                    <mat-form-field appearance="outline">
+                        <input matInput type="text" name="state" formControlName="state" placeholder="State">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <footer class="btn-grp">
+            <button class="white-btn" mat-button (click)="previous()">
+                Back
+            </button>
+            <button class="black-btn" mat-raised-button (click)="next()">
+                {{buttonText}}
+            </button>
+        </footer>
+
+    </form>
+</div>

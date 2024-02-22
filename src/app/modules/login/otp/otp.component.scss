@@ -1,0 +1,51 @@
+// @media only screen and (min-device-width: 320px) and (max-device-width: 767px){}: media query for phone (orientation: landscape or potrait)
+// @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}: media query for iPad and Tablet (orientation: landscape or potrait)
+.login-form {
+    text-align: left !important;
+    width: 100%;
+    @media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+        margin-left: 1.5em;
+        width: auto;
+    }
+    .input-heading {
+        font-weight: 600;
+        line-height: 2em;
+        font-size: 0.9em;
+        text-transform: uppercase;
+    }
+    .otp-not-recieved {
+        display: flex;
+        grid-gap: 5.5em;
+    }
+    .input-field {
+        margin: 0.7em 0 0.7em;
+        width: 100%;
+        flex-direction: column;
+        grid-gap: 1em;
+    }
+    .timer {
+        color: #6D7E8B;
+        text-decoration: underline;
+    }
+    .custom-btn {
+        background-color: #0D1D28;
+        color: #fff;
+        width: 100%;
+        height: 3.75em;
+        font-size: 1em;
+        font-weight: 600;
+        border-radius: 8px;
+        margin-top: 0.7em;
+        text-transform: uppercase;
+        @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+            width: 93%;
+        }
+    }
+}
+
+
+.a-link {
+    color: #6D7E8B;
+    text-decoration: underline;
+    cursor: pointer;
+}

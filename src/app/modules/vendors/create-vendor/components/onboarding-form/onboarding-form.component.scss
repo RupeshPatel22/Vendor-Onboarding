@@ -1,0 +1,48 @@
+@import '../../../../../../assets/styles/components/forms';
+
+.item-heading {
+    color: #FF604A;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 2.5em;
+    display: flex;
+    align-items: center;
+}
+
+.item-heading--grey {
+    color: #6D7E8B;
+}
+
+.upload-menu {
+    display: flex;
+    align-items: center;
+}
+
+mat-icon {
+    font-size: 1.5em;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.grey {
+    background-color: rgba(0, 0, 0, 0.26) !important;
+}
+
+.green {
+    color: #04A971 !important;
+}
+
+.red {
+    color: crimson !important;
+}
+
+.mandatory-txt {
+    color: #6d7e8b;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    font-style: italic;
+    text-transform: none;
+}

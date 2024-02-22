@@ -1,0 +1,35 @@
+<form class="login-form">
+   <ng-container *ngIf="openedFor === 'registration'">
+        <div class="input-heading text-center">Enter the verification code sent to {{partialEmail}}</div>
+        <ng-otp-input class="d-flex justify-content-center align-items-center" (onInputChange)="onEmailOtpChange($event)" 
+            [config]="config">
+        </ng-otp-input>
+        <div class="d-flex justify-content-center align-items-center gap-2 mb-3">
+            <label class="input-heading">Didn't receive the code!</label>
+            <span class="timer" *ngIf="!canResendEmailOtp">{{emailOtpResendTimer}} secs left</span>
+            <a (click)="reSendEmailOtp()" class="a-link" *ngIf="canResendEmailOtp">Resend</a>
+        </div>
+   </ng-container>
+    <div class="input-heading text-center">Enter the verification code sent to {{partialMobile}}</div>
+    <ng-otp-input class="d-flex justify-content-center align-items-center" (onInputChange)="onPhoneOtpChange($event)" (keydown.enter)="verifyOtp()"
+        [config]="config">
+    </ng-otp-input>
+    <div class="d-flex justify-content-center align-items-center gap-2">
+        <label class="input-heading">Didn't receive the code!</label>
+        <span class="timer" *ngIf="!canResendPhoneOtp">{{phoneOtpResendTimer}} secs left</span>
+            <a (click)="reSendPhoneOtp()" class="a-link" *ngIf="canResendPhoneOtp">Resend</a>
+    </div>
+    <!-- <div class="input-field d-flex justify-content-center align-items-center">
+        <label class="input-heading"> Didn't receive the code?</label>
+        <div class="otp-not-recieved">
+            <span class="timer" *ngIf="!canResendPhoneOtp">{{phoneOtpResendTimer}} secs left</span>
+            <a (click)="reSendPhoneOtp()" class="a-link" *ngIf="canResendPhoneOtp">Resend Code</a>
+            <a (click)="goToLoginPage()" class="a-link a-link--ml">Sign in again</a>
+        </div>
+    </div> -->
+    <button (click)="verifyOtp()" mat-flat-button class="custom-btn">Get Started</button>
+</form>
+<div class="d-flex w-100 mt-3">
+    <a (click)="closeOtpPage(false)" class="a-link w-50">{{openedFor === 'registration' ? 'Register again' : 'Sign in again'}}</a>
+    <a (click)="closeOtpPage(true)" class="a-link w-100 text-end" *ngIf="openedFor === 'registration'">Already a user? Login here</a>
+</div>

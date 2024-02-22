@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="header d-flex align-items-baseline">
+        <h3><b> Add New Outlet </b></h3>
+        <button type="submit" class="modal-cancel-button" (click)="closeModal()">
+            <span aria-hidden="true" class="crossButton">×</span>
+        </button>
+    </div>
+    <h5><b> Select Vendor Category</b></h5>
+    <div class="input-field mb-3">
+        <ng-select [clearable]="false" [searchable]="false" placeholder="Select Vendor Category"
+            [formControl]="selectVendorCategory" (change)="showOutletNameField = true;vendorCategorySelectionChange()">
+            <ng-container *ngFor="let category of vendorCategory">
+                <ng-option [value]="category"><strong>{{category}}</strong></ng-option>
+            </ng-container>
+
+        </ng-select>
+        <app-form-error-msg [control]="selectVendorCategory"></app-form-error-msg>
+    </div>
+    <div class="input-field" *ngIf="showOutletNameField">
+        <h5><b> Outlet Name</b></h5>
+        <mat-form-field appearance="outline">
+            <input matInput type="text" name="outletName" [formControl]="outletName" placeholder="Enter Outlet Name" (keydown.enter)="createOutlet()">
+        </mat-form-field>
+        <app-form-error-msg [control]="outletName"></app-form-error-msg>
+    </div>
+    <button type="submit" class="btn btn-dark" class="modal-action-button" (click)="createOutlet()">
+        START
+    </button>
+</div>

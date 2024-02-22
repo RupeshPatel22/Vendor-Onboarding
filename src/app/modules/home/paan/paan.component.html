@@ -1,0 +1,54 @@
+<div class="hero">
+    <div class="heading justify-content-between align-items-end d-flex">
+        <label class="all-outlet-text">{{role === roles.Partner ? 'All Outlets': 'All Outlets for Approval'}}</label>
+        <div class="d-flex me-3">
+            <button class="black-btn" mat-raised-button [routerLink]="'/home/paan-history'" *ngIf="role !== roles.Partner"> History </button>
+            <pagination-controls class="text-end" *ngIf="paanList.length && role !== roles.Partner"
+                (pageChange)="currentPage = $event;showAdminApprovalPendingOutletList()">
+            </pagination-controls>
+        </div>
+    </div>
+    <div class="input-field mt-3 ms-5 ps-3" *ngIf="role !== roles.Partner">
+        <mat-form-field appearance="outline" class="w-50">
+            <input matInput type="text" name="search" [(ngModel)]="search" placeholder="Search..."
+                (keyup.enter)="showAdminApprovalPendingOutletList(true)">
+            <a matSuffix (click)="showAdminApprovalPendingOutletList(true)"> <mat-icon>search</mat-icon> </a>
+        </mat-form-field>
+    </div>
+    <div class="container-fluid">
+        <ng-container *ngIf="paanList.length && role === roles.Partner; else noData">
+            <div class="vendor" *ngFor="let paan of paanList; let i = index">
+                <app-outlet-card [outlet]="paan"></app-outlet-card>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="paanList.length && role !== roles.Partner; else noDataForApproval">
+            <div class="vendor"
+                *ngFor="let paan of paanList | paginate: {itemsPerPage: pageSize,  currentPage: currentPage,totalItems: totalApprovalPendingRecords }; let i = index">
+                <app-outlet-card [outlet]="paan"></app-outlet-card>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<ng-template #noData>
+    <div *ngIf="role === roles.Partner"
+        class="no-data d-flex justify-content-center align-items-center position-static">
+        <div class="establishment-message">
+            Oh! looks like you haven't added any establishment yet!
+        </div>
+        <img src="assets/noEstablishment.svg" />
+        <div class="no-establishment">
+            <img src="assets/Exclamation Mark.svg" />
+            <span class="no-establishment-text">No establishment</span>
+        </div>
+    </div>
+</ng-template>
+<ng-template #noDataForApproval>
+    <div *ngIf="role !== roles.Partner"
+        class="no-data d-flex justify-content-center align-items-center position-static">
+        <img src="assets/noEstablishment.svg" />
+        <div class="no-establishment">
+            <img src="assets/Exclamation Mark.svg" />
+            <span class="no-establishment-text">No establishments for Approval</span>
+        </div>
+    </div>
+</ng-template>

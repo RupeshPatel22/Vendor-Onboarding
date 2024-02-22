@@ -1,0 +1,227 @@
+<div class="content">
+    <header class="heading">Outlet Details
+        <p class="mandatory-txt">(All fields are mandatory.)</p>
+    </header>
+
+    <form [formGroup]="outletDetailsForm" autocomplete="off" (keydown.enter)="$event.preventDefault()">
+        <label class="input-heading">OUTLET NAME</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input type="text" matInput name="outletName" formControlName="outletName" placeholder="Enter Outlet Name">
+            </mat-form-field>
+            <app-form-error-msg [control]="outletDetailsForm.controls.outletName"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">CITY</label>
+        <div class="input-field">
+            <ng-select id="city" name="city" formControlName="city" [items]="city" (change)="setAreaList($event.id)" bindLabel="name" bindValue="id" placeholder="Select City">
+            </ng-select>
+            <app-form-error-msg [control]="outletDetailsForm.controls.city"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">AREA</label>
+        <div class="input-field">
+            <ng-select id="area" name="area" formControlName="area" [items]="area" bindLabel="name" bindValue="id" placeholder="Select Area">
+            </ng-select>
+            <app-form-error-msg [control]="outletDetailsForm.controls.area"></app-form-error-msg>
+        </div>
+        <ng-container *ngIf="service === Services.Food">
+            <label class="input-heading" >Outlet Type</label>
+        <div class="input-field">
+            <ng-select id="outletType" name="outletType" formControlName="outletType"
+                [items]="outletTypesList | keyvalue: originalOrder" bindLabel="value" bindValue="key" placeholder="Select Outlet Type">
+            </ng-select>
+        </div>
+        </ng-container>        
+        <label class="input-heading">DO YOU HAVE BRANCH NAME?</label>
+        <div class="input-field">
+            <div class="radio-btn">
+                <div class="checkbox radio">
+                    <input type="radio" [value]="true" name="hasBranchName" formControlName="hasBranchName" (change)="haveValidBranchName()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">Yes</div>
+                <div class="checkbox radio">
+                    <input type="radio" [value]="false" name="hasBranchName" formControlName="hasBranchName" (change)="haveValidBranchName()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">No</div>
+            </div>
+        </div>
+
+        <div *ngIf="haveBranchName">
+            <label class="input-heading">Branch Name</label>
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <input type="text" matInput name="branchName" formControlName="branchName" placeholder="Enter Branch Name">
+                </mat-form-field>
+                <app-form-error-msg [control]="outletDetailsForm.controls.branchName"></app-form-error-msg>
+            </div>
+        </div>
+
+        <!-- <label class="input-heading">CONTACT NUMBER</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="contactNumber" formControlName="contactNumber" placeholder="Contact No." (input)="contactNumberValueChanges()">
+                <a matSuffix (click)="canSendOtp ? sendOtp() : ''">{{sendOtpText}}</a>
+            </mat-form-field>
+            <app-form-error-msg [control]="outletDetailsForm.controls.contactNumber"></app-form-error-msg>
+        </div> -->
+
+        <!-- <label *ngIf="!contactNumberVerified" class="input-heading">VERIFY OTP</label>
+        <div *ngIf="!contactNumberVerified" class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="otp" formControlName="otp" placeholder="Enter OTP">
+                <a matSuffix (click)="verifyOtp()">{{verifyOtpText}}</a>
+            </mat-form-field>
+            <app-form-error-msg [control]="outletDetailsForm.controls.otp"></app-form-error-msg>
+        </div> -->
+
+        <!-- <label class="input-heading">PREFERRED LANGUAGE</label>
+        <div class="input-field">
+            <ng-select id="area" name="preferredLang" formControlName="preferredLang" [items]="language" bindLabel="name" bindValue="id" [multiple]="true" [closeOnSelect]="false" placeholder="Select Language">
+            </ng-select>
+            <app-form-error-msg [control]="outletDetailsForm.controls.preferredLang"></app-form-error-msg>
+        </div> -->
+
+        <!-- <label class="input-heading">ARE YOU ALREADY REGISTERED WITH US?</label>
+        <div class="input-field">
+            <div class="radio-btn">
+                <div class="checkbox radio">
+                    <input type="radio" [value]="true" name="alreadyRegisteredWithUs" formControlName="alreadyRegisteredWithUs" (change)="alreadyRegistered()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">Yes</div>
+                <div class="checkbox radio">
+                    <input type="radio"  [value]="false" name="alreadyRegisteredWithUs" formControlName="alreadyRegisteredWithUs" (change)="alreadyRegistered()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">No</div>
+            </div>
+        </div> -->
+
+        <!-- <div *ngIf="showBrandIdField">
+            <label class="input-heading">BRAND ID</label>
+            <div class="input-field">
+                <mat-form-field  appearance="outline">
+                <input matInput type="text" name="brandId" formControlName="brandId" placeholder="Enter Brand ID">
+                </mat-form-field>
+                <app-form-error-msg [control]="outletDetailsForm.controls.brandId"></app-form-error-msg>
+            </div>
+        </div> -->
+
+        <!-- <label class="input-heading">RECEIVE NOTIFICATION VIA WHATSAPP?</label>
+        <div class="input-field">
+            <div class="radio-btn">
+                <div class="checkbox radio">
+                    <input type="radio" [value]="true" name="receiveWhatsAppNotification" formControlName="receiveWhatsAppNotification" (change)="receiveNotification()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">Yes</div>
+                <div class="checkbox radio">
+                    <input type="radio"  [value]="false" name="receiveWhatsAppNotification" formControlName="receiveWhatsAppNotification" (change)="receiveNotification()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">No</div>
+            </div>
+        </div>
+        <div *ngIf="showWhatsAppNumberField">
+            <label class="input-heading">WHATSAPP NUMBER </label>
+            <span class="checkbox">
+                <input type="checkbox" class="checkbox-right" formControlName="sameAsContactNumber" (change)="sameAsOwnerNumber($event)" />
+                <span class="same-as">SAME AS OWNER'S CONTACT NO.</span>
+              </span>
+            <div class="input-field">
+                <mat-form-field  appearance="outline">
+                    <input matInput type="text"  name="whatsAppNumber" formControlName="whatsAppNumber" placeholder="Contact No.">
+                </mat-form-field>
+                <app-form-error-msg [control]="outletDetailsForm.controls.whatsAppNumber"></app-form-error-msg>
+            </div>
+        </div> -->
+        <label class="input-heading">UPLOAD PRIMARY OUTLET IMAGE</label>
+        <!-- <mat-icon (click)="deleteMenu(i)" *ngIf="!disableAll && outletDetailsForm.controls['imageOutlet']['controls'].length > 1" matTooltip="Delete">delete </mat-icon> -->
+        <span class="upload-format-info">(.jpg, .jpeg, .png upto 20 MB only)</span>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files, 'outletImage')" type="file" accept="all/*" #outletDoc>
+                <input type="text" readonly matInput formControlName="outletDoc" />
+                <button matSuffix *ngIf="!disableAll" (click)="outletDoc.click();" mat-raised-button class="upload-button">
+                    upload
+                </button>
+                <button matSuffix *ngIf="disableAll" (click)="viewFile('outletImage');" mat-raised-button class="upload-button">
+                    view
+                </button>
+            </mat-form-field>
+            <app-form-error-msg [control]="outletDetailsForm.controls.outletDoc"></app-form-error-msg>
+        </div>
+        <div formArrayName="outletImageRows">
+            <div *ngFor="let imageRow of outletDetailsForm.controls['outletImageRows']['controls']; let i=index" [formGroupName]="i">
+                <label class="input-heading upload-image d-flex align-items-center">UPLOAD ADDITIONAL OUTLET IMAGE
+                    <mat-icon (click)="deleteOutletImage(i)" *ngIf="!disableAll" matTooltip="Delete">delete </mat-icon>
+                    <span class="upload-format-info float-end">(.jpg, .jpeg, .png upto 20 MB only)</span>
+                </label>
+
+                <div class="input-field">
+                    <mat-form-field appearance="outline">
+                        <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files, 'outletImage', i)" type="file" accept="all/*" #outletImage>
+                        <input type="text" readonly matInput formControlName="outletImage" />
+                        <button matSuffix *ngIf="!disableAll" (click)="outletImage.click();" mat-raised-button class="upload-button">
+                            upload
+                        </button>
+                        <button matSuffix *ngIf="disableAll" (click)="viewFile(i);" mat-raised-button class="upload-button">
+                            view
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+            <button class="add-more-btn text-uppercase" type="button" *ngIf="!disableAll" (click)="addOutletImage()" mat-raised-button>
+                Add More Images
+            </button>
+        </div>
+        <div class="mt-3" *ngIf="service === Services.Pharmacy">
+            <label class="input-heading">Drug License Number</label>
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <input type="text" matInput name="drugLicenseNumber" formControlName="drugLicenseNumber" placeholder="Enter Drug License Number">
+                </mat-form-field>
+                <app-form-error-msg [control]="outletDetailsForm.controls.drugLicenseNumber"></app-form-error-msg>
+            </div>
+            <label class="input-heading">UPLOAD Drug Retail DOCUMENT</label><span class="upload-format-info">{{allowedUploadFormat}}</span>
+            <div class="input-field">
+                <!-- <ngx-img></ngx-img> -->
+                <mat-form-field appearance="outline">
+                    <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files,'drugRetailDoc')" type="file" accept="all/*" #drugRetailDoc>
+                    <input type="text" readonly matInput formControlName="drugRetailDoc" />
+                    <button matSuffix *ngIf="!disableAll" (click)="drugRetailDoc.click();" mat-raised-button class="upload-button">
+                        upload
+                    </button>
+                    <button matSuffix *ngIf="disableAll" (click)="viewFile('drugRetailDocUrl');" mat-raised-button class="upload-button">
+                        view
+                    </button>
+                </mat-form-field>
+            </div>
+
+            <label class="input-heading">UPLOAD Drug Wholesale DOCUMENT</label><span class="upload-format-info">{{allowedUploadFormat}}</span>
+            <div class="input-field">
+                <!-- <ngx-img></ngx-img> -->
+                <mat-form-field appearance="outline">
+                    <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files,'drugWholesaleDoc')" type="file" accept="all/*" #drugWholesaleDoc>
+                    <input type="text" readonly matInput formControlName="drugWholesaleDoc" />
+                    <button matSuffix *ngIf="!disableAll" (click)="drugWholesaleDoc.click();" mat-raised-button class="upload-button">
+                        upload
+                    </button>
+                    <button matSuffix *ngIf="disableAll" (click)="viewFile('drugWholesaleDocUrl');" mat-raised-button class="upload-button">
+                        view
+                    </button>
+                </mat-form-field>
+            </div>
+        </div>
+        <!-- <button type="button" class="black-btn" mat-raised-button (click)="addOutletImage()" *ngIf="!outletDetailsForm.controls['outletImageRows']['controls'].length">Upload additional outlet images</button> -->
+
+
+        <footer class="btn-grp">
+            <button class="white-btn" mat-button (click)="previous()">
+                Back
+            </button>
+            <button class="black-btn" mat-raised-button (click)="next()">
+                {{buttonText}}
+            </button>
+        </footer>
+
+
+    </form>
+</div>

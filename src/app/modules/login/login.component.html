@@ -1,0 +1,51 @@
+<div class="login-main">
+    <div class="login-wrapper d-flex justify-content-center align-items-center">
+        <div class="box-form">
+            <div class="left d-none d-lg-block d-xl-block">
+                <img class="hero-img w-100 h-100" src="assets/styles/images/pancakes.jpg" alt="Speedyy Intro Image" />
+            </div>
+            <div class="right">
+                <div class="headers">
+                    <img class="company-logo" src="../../../assets/Speedyy logo.svg" alt="Logo" height="100" width="100" />
+                    <header class="heading mt-4">Get listed on Speedyy</header>
+                    <p class="mt-4">- Partner With Speedyy -</p>
+                </div>
+                <ng-container *ngIf="!otpSent">
+                    <app-register *ngIf="currentPage === 'registration'" (flag)="otpSent = true"></app-register>
+                    <form [formGroup]="loginForm" autocomplete="off" class="login-form" *ngIf="currentPage === 'login'">
+                        <section>
+                            <label class="input-heading" for="mobileNumber">Mobile Number</label>
+                            <div class="mobile-number-details d-flex">
+                                <div class="custom-code-field row" appearance="outline">
+                                    <i class="flag-icon flag-icon-in col-6"></i>
+                                    <input class="country-code col-4" type="text" matInput formControlName="userCountryCode" placeholder="+91" />
+                                </div>
+                                <div class="input-phn-field">
+                                    <mat-form-field class="custom-mobile-field" appearance="outline">
+                                        <input matInput formControlName="userMobile" type="text" placeholder="Enter mobile no" />
+                                    </mat-form-field>
+                                    <app-form-error-msg [control]="loginForm.controls.userMobile"></app-form-error-msg>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="custom-btn mt-3" (click)="onSubmit()" mat-flat-button>
+                            SEND OTP
+                        </button>
+                    </form>
+                    <a class="a-link text-end mt-3" (click)="toggleCurrentPage()">{{currentPage === 'login' ? 'New user, Register here' : 'Already a user? Login here'}}</a>
+                </ng-container>
+                <section *ngIf="otpSent">
+                    <app-otp [openedFor]="currentPage" (flag)="hideOtpPage($event)"></app-otp>
+                </section>
+            </div>
+        </div>
+        <footer class="footer-links">
+            <section class="social-links">
+                <img class="footer-logo" src="assets/styles/media/footerImg.svg" alt="Speedyy Logo" />
+                <a href="https://www.speedyy.com/" target="_blank">About Us</a>
+                <a href="mailto:customercare@speedyy.com">Contact Us</a>
+                <a href="mailto:customercare@speedyy.com">Help</a>
+            </section>
+        </footer>
+    </div>
+</div>

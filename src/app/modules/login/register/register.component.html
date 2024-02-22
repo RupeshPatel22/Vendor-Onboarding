@@ -1,0 +1,28 @@
+<form [formGroup]="registerForm" autocomplete="off">
+    <section>
+        <label class="input-heading" for="email">Enter Email</label>
+        <div class="input-field">
+            <mat-form-field class="custom-email-field" appearance="outline">
+                <input matInput formControlName="email" type="email" placeholder="Enter email" />
+            </mat-form-field>
+            <app-form-error-msg [control]="registerForm.controls.email"></app-form-error-msg>
+        </div>
+        <label class="input-heading" for="mobileNumber">Mobile Number</label>
+        <div class="mobile-number-details d-flex">
+            <div class="custom-code-field row" appearance="outline">
+                <i class="flag-icon flag-icon-in col-6"></i>
+                <input class="country-code col-4" type="text" matInput formControlName="countryCode"
+                    placeholder="+91" />
+            </div>
+            <div class="input-phn-field">
+                <mat-form-field class="custom-mobile-field" appearance="outline">
+                    <input matInput formControlName="mobile" type="text" placeholder="Enter mobile no" />
+                </mat-form-field>
+                <app-form-error-msg [control]="registerForm.controls.mobile"></app-form-error-msg>
+            </div>
+        </div>
+    </section>
+    <button class="custom-btn mt-3" (click)="submit()" mat-flat-button>
+        SEND OTP
+    </button>
+</form>

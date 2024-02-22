@@ -1,0 +1,129 @@
+<div class="content">
+
+    <header class="heading">FSSAI Details
+        <p class="mandatory-txt">(All fields are mandatory.)</p>
+        <p class="sub-heading">Kindly provide valid certificates for the followings</p>
+    </header>
+
+    <ng-container *ngIf="showHasFssaiDetailsField">
+        <label class="input-heading">DO YOU HAVE FSSAI DETAILS?</label>
+        <div class="input-field">
+            <div class="radio-btn">
+                <div class="checkbox radio">
+                    <input type="radio" [value]="true" name="hasFssaiDetails" [ngModel]="hasFssaiDetails" (ngModelChange)="haveFssaiDetails($event)" [disabled]="disableAll"/>
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">Yes</div>
+                <div class="checkbox radio">
+                    <input type="radio" [value]="false" name="hasFssaiDetails" [ngModel]="hasFssaiDetails" (ngModelChange)="haveFssaiDetails($event)" [disabled]="disableAll"/>
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">No</div>
+            </div>
+        </div>
+    </ng-container>
+    <form [formGroup]="fssaiDetailsForm" autocomplete="off" (keydown.enter)="$event.preventDefault()" [ngClass]="{'d-none': !hasFssaiDetails}">
+        <label class="input-heading">DO YOU HAVE VALID FSSAI CERTIFICATE?</label>
+        <div class="input-field">
+            <div class="radio-btn">
+                <div class="checkbox radio">
+                    <input type="radio" [value]="true" name="hasFssaiCertificate" formControlName="hasFssaiCertificate" (change)="haveValidFssaiCertificate()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">Yes</div>
+                <div class="checkbox radio">
+                    <input type="radio" [value]="false" name="hasFssaiCertificate" formControlName="hasFssaiCertificate" (change)="haveValidFssaiCertificate()" />
+                </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                <div class="radio-btn__name">No</div>
+            </div>
+            <app-form-error-msg [control]="fssaiDetailsForm.controls.hasFssaiCertificate"></app-form-error-msg>
+        </div>
+
+        <ng-container *ngIf="hasFssaiCertificate !== null">
+            <label class="input-heading">{{hasFssaiCertificate ? 'FSSAI EXPIRATION DATE': 'DATE OF APPLICATION'}}</label>
+            <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput (click)="expirationDate.open()" [matDatepicker]="expirationDate" [readonly]="true"
+                formControlName="fssaiExpirationDate" matInput [max]="maxDate" [min]="minDate" name="fssaiExpirationDate"
+                placeholder="Select date">
+                <mat-datepicker-toggle matSuffix [for]="expirationDate" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #expirationDate></mat-datepicker>
+            </mat-form-field>
+            <app-form-error-msg [control]="fssaiDetailsForm.controls.fssaiExpirationDate"></app-form-error-msg>
+            </div>
+            
+
+            <div *ngIf="hasFssaiCertificate">
+                <label class="input-heading">FSSAI REGISTER NO.</label>
+                <div class="input-field">
+                    <mat-form-field appearance="outline">
+                        <input matInput type="text" name="fssaiRegisterNumber" formControlName="fssaiRegisterNumber" placeholder="Enter register No.">
+                        <!-- <a matSuffix (click)="validateFSSAI()">{{validateFSSAIText}}</a> -->
+                    </mat-form-field>
+                    <app-form-error-msg [control]="fssaiDetailsForm.controls.fssaiRegisterNumber"></app-form-error-msg>
+                </div>
+            </div>
+
+            <div *ngIf="!hasFssaiCertificate">
+                <label class="input-heading">FSSAI ACKNOWLEDGEMENT NUMBER</label>
+                <div class="input-field">
+                    <mat-form-field appearance="outline">
+                        <input matInput type="text" name="fssaiAcknowledgementNumber" formControlName="fssaiAcknowledgementNumber" placeholder="Enter fssai acknowledgment No.">
+                    </mat-form-field>
+                    <app-form-error-msg [control]="fssaiDetailsForm.controls.fssaiAcknowledgementNumber"></app-form-error-msg>
+                </div>
+            </div>
+
+            <!-- <label class="input-heading" >{{hasFssaiCertificate ? 'FSSAI LICENSE TYPE': 'FSSAI ACKNOWLEDGEMENT TYPE'}}</label> 
+            <div class="input-field">
+                <ng-select id="docType" name="fssaiLicenseType" formControlName="fssaiLicenseType" [items]="docType" bindLabel="name" bindValue="id" (change)="uploadFileTypeChange($event.id)" placeholder="Select FSSAI type">
+                </ng-select>
+                <app-form-error-msg [control]="fssaiDetailsForm.controls.fssaiLicenseType"></app-form-error-msg>
+            </div> -->
+
+            <label class="input-heading">{{hasFssaiCertificate ? 'FSSAI DOCUMENT UPLOAD': 'FSSAI ACKNOWLEDGEMENT DOCUMENT
+                UPLOAD'}}</label>
+            <!-- <span class="upload-format-info">{{allowedUploadFormat}}</span> -->
+            <div class="input-field">
+                <span class="upload-format-info">{{allowedUploadFormat}}</span>
+                <!-- <ngx-img></ngx-img> -->
+                <mat-form-field appearance="outline">
+                    <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files)" type="file" accept="all/*" #fssaiDoc>
+                    <input type="text" readonly matInput formControlName="fssaiDoc" />
+                    <button matSuffix *ngIf="!disableAll" (click)="fssaiDoc.click();" mat-raised-button class="upload-button">
+                        upload
+                    </button>
+                    <button matSuffix *ngIf="disableAll" (click)="viewFile();" mat-raised-button class="upload-button">
+                        view
+                    </button>
+                </mat-form-field>
+                <app-form-error-msg [control]="fssaiDetailsForm.controls.fssaiDoc"></app-form-error-msg>
+            </div>
+        </ng-container>
+
+        <label class="input-heading">FSSAI FIRM NAME</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="fssaiFirmName" formControlName="fssaiFirmName" placeholder="Enter firm name">
+            </mat-form-field>
+            <app-form-error-msg [control]="fssaiDetailsForm.controls.fssaiFirmName"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">FSSAI ADDRESS</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <!-- <input matInput type="text" name="fssaiAddress" formControlName="fssaiAddress" placeholder="Enter Address"> -->
+                <textarea matInput type="text" name="fssaiAddress" id="fssaiAddress" formControlName="fssaiAddress" placeholder="Enter Address"></textarea>
+            </mat-form-field>
+            <app-form-error-msg [control]="fssaiDetailsForm.controls.fssaiAddress"></app-form-error-msg>
+        </div>
+    </form>
+
+    <footer class="btn-grp">
+        <button class="white-btn" mat-button (click)="previous()">
+            Back
+        </button>
+        <button class="black-btn" mat-raised-button (click)="next()">
+            {{buttonText}}
+        </button>
+    </footer>
+
+
+</div>

@@ -1,0 +1,41 @@
+<div class="hero">
+    <div class="heading justify-content-between align-items-end d-flex">
+        <label class="all-outlet-text"> History</label>
+        <div class="d-flex">
+            <button class="black-btn me-2" mat-raised-button [routerLink]="'/home/rider'">approve Riders</button>
+            <pagination-controls class="text-end" (pageChange)="currentPage = $event;showHistoryRiderList()">
+            </pagination-controls>
+        </div>
+    </div>
+    <ng-container>
+        <div class="input-field mt-3 ms-5 ps-3">
+            <mat-form-field appearance="outline" class="w-50">
+                <input matInput type="text" name="search" [(ngModel)]="search" placeholder="Search..."
+                    (keyup.enter)="showHistoryRiderList(true)">
+                <a matSuffix (click)="showHistoryRiderList(true)"> <mat-icon>search</mat-icon> </a>
+            </mat-form-field>
+        </div>
+        <table class="rwd-table ">
+            <tr>
+                <th>Sr No</th>
+                <th> RIDER NAME</th>
+                <th>STATUS</th>
+                <th>APPROVED BY</th>
+                <th>ACTIONS</th>
+            </tr>
+            <tr *ngFor="let historyRider of historyRiderList | paginate: {itemsPerPage: pageSize,  currentPage: currentPage,totalItems: totalRiderRecords }; 
+                let i = index">
+                <td data-th="Sr No">{{ ((currentPage - 1) * pageSize) + (i + 1) }}</td>
+                <td data-th="RESTAURANT NAME">{{historyRider.name}}</td>
+                <td data-th="STATUS">{{riderStatusList[historyRider.status]}}</td>
+                <td data-th="APPROVED BY">{{historyRider.approvedBy}}</td>
+                <td data-th="ACTIONS">
+                    <mat-icon (click)="viewRider(historyRider.id)">remove_red_eye</mat-icon>
+                </td>
+            </tr>
+            <tr *ngIf="!historyRiderList.length">
+                <td colspan="5">No Data Available</td>
+            </tr>
+        </table>
+    </ng-container>
+</div>

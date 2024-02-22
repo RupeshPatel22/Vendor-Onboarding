@@ -1,0 +1,34 @@
+<div class="content">
+    <!-- <header class="heading">Subcription & Onboarding Details -->
+    <!-- <p class="sub-heading">Please note that the access to the platform will be free for the first month
+             and a set subscription fee will be charged based on the plan opted there after.
+        </p> -->
+    <img src="../../../../../../assets/media/subscription-note.jpg" alt="" width="490" height="617"  *ngIf="service === services.Grocery || service === services.Flower">
+    <img src="../../../../../../assets/media/subscription-banner-food.jpg" alt="" width="490" height="617"  *ngIf="service === services.Food">
+    <img src="../../../../../../assets/media/paan-subscription-banner.png" alt="" width="490" height="617" *ngIf="service === services.Paan">
+    <img src="../../../../../../assets/media/pet-pharmacy-banner.png" alt="" width="490" height="617" *ngIf="service === services.Pharmacy || service === services.Pet">
+
+
+
+    <!-- </header> -->
+
+    <!-- <div class="checkbox e-sign mt-3">
+        <input type="checkbox" [disabled]="disableAll" [(ngModel)]="confirmationCheckbox" />
+        <span>I agree to a 3 month free subscription.</span>
+    </div> -->
+    <br>
+    <footer class="btn-grp-2 mt-4">
+        <button *ngIf="(!disableAll && !valid) " class="white-btn-2 me-3" mat-button (click)="previous()">
+            back
+        </button>
+        <button *ngIf="(!disableAll && !valid)" class="black-btn-2" mat-raised-button (click)="next()">
+            Subscribe & Next
+        </button>
+        <button *ngIf="(disableAll || valid) " class="white-btn-2 me-3" mat-button (click)="previous()">
+            back
+        </button>
+        <button *ngIf="(disableAll || valid) " class="black-btn-2" mat-raised-button (click)="next()">
+            Next
+        </button>
+    </footer>
+</div>

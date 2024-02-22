@@ -1,0 +1,30 @@
+@import "~src/assets/styles/helpers/variables";
+
+.app-toast {
+  top: 0;
+  left: 50%;
+  color: white;
+  position: fixed;
+  z-index: 99999;
+  transform: translateX(-50%) translateY(-200px);
+  min-height: 30px;
+  width: 500px;
+  padding: $spacer-8;
+  box-shadow: $shadow;
+  text-align: center;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  transition: transform 0.3s ease-in-out;
+
+  &.show {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  &--success {
+    background-color: $success-color;
+  }
+
+  &--error {
+    background-color: $error-color;
+  }
+}

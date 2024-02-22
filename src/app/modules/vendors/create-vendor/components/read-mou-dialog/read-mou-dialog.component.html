@@ -1,0 +1,1217 @@
+<!-- Food LOU -->
+<section class="dialog-wrapper" *ngIf="service ==='Food'">
+    <mat-icon class="d-flex justify-content-end w-100" [mat-dialog-close]="true">close</mat-icon>
+    <div class="dialog-wrapper__content">
+        <!-- <figure>
+            <img src="assets/tick.svg" width="40" height="40" alt="">
+        </figure> -->
+        <!-- <div class="d-flex justify-content-between align-items-center">
+            <header class="heading">LETTER OF UNDERSTANDING</header>
+            <label><u><b>Download</b></u></label>
+        </div> -->
+        <p class="sub-heading mt-3">
+        <h1>LETTER OF UNDERSTANDING</h1>
+        <p class="ms-3">This Letter of Understanding(“LOU”) is issued in favour of Techshack Pvt.Ltd.,a company registered under the CompaniesAct,1956, having its registered office at 
+            Office no 1006, 10th floor, Hubtown Solaris NS Phadke road, Saiwadi Andheri (E) Mumbai400069(“Speedyy”)By <b><u>{{outletName}},
+                    {{outletAddress}}</u></b> ("Merchant")
+            in pursuance of our discussions and intent to
+            avail the Services offered by Speedyy.</p>
+        <p> <strong>THE MERCHANT HEREBY AGREES AS FOLLOWS:</strong> Capitalized terms used but not defined herein shall have the meaning
+            assigned to them under the Merchant Terms of Use available at ("Merchant Terms to be made").</p>
+        <ol>
+            <li>Merchants understands that Speedyy is engaged in the business of inter alia operating an online platform under the name and style “Speedyy”, 
+                through its Platform,which enables transactions between Merchants and Buyers, dealing in prepared food and beverages. 
+                The Platform is utilized by Buyer(s)to choose and place Order(s)from a variety of prepared food products listed and offered for sale by Merchants on the Platform, 
+                pursuant to which Speedyy enables Delivery of such Order(s) in select serviceable geographical area of the cities in India. 
+                The Merchant wishes to avail the Services enabled by Speedyy on a non-exclusive and contractual basis subject to the terms and conditions set out in the Merchant Terms, 
+                which includes, inter alia, warranties provided ,obligations, intellectual property rights,confidentiality, responsibilities and grounds for termination.
+            </li>
+            <li>The Merchant represents and warrants that <b>(i)</b> it is engaged in the business of restaurant services under
+                the brand name and style "<b><u>{{outletName}}</u></b>"serving prepared food products and beverages
+                through its
+                multiple outlets owned and managed by the Merchant only and not the franchisees, the list enclosed in
+                Annexure - A; <b>(ii)</b> it has full power and capacity to enter into and perform its obligations under this
+                LOU; <b>(iii)</b> has taken all necessary licenses applicable to its business and is fully compliant with the
+                applicable laws including but not limited to provisions of the Food Safety and Standards Act, 2006 and
+                rules and regulations prescribed thereunder ("FSSAI"), as amended from time to time and maintain the
+                same during subsistence of this LOU; <b>(iv)</b> it shall not provide for sale on the platform, or for delivery
+                pursuant to sales facilitated on the Platform, any food items that may be unsafe, or mis-branded or
+                substandard or which contain extraneous matter or for which a license is required under FSSAI, except in
+                accordance with the conditions of the license; and <b>(v)</b> all the information and contents provided by it,
+                as required, to Speedyy are true, correct and accurate.</li>
+                <li>
+                    The Merchant shall pay a Service charge of Rs.9 + GST on all completed & cancelled orders where the payout for the same has been released. 
+                    This service charge shall be applicable after the completion of the free trial period of 3 months.
+                    The Merchant agrees that Service Fees hall be valid from the Effective Date until the termination of this contract.
+                </li>
+            <li>The Merchant shall pay to Speedyy Rs.00 (Rupees ZERO Only) towards one-time listing facilitation services (Listing Facilitation Service Fee) 
+                availed by the Merchant at the time of Platform on -boarding. 
+                Merchant irrevocably consents and agrees that Speedyy reserves the right to deduct the Listing Facilitation Service
+                Fee from the weekly settlement amount, at once or in installments.</li>
+            <li>The Merchant understands and agrees that Speedyy shall collect, for and on behalf of the Merchant, 
+                the payments received from the Buyers and remit the same to the bank account of the Merchant in accordance with the Payment Terms 
+                after deductions of Service Fee and Other Charges, if any as mentioned under the Schedule of Charges and GST & other taxes applicable there on at the prevail ingrates.</li>
+            <li>The Merchant understands that Speedyy shall send consolidated reports of Orders placed and other details
+                for the Settlement Period and invoice/s to the Merchant by electronic mail to
+                <b><u>{{ownerEmailId}}</u></b>.</li>
+            <li>The Merchant confirms and undertakes that it has read, understood and agrees to be bound by the terms
+                set out in the Merchant Terms that are incorporated by reference herein and are deemed to be part of
+                this LOU.</li>
+            <li>The effective date (“Effective Date”) of this LOU shall be the date on which the Merchant signs this LOU
+                [whether digitally or otherwise] and relay the same to Speedyy. This LOU shall thereon have full force
+                of a contract and shall bind both Merchant and Speedyy fully upon on-boarding of Merchant on Platform.
+            </li>
+            <li>The Merchant confirms and undertakes that the supporting documents provided by the Merchant along with
+                this MOU are true and correct to their knowledge and understanding.</li>
+        </ol>
+        <div class="d-flex justify-content-start w-100 flex-column align-items-baseline ms-3"> <b>[Digitally] Signed by
+                the
+                Merchant:</b>
+            <label>Name: <b><u>{{ownerName}}</u></b></label>
+            <label>Designation: <b><u>Owner</u></b></label>
+            <label>Date: <b><u>{{currentDate | date: 'dd/MM/yyyy'}}</u></b> </label>
+        </div>
+        <!-- <p class="mt-5">Speedyy Legal-</p>
+        <hr class="ms-3"> -->
+
+        <h2 class="d-flex justify-content-start w-100 flex-column align-items-baseline p-3"> <b>Assignment for Fund
+                Transfer</b></h2>
+        <div class="d-flex flex-column align-items-baseline p-3">
+            <p>Date of signing MOU: <b><u>{{currentDate | date: 'dd/MM/yyyy'}}</u></b></p>
+            <p>To,</p>
+            <p>Area Sales Manager</p>
+            <p>Techshack Pvt. Ltd.India.</p>
+            <p>From,</p>
+            <p>Restaurant Name: <b><u>{{outletName}}</u></b></p>
+            <p>Owner/ Partner / Manager Name: <b><u>{{ownerName}}</u></b></p>
+            <p>Designation: <b><u>owner</u></b></p>
+            <p>Dear Sir/ Madam,</p>
+            <p>We do hereby request to you kindly transfer all the future payments / due / Net payable
+                amount due to us from sale of our products through your application / platform in the
+                account number <b><U>{{bankAccountNumber}}</U></b> Having IFSC code <b><u>{{ifscCode}}</u></b> in the
+                name of beneficiary
+                <b><u>{{entityName}}</u></b>
+            </p>
+            <p>We are hereby attaching a copy of the self-attested Identity and address proof herewith.</p>
+            <p>Please do the needful at your end.</p>
+            <p>Thanking you.</p>
+            <p>You're faithfully,</p>
+            <div class="row align-items-center justify-content-between w-100">
+                <span class="col-7 align-items-baseline">
+                    <p>Mr. / Ms.<b><u>{{ownerName}}</u></b></p>
+                    <p>Designation: <b><u>owner</u></b></p>
+                    <p>Name of Restaurant: <b><u>{{outletName}}</u></b></p>
+                </span>
+                <!-- <span class="col-5 d-flex flex-row align-items-center justify-content-between border">
+                    <img src="../../../../../../assets/badge.png">
+                    <div class="d-flex flex-column align-items-baseline">
+                        <label>Digitally signed by :</label>
+                        <label><b><u>{{ownerName}}</u></b></label>
+                        <label>Location : INDIA</label>
+                        <p>Date: <b><u>{{currentDate | date : 'dd/MM/yyyy hh:mm:ss'}}</u></b></p>
+                    </div>
+                </span> -->
+            </div>
+        </div>
+
+        <!-- <p class="mt-5">Speedyy Legal-</p> -->
+        <hr class="ms-3">
+        <div class="d-flex flex-column align-items-baseline p-3">
+            <p>To:</p>
+            <p>Techshack Private Limited,</p>
+            <p>Office no 1006, 10th floor,</p>
+            <p>Hubtown Solaris NS Phadke road, Saiwadi,</p>
+            <p>Andheri (E) Mumbai 400069</p>
+            <label><b>Subject: Confirmation with respect to GST registration</b></label>
+            <p>We, <b><u>{{outletName}}</u></b>,
+                having our registered office/principal place of business at
+                <b><u>{{outletAddress}}</u></b>
+                hereby declare that we are not required to obtain registration under GST
+                in accordance with Section 22 of the CGST Act, 2017 as we are below the threshold limit for
+                registration as prescribed under the GST law in our State.
+            </p>
+            <p>We acknowledge our understanding under the GST law that Speedyy is required to collect tax at
+                source on supplies made by us of food through Speedyy in case we qualify as registered person
+                under GST.</p>
+            <p>We hereby undertake to immediately notify Speedyy if we obtain a registration under GST under
+                any circumstances.</p>
+            <p>We also undertake to hold Speedyy unaccountable for any loss where this Declaration is found
+                fallacious.</p>
+            <label>For,</label>
+            <label><b><u>{{outletName}}</u></b></label>
+            <label><b><u>{{ownerName}}</u></b></label>
+            <p>owner</p>
+        </div>
+        <!-- <p class="mt-5">Speedyy Legal-</p> -->
+        <hr class="ms-3">
+        <h2 class="d-flex justify-content-start w-100 flex-column align-items-baseline p-3"> <b>Notes:</b></h2>
+        <ol>
+            <li>
+                <p><b>“Call Center Service Fee”</b> shall means fee towards Call Centre Services provided by Speedyy to get an
+                    Order confirmation by Merchant more fully defined under clause VI (8)(xii)(a) of the Merchant Terms.
+                    Speedyy shall waive off Call Center Services Fee (a) as one-time convenience to the new Merchants
+                    for an
+                    initial period of two (2) weeks from the date of the LOU and (b) Call Centre Services up to 5% of
+                    Orders
+                    out of the total Orders (rounding decimals to the next whole number) in a Settlement Period
+                    [Illustration: 1.4 rounded to the next whole number will be 2 and 1.6 rounded to the next whole
+                    number
+                    will be 2];</p>
+            </li>
+            <li>
+                <p><b>“Merchant Cancellation Charges”</b> shall mean Service Fee with respect to Order that are cancelled by
+                    the
+                    Merchant due to failure to fulfil as a result of unavailability of the product/s in an Order or
+                    closure
+                    of t he Merchant’s outlet or any other reason attributable to the Merchant. Merchant Cancellations
+                    (without any charge) will be permitted up to 0.5% of Orders out of the total Orders (rounding
+                    decimals
+                    to the next whole number) in a Settlement Period [Illustration: 1.4 rounded to the next whole number
+                    will be 2 and 1.6 rounded to the next whole number will be 2];</p>
+            </li>
+            <li>
+                <p><b>“Refund for Disputed Order/s”</b> shall mean refund paid to the Buyer, where the Buyer claimed partial or
+                    full refund, as applicable, for the reasons that are attributable to Merchant, including but not
+                    limited
+                    to, Buyer’s expectations not being met or Buyer dissatisfaction in relation to, inter alia, the
+                    quality
+                    of the products, undelivered Orders, discrepancy in the product delivered which is not in accordance
+                    with the Order placed and/or those Orders for which Buyer requests for a refund or replacement.</p>
+            </li>
+            <li>
+                <p><b>“Marketing fees and such other charges” </b> shall mean the charges towards digital marketing services
+                    including but not limited to carousel connection with the Merchant’s listings and other related
+                    services
+                    availed by the Merchant on the Platform and shall be decided by Speedyy;</p>
+            </li>
+            <li>
+                <p><b>“Seller Protection for Cancellation other than Merchant Cancellation”</b> shall be an amount contributed
+                    by
+                    Speedyy in case of cancellation of Orders either through the Platform, or through calling customer
+                    care,
+                    by a Buyer (a) for no reason attributable to Merchant, or (b) for no reason attributable to Speedyy,
+                    provided that the said Order has been accepted and confirmed for preparation by the Merchant. In
+                    case of
+                    Buyer Cancellation, Merchant will be paid and the same shall be accounted in the applicable
+                    Settlement
+                    Period in the following manner: (a) 40% of Net Value for Orders not marked as ‘Food Ready’ and not
+                    picked up by the Speedyy Delivery Partner and (b) 100% of Net value (less of commissions and
+                    applicable
+                    schemes) for all remaining Orders placed through the Platform. Items must be securely packed and
+                    kept ready in packaged condition, marked as ‘Food
+                    Ready’, for a minimum of 80% of Merchant’s total delivered orders and handed over to the pick-up and
+                    delivery personnel, upon
+                    his/her arrival. Merchant shall ensure, at all times, the pick-up and delivery personnel shall not
+                    be required to wait beyond 3
+                    minutes to collect such packaged items. </p>
+            </li>
+        </ol>
+        <!-- <p class="mt-5">Speedyy Legal-</p> -->
+        <hr class="ms-3">
+        <span class="link" onclick="window.open('https://gstcouncil.gov.in/sites/default/files/All-rate-notification/notfctn-17-2021-cgst-rate.pdf')">Notification No. 17/2021 Central Tax (rate) was issued on 18 November 2021</span>
+
+        <p class="mt-3">This communication is intended to inform you about the implications of the above mentioned GST notification
+            applicable from 01 January 2022.</p>
+        <p>We wish to bring to your attention the latest Notification No. 17/2021 dated November 18, 2021 issued by
+            Central Board of Indirect Tax and Customs (CBIC) through which the e-commerce operator (ECO) is now made
+            liable to pay GST on “restaurant services” provided through the e-commerce platform. Note that this change
+            is not applicable for restaurant services provided from a premise with declared tariff of Rs. 7,500/- or
+            above per day. At present, this provision shall be effective from January 01, 2022.</p>
+        <p>Techshack Private Limited (hereinafter referred to as “BTPL” or “Speedyy” or “the company”) qualifies as an
+            “e-commerce operator” under Section 2(45) of Central Goods and Services Tax Act, 2017. Therefore, based on
+            the above notification read with Section 9(5) of CGST Act, 2017, Speedyy will be responsible to pay GST on
+            restaurant services provided through its website / app from January 01, 2022.</p>
+        <p>In this regard to comply with the above change, Techshack Private Limited (hereinafter referred to as “BTPL”
+            or “Speedyy” or “the company”) is classified as an ECO as per the applicable provisions of the GST law and
+            is required to bifurcate the eateries operating on its platform into two broad categories as below:</p>
+        <ol>
+            <li>
+                Restaurant:
+                <p>As per Notification No.11/2017 - Central Tax Rate F.No.354/117/2017-TRU dated 28th June, 2017,
+                    “restaurant services” is defined as “Restaurant service means supply, by way of or as part of any
+                    service, of goods, being food or any other article for human consumption or any drink, provided by a
+                    restaurant, eating joint including mess, canteen, whether for consumption on or away from the
+                    premises where such food or any other article for human consumption or drink is supplied”.</p>
+                <p>A restaurant is a place which is in the business of preparing and serving food in the premises or as
+                    takeaway. An illustration under this category is provided below:</p>
+                <ol>
+                    <li>Restaurants located in a premise where declared tariff is not exceeding Rs. 7,500 per day and
+                        providing restaurant services;</li>
+                    <li>Food and beverage sold as a part of restaurant services and which qualifies as restaurant
+                        services;</li>
+                    <li>Cloud kitchens providing restaurant services; etc.</li>
+                    <li>Standalone restaurants which are not ice cream parlors or bakeries.</li>
+                </ol>
+                <p>Notification No. 17/2021 dated November 18, 2021</p>
+                <p>As per Notification No. 17/2021 dated November 18, 2021, Speedyy shall be responsible for charging,
+                    collecting and paying GST @ 5% to the relevant GST authorities on supply of “restaurant services”
+                    made by such restaurants through the Speedyy’s platform. The payments will be made to these
+                    restaurants after deducting such GST.</p>
+                <p>For restaurants with no GSTIN, Speedyy shall be responsible for charging, collecting and paying GST @
+                    5% on the total order value. Speedyy will also disclose such payment made in the GST returns as
+                    prescribed by CBIC.</p>
+            </li>
+            <li>Non-restaurant:
+                <p>Shops / suppliers supplying other edible goods which do not qualify as “restaurant services” shall
+                    fall under this category. Some of the examples under this category are:</p>
+                <ol>
+                    <li>Standalone ice cream parlor who is not supplying “restaurant services”;</li>
+                    <li>Standalone bakery who is not supplying “restaurant services”;</li>
+                    <li>Sweet shops who is not supplying “restaurant services”;</li>
+                    <li>Standalone chocolate shop who is not supplying “restaurant services”;</li>
+                    <li>Restaurants in hotels where the declared tariff of any accommodation unit is more than INR
+                        7500/-.</li>
+                </ol>
+                <p><strong>Note</strong>: the above list is not exhaustive and is merely illustrative for the purpose of
+                    understanding the definition of non-restaurant basis interpretation of press releases and various
+                    notifications issued by the government of India in relation to GST.</p>
+                <p>Such suppliers will continue to charge and pay applicable GST as per their current practice. These
+                    suppliers will have to mandatorily get themselves registered under GST in line with Section 24 of
+                    the CGST Act, 2017. Speedyy shall only be responsible to deduct and pay tax collected at source
+                    (TCS) under section 52 of the CGST Act 2017 at the rate of 1%. Note that there is no change in the
+                    process of collection and payment of GST for such suppliers falling under this category.</p>
+            </li>
+            <li>Hybrid:
+                <p>In case where a supplier is involved in providing “restaurant services” and supplying other goods
+                    that does not qualify as “restaurant services”, such supplier will be categorised under ‘hybrid
+                    model’.</p>
+                <p>Such supplier will have to bifurcate the “restaurant services” and other goods supplied through ECO.
+                    GST on “restaurant services” provided through Speedyy shall be paid by
+                    Speedyy and applicable GST on goods supplied through Speedyy shall be continued to be paid by the
+                    supplier. Note that these suppliers will have to mandatorily get themselves registered under GST in
+                    line with Section 24 of the CGST Act, 2017 as no turnover threshold shall be applicable for supply
+                    of goods through e-commerce operators.</p>
+                <p>Further, Speedyy shall also be responsible to deduct and pay tax collected at source (TCS) under
+                    section 52 of the CGST Act 2017 at the rate of 1% on the value of other goods supplied through
+                    Speedyy’s platform.</p>
+
+            </li>
+        </ol>
+        <p>Accordingly, we request you to categorize yourself into any one of the above categories via the below
+            declaration. We also request you to immediately communicate to us in case there is any change in the
+            particulars given in the declaration at any time.</p>
+        <p>Wherever appropriate, we shall suggest the appropriate classification as per our understanding of the law.
+            However, it is solely your responsibility to classify yourself correctly.</p>
+        <p>Please note that this will form a part of the addendum to your MOU with Speedyy effective immediately.</p>
+        <p>We request you to consider this communication of utmost importance since it would also enable us to make the
+            necessary changes in our ERP system.</p>
+        <p>Thanking you in advance for your co-operation.</p>
+        <p>Best regards</p>
+        <hr class="ms-3">
+
+        <h2 class="d-flex justify-content-start w-100 flex-column align-items-baseline p-3"> <b>DECLARATION FOR THE
+                PURPOSES OF DETERMINING GST COLLECTION</b></h2>
+        <p>The following declaration is given with true understanding of the categorization and the full understanding
+            of the aforementioned notification as issued under the GST law:</p>
+        <p>I/ We <b><u>{{outletName}}</u></b> (Legal Name of the entity), having our place of business at
+            <b><u>{{outletAddress}}</u></b> and having
+            the FSSAI No. <b><u>{{fssaiNumber}}</u></b> hereby acknowledge the understanding of the Notification No.
+            17/2021 Central
+            Tax (rate) dated 18 November 2021 read with Section 9(5) of CGST Act, 2017 and applicable CGST Rules, 2017.
+        </p>
+        <p>Accordingly, we declare that we classify our business as: <b><u>{{gstCategoryType}}</u></b></p>
+        <ul>
+            <li>Restaurant</li>
+            <li>Non- Restaurant</li>
+            <li>Both (referred as “Hybrid”)</li>
+        </ul>
+        <p>I/We confirm that we have classified our business correctly above.</p>
+        <p>I/We shall indemnify Techshack Private Limited (hereinafter referred to as “Speedyy”, “BTPL”, “ECO” or “the
+            company”), its affiliates, its directors and its employees from any demand of tax, interest or penalties
+            arising on the company in case the declaration is found to be fallacious. In addition, we undertake to
+            declare as below and indemnify Speedyy accordingly:</p>
+        <label><b><u>Declaration applicable in case you have selected “restaurant” above</u></b></label>
+        <ol>
+            <li>I/ We understand and acknowledge that Speedyy shall collect and deposit GST at 5% to the extent of
+                “restaurant services” provided by us on Speedyy’s website/ application (‘Speedyy’s platform’). I/ We
+                undertake that I/ we have carried out a determination of items that are supplied by us and undertake
+                that all of these are to be categorized as “restaurant services”.</li>
+            <li>I/ We understand that Speedyy is merely responsible to collect and deposit the GST with the relevant GST
+                authorities on “restaurant services” based on the information and classification that I/ We provide to
+                Speedyy. Speedyy is not responsible to determine whether a particular transaction qualifies as
+                “restaurant service” or not as Speedyy is not privy to any internal activities carried out by us.</li>
+            <li>As per GST Law, in services of App based Food Delivery, e-commerce operator is responsible to raise invoice and collect GST and pay the same to the Government.
+                No Restaurant in such case should issue their bill/invoice. Speedyy being a Food Delivery App will raise invoice for food delivery services.
+                Speedyy in any case will not be responsible for penal actions (financial or otherwise) in case of violation of such condition. </li>
+            <li>I/ We undertake to notify Speedyy immediately if the classification of our business changes in the
+                future.</li>
+            <li>I/ We hereby undertake and confirm that I/ We shall indemnify Speedyy, its Affiliates, subsidiaries,
+                directors, officers, employees, agents and service providers from any notices, liabilities, penalties,
+                claims or demands, (including all costs, expenses, interests, and attorney's fees on account thereof
+                that may be made) in connection with any tax collected at source under section 52 of the CGST Act 2017
+                which may arise in case of any incorrect determination of items falling under
+                “restaurant services” and “non-restaurant services” as made by us here in above.
+            </li>
+            <hr class="ms-3">
+            <li>
+                All liabilities arising from any incorrect classification of items by us including any
+                interest, penalty or any other amount demanded by the appropriate authorities shall
+                be payable solely by us and shall remain our sole responsibility.
+            </li>
+            <li>
+                I/ We undertake to cooperate with Speedyy in case of any enquiry by the GST
+                authorities on supplies made by us including furnishing any information required by
+                the authorities, including copies of licenses, permits, approvals to establish that
+                certain items in our services offering qualify as “restaurant services”
+            </li>
+        </ol>
+
+
+        <label><b><u>Declaration applicable in case you have selected “non-restaurant” above</u></b></label>
+        <ol>
+            <li>I/ We understand and acknowledge that we shall be solely liable to pay GST on the supplies
+                for “non-restaurant services” provided by us on Speedyy’s website/ application (‘Speedyy’s
+                platform’). I/ We undertake that we have carried out a determination of items that are supplied
+                by us and undertake that all these fall under “non-restaurant services”.</li>
+            <li>I/ We understand that Speedyy shall not be responsible to deposit the GST on any supplies
+                made by us as these qualify as “non - restaurant services”. Speedyy is not responsible to
+                determine whether a particular transaction qualifies as “non-restaurant service” or not as
+                Speedyy is not privy to any internal activities carried out by us.</li>
+            <li>I/ We undertake to notify Speedyy immediately if the classification of our business changes in the
+                future.</li>
+            <li>I/ We hereby undertake and confirm that I/ We shall indemnify Speedyy, its Affiliates,
+                subsidiaries, directors, officers, employees, agents and service providers from any notices,
+                liabilities, penalties, claims or demands, (including all costs, expenses, interests, and
+                attorney's fees on account thereof that may be made) in connection with any incorrect
+                determination of items falling under “non – restaurant services” as made by us here in above.
+            </li>
+            <li>
+                In case the GST authorities demand tax on us (for example asking us to reverse any input tax
+                credit on account of any incorrect classification as determined by us), the liability arising
+                therefrom including any interest, penalty or any other amount demanded by the authorities
+                shall be payable solely by us and shall remain our sole responsibility.
+            </li>
+
+
+
+            <li>
+                I/ We undertake to cooperate with Speedyy in case of any enquiry by the GST
+                authorities on supplies made by us including furnishing any information required by
+                the authorities, including copies of licenses, permits, approvals to establish that
+                certain items in our services offering qualify as “non-restaurant services”
+            </li>
+        </ol>
+        <label><b><u>Declaration applicable in case you have selected “hybrid” above</u></b></label>
+        <ol>
+            <li>I/ We understand and acknowledge that Speedyy shall be responsible for collecting and depositing GST at the rate 5% of the services which fall under the category of 
+                “restaurant services”and are provided by us on Speedyy’s website / application(‘Speedyy’s platform’)and we shall be liable to pay GST on the supplies on goods and services 
+                which fall under the category of “non-restaurant services” provided by us on Speedyy’s platform. 
+                I/ We under take that we have carried out a determination of items that are supplied by us and undertake what 
+                items fall under “restaurant services” and what items fall under “non-restaurant services”</li>
+            <li>I / We understand that Speedyy is merely responsible to collect and deposit the GST on 
+                “restaurant services” with the relevant GST authorities based on the information and classification that I/ we provide to them. 
+                Speedyy is not responsible to determine whether a particular transaction qualifies as “restaurant service” or not as Speedyy is 
+                not privy to any internal activities carried out by us.
+                </li>
+            <hr class="ms-3">
+            <li>I/ We undertake to notify Speedyy immediately if the classification of our business changes in the
+                future.</li>
+            <li>I/ We hereby under take and confirm that I/ We shall indemnify Speedyy,itsAffiliates, subsidiaries, directors, officers, employees, agents and service 
+                providers from any notices,liabilities,penalties,claims or demands,(including all costs,expenses, interests, and attorney's fees on account thereof that may be made) 
+                in connection with any tax collected at source under section 52 of the CGST Act 2017 which may arise in case of any incorrect determination of items falling under 
+                “restaurant services” and “non-restaurant services” as made by us here in above.
+            </li>
+            <li>
+                All liabilities arising from any incorrect classification of items by us including any interest, 
+                penalty or any other amount demanded by the appropriate authorities shall be payable solely by us and shall remain our sole responsibility.
+            </li>
+            <li>
+                I/ We undertake to cooperate with Speedyy in case of any enquiry by the GST
+                authorities on supplies made by us including furnishing any information required by
+                the authorities, including copies of licenses, permits, approvals to establish that
+                certain items in our services offering qualify as “restaurant services” and “non-restaurant services”
+            </li>
+        </ol>
+
+        <div class="d-flex flex-column align-items-baseline">
+            <label>For, <b><u>{{outletName}}</u></b></label>
+            <label>Authorized Signatory: - <b><u>{{ownerName}}</u></b></label>
+        </div>
+        <p>Date: <b><u>{{currentDate | date: 'dd/MM/yyyy'}}</u></b></p>
+
+        <label><b><u>Note:</u></b> In case you would like to update the item level GST percentages on the GST menu you
+            may do the same via POS systems, Speedyy web portal and through the partner support team
+            (as applicable)</label>
+
+
+    </div>
+</section>
+
+<!-- Grocery LOU -->
+<section class="dialog-wrapper" *ngIf="service === 'Grocery'">
+    <mat-icon class="d-flex justify-content-end w-100" [mat-dialog-close]="true">close</mat-icon>
+    <div class="dialog-wrapper__content">
+        <!-- <figure>
+            <img src="assets/tick.svg" width="40" height="40" alt="">
+        </figure> -->
+        <!-- <div class="d-flex justify-content-between align-items-center">
+            <header class="heading">LETTER OF UNDERSTANDING</header>
+            <label><u><b>Download</b></u></label>
+        </div> -->
+        <p class="sub-heading mt-3">
+        <h1>LETTER OF UNDERSTANDING</h1>
+        <p class="ms-3">This Letter of Understanding (“LOU”) is issued in favour of Techshack Pvt. Ltd., a company registered under the Companies Act, 1956, having its registered office at   Office no 1006, 10th floor, Hubtown Solaris NS Phadke road, Saiwadi Andheri (E) Mumbai 400069 (“Speedyy”) By <b><u>{{outletName}},
+                    {{outletAddress}}</u></b> ("Merchant")
+                    in pursuance of our discussions and intent to avail the Services offered by Speedyy. </p>
+        <p>THE MERCHANT HEREBY AGREES AS FOLLOWS: Capitalized terms used but not defined herein shall have the meaning assigned to them under the Merchant Terms of Use available at (“Merchant Terms to be made”).</p>
+        <ol>
+            <li>Merchants understand that Speedyy is engaged in the business of inter alia operating an online platform under the name and style “Speedyy”, through its Platform, which enables transactions between Merchants and Buyers, dealing in groceries, food products and daily needs. The Platform is utilized by Buyer(s) to choose and place Order(s) from a variety of products listed and offered for sale by Merchants on the Platform, pursuant to which Speedyy enables Delivery of such Order(s) in select serviceable geographical area of the cities in India. The Merchant wishes to avail the Services enabled by Speedyy on a non-exclusive and contractual basis subject to the terms and conditions set out in the Merchant Terms, which includes, inter alia, warranties provided, obligations, intellectual property rights, confidentiality, responsibilities and grounds for termination.</li>
+            <li>The Merchant represents and warrants that – (i) it is engaged in the business of selling groceries, food products and daily needs under the brand name and style "<b><u>{{outletName}}</u></b>"through its multiple outlets owned and managed by the Merchant - A; (ii) it has full power and capacity to enter into and perform its obligations under this LOU; 
+                 (iii) has taken all necessary licenses applicable to its business and is fully compliant with the applicable laws including but not limited to provisions of the Food Safety and Standards Act, 2006 and rules and regulations prescribed thereunder (“FSSAI”), as amended from time to time and maintain the same during subsistence of this LOU; 
+                 (iv)it shall not provide for sale on the platform, or for delivery pursuant to sales facilitated on the Platform, any items that may be unsafe, or misbranded or substandard or which contain extraneous matter or for which a license is required under any law, except in accordance with the conditions of the license; 
+                 (v) Merchant undertakes that they shall not sale any product ordered through Speedyy app over or above the MRP mentioned on the said product, Merchant shall not sell any product which has crossed expired date and shall check the date is clearly mentioned on the product before delivery;
+                 (vi) Merchants shall take good care as to follow norms for the product listed by the manufacturer to maintain its quality, for instance “to be stored in cool and dry place” or “keep relegated”, Merchants shall not tamper with the original packaging of the products and pass on the same as manufactured by the manufacturer;
+                 (vii) Merchant shall Passover any schemes or benefits provided by the manufacturer to the user, like buy one get on free or any free merchandise listed along with the product;
+                 (vii) all the information and contents provided by it, as required, to Speedyy are true, correct and accurate.</li>
+
+            <li>The Merchant undertakes that in case of any action from or on behalf of any consumers alleging unsafe, or misbranded or substandard items, Merchant undertakes to indemnify Speedyy from said action and loss incurred, if any, due to said action as the Speedyy is just a delivery platform and is not Merchant.</li>
+                <li>The Merchant shall be charged ___% of the billed amount by the user to Speedyy for its services. 	The Merchant understands and agrees that Speedyy shall collect amount of bill, for and on behalf of the Merchant, the payments received from the Buyers and remit the same to the bank account of the Merchant in accordance with the Payment Terms after deductions, as mentioned above and GST & other taxes applicable thereon at the prevailing rates. </li>
+            <li>Speedyy reserves the right to revise service charges rates charged by them as and when required. Change in the rates shall be intimated to Merchants in advance, in case of any disagreement it should be timely communicated by Merchants to Speedyy. In case disagreement, if any, is not communicated, the change in rate shall be considered as accepted by the Merchant and the same shall be applicable from the date notified.
+            </li>
+            <li>The Merchant understands that Speedyy shall send consolidated reports of Orders placed and other details for the Settlement Period to the Merchant by electronic mail to
+                <b><u>{{ownerEmailId}}</u></b>(Merchant’s mail ID).</li>
+            <li>The Merchant confirms and undertakes that it has read, understood and agrees to be bound by the terms set out in the Merchant Terms that are incorporated by reference herein and are deemed to be part of this LOU.</li>
+            <li>The effective date (“Effective Date”) of this LOU shall be the date on which the Merchant signs this LOU [whether digitally or otherwise] and relay the same to Speedyy. This LOU shall thereon have full force of a contract and shall bind both Merchant and Speedyy fully upon on-boarding of Merchant on Platform.           </li>
+            <li>The Merchant confirms and undertakes that the supporting documents provided by the Merchant along with this MOU are true and correct to their knowledge and understanding.</li>
+        </ol>
+        <div class="d-flex justify-content-start w-100 flex-column align-items-baseline ms-3"> <b>[Digitally] Signed by
+                the
+                Merchant:</b>
+            <label>Name: <b><u>{{ownerName}}</u></b></label>
+            <label>Designation: <b><u>Owner</u></b></label>
+            <label>Date: <b><u>{{currentDate | date: 'dd/MM/yyyy'}}</u></b> </label>
+        </div>
+
+        <h2 class="d-flex justify-content-start w-100 flex-column align-items-baseline p-3"> <b>Assignment for Fund Transfer</b></h2>
+        <div class="d-flex flex-column align-items-baseline p-3">
+            <p>Date of signing MOU: <b><u>{{currentDate | date: 'dd/MM/yyyy'}}</u></b></p>
+            <p>To,</p>
+            <p>Area Sales Manager</p>
+            <p>Techshack Pvt. Ltd.India.</p>
+            <p>From,</p>
+            <p>Merchant Name: <b><u>{{outletName}}</u></b></p>
+            <p>Owner/ Partner / Manager Name: <b><u>{{ownerName}}</u></b></p>
+            <p>Designation: <b><u>owner</u></b></p>
+            <p>Dear Sir/ Madam,</p>
+            <p>We do herby request to you kindly transfer all the future payments / due / Net payable amount due to us from sale of our products through your application / platform in the account number <b><U>{{bankAccountNumber}}</U></b> Having IFSC code <b><u>{{ifscCode}}</u></b> in the
+                name of beneficiary
+                <b><u>{{outletName}}</u></b> and having Bank Name______________
+            </p>
+            <p>We are hereby attaching a copy of the self-attested Identity and address proof herewith.</p>
+            <p>Please do the needful at your end.</p>
+            <p>Thanking you.</p>
+            <p>You're faithfully,</p>
+            <div class="row align-items-center justify-content-between w-100">
+                <span class="col-7 align-items-baseline">
+                    <p>Mr. / Ms.<b><u>{{ownerName}}</u></b></p>
+                    <p>Designation: <b><u>owner</u></b></p>
+                    <p>Name of Store: <b><u>{{outletName}}</u></b></p>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Paan LOU -->
+<section class="dialog-wrapper" *ngIf="service === 'Paan'">
+    <mat-icon class="d-flex justify-content-end w-100" [mat-dialog-close]="true">close</mat-icon>
+    <div class="dialog-wrapper__content">
+        <p class="sub-heading mt-3">
+        <h1>THE E-COMMERCE VENDOR AGREEMENT</h1>
+        <p class="ms-3">This E-Commerce Vendor Services Agreement (hereinafter referred to as <b>“Agreement”</b>) is made on the <b>{{currentDate | date: 'dd/MM/yyyy'}}</b> which shall construe the acceptance of this Agreement <b>(“Execution Date”)</b> by and between:</p>
+        <p><b><u>{{outletName}},</u></b> (Vendor Name), (CIN: [●]) a Vendor incorporated under the provisions of the Indian Companies Act, 1956 / 2013 and having its registered office at <b><u>{{outletAddress}}</u></b> (hereinafter referred to as “Vendor” which expression shall unless repugnant to the context and meaning thereof, include its heirs, legal representatives, successors, liquidators, receivers, administrators and permitted assigns), of One Part;</p>
+        <p><b>And</b></p>
+        <p><b>Techshack Private Limited,</b> (CIN: U74900MH2021PTC366653) An E-commerce Service Provider company incorporated under the provisions of the Indian Companies Act, 2013 and having its registered office at Office No 1006, 10th Floor, Hubtown Solaris N.S Phadke Road, Saiwadi, Andheri (E), Mumbai, Maharashtra – 400069 (hereinafter referred to as <b>“Service Provider”</b> which expression shall unless repugnant to the context and meaning thereof, include its successors, representatives, associates, affiliates, liquidators and assigns), of Other Part.</p>
+        <p> Vendor and Service Provider shall hereinafter be individually referred to as <b>“Party”</b> and collectively as <b>“Parties”</b>.</p>
+        <p><b>Whereas,</b></p>
+        <ol>
+            <li>Vendor is inter alia engaged in the business of selling various Tobacco products in the Territory of India <b>(“Business”);</b> </li>
+            <li>Service Provider is inter alia in the business of developing and operating E-commerce businesses for independent third party retailers and manufacturers and providing for those entities/persons Service Provider’s proprietary technology, design and development capabilities, order processing capabilities, customer service capabilities  and invoicing and payment management to enable Vendors to sell their  Tobacco products to end-customers and such services through the Service Provider’s Platform <b>(“Platform”)</b> along with Transaction Support Services (as defined hereunder) (collectively, <b>“Service Provider Business”</b>);</li>
+            <li>Vendor has approached Service Provider to avail Service Provider Business for the purpose of Vendor’s Business and Service Provider has agreed to make available Service Provider Business to Vendor by following mandatory documentation and payment of consideration amount as discussed amongst the parties;</li>
+            <li>Service Provider has made and is in the process of making substantial investment both monetary, knowhow and otherwise, to establish its trade name among consumers and distributors so as to create a retail image connoting a specific manner in which the Tobacco products can be presented on and sold through the Platform;</li>
+                <li>Both Service Provider and Vendor recognize that overall success of the Platform and trade names of the Service Provider depends on the end-users/end-customers of the Platform and the public in general perceives Platform as a trusted online marketplace to buy and sell products and services;</li>
+            <li>The Parties wish to enter into this Agreement to document and record their mutual understandings and agreements in relation to the terms and conditions on which Service Provider shall make available Service Provider Business to Vendor and Vendor shall avail Service Provider Business;</li>
+            <li>These recitals shall form part of the Agreement.</li>
+        </ol>
+        <p> <b>NOW THEREFORE, IN CONSIDERATION OF THE MUTUAL PROMISES AND OTHER CONSIDERATION, THE SUFFICIENCY OF WHICH IS ACKNOWLEDGED, THE PARTIES, INTENDING TO BE LEGALLY BOUND, AGREE AS FOLLOWS: </b> </p>
+        <ol>
+            <b><li><u>DEFINITIONS</u></li></b>
+            <p><b>"Tobacco products"</b> refer to products derived from or containing tobacco, including cigarettes, cigars, tobacco leaves, snuff, chewing tobacco, electronic cigarettes, and any other related products.</p>
+            <p><b>“Confidential Information”</b> means and includes any and all information which is confidential to a Party including any (i) business information and business processes, (ii) any samples, formulations, specifications, data relating to manufacturing and quality control processes and procedures, (iii) advertising and marketing plans, (iv) any past, current or proposed development projects or plans for future development work, (v) technical, marketing, financial and commercial information whether relating to past or current or future, (vi) the commercial and business affairs of a Party, (vi) all customer related information including any rates and discounts and (vii) and with respect to the Service Provider shall include, without limitation, the End Customer Database, Intellectual Property, trade secrets, business know – how, etc.</p>
+            <p><b>“Deliverable(s)”</b> shall mean the specific materials, devices, products, services or other deliverables that are provided by Vendor to Service Provider during the course of performing Service Provider Business as per this Agreement and any related document thereto.</p>
+            <p><b>“End Customer”</b> shall mean the retail customers to whom Vendor offers to sell or sells or from whom Vendor receives offers to purchase the Tobacco products through the Platform.</p>
+            <p><b>“End Customer</b> Database” shall mean all data/information (as may be updated from time to time) about the persons/ entities including their names, addresses, contact details, queries, orders and other requests made available by such persons / entities on the Platform or otherwise captured by the Platform that shall further include the usage, behaviour, trends and other statistical information / data relating to such persons / entities, who (i) access the Platform or otherwise get invitation to the Platform or correspond with the Platform, (ii) place any order for Tobacco products on the Platform, or (iii) send any enquiry/ request with respect to the Platform, and shall include all analysis and records based on such aforementioned information, including the spending and other patterns of such persons/entitles and Tobacco products. For the avoidance of doubt, any list, description or other grouping of consumers or customers or any derivative work from End Customer Database shall be deemed to be End Customer Database.</p>
+            <p><b>“Intellectual Property”</b> includes, without limitation, collectively or individually, the worldwide rights, whether existing now or in future, relating to the intangible property belong to the respective Party, including ideas, concepts, creations, discoveries,  inventions, improvements, know how, trade or business secrets; trademarks, service marks, domain names, designs, utility models, tools, devices, models, methods, patents, copyright (including all copyright in any designs and any moral rights), masks rights, design right, procedures, processes, systems, principles, algorithms, works of authorship, flowcharts, drawings, books, papers, models, sketches, formulas, teaching techniques, electronic codes, proprietary techniques, research projects, and other confidential and proprietary information, computer programming code, databases, software programs, data, documents, instruction manuals, records, memoranda, notes, user guides; in either printed or machine-readable form, whether or not copyrightable or patentable, or any written or verbal instructions or comments. The End Customer Database shall be considered to be the Intellectual Property of the Service Provider.</p>
+            <p><b>“Intellectual Property Rights”</b> means and includes (i) all rights, title or interest under any statute or under common law or under customary usage including in any Intellectual Property or any similar right, anywhere in the world, whether negotiable or not and whether registerable or not, (ii) any licenses, permissions and grants in Intellectual Property (iii) applications for any of the foregoing and the right to apply for them in any part of the world and (iv) all extensions and renewals thereto.</p>
+            <p><b>“Payment Facilitation Services”</b> shall mean facilitating the receipt of Sale Price on the Platform either along with Platform Services or otherwise (for example cash on delivery services).</p>
+            <p><b>“Platform”</b> refers to the online platform or Platform operated by the Service Provider, which provides a virtual marketplace for Vendors to promote, market, sell, and distribute their Tobacco products to consumers.</p>
+            <p><b>“Platform Services”</b> means internet based electronic platform in the form of an intermediary to facilitate sale and purchase of goods and services through Platform.</p>
+            <p><b>“Product(s)”</b> shall mean any and all goods and related services of the Vendor for which Service Provider makes available Service Provider Business to the Vendor, more specifically listed out under Annexure – A of this Agreement.</p>
+            <p><b>“Sale Price”</b> shall be the price at which the Product is offered for sale by the Vendor on the Platform by using Platform Services to the End Customer. Parties agree that Sale Price is dynamic and volatile and may vary at different times and points of sale and therefore can be periodically and from time to time changed or revised by the Vendor in accordance with the terms of this Agreement.</p>
+            <p><b>“Service Fees”</b> shall mean the fees for availing either whole or part of the Service Provider Business in accordance with the terms of this Agreement and/or Commercial Terms (the term as defined in the Agreement).</p>
+            <p><b>“Service Provider Business”</b> shall have the meaning as set out Recital 2 hereinabove and shall include Platform, Platform Services, Payment Facilitation Services and Transaction Support Services.</p>
+            <p><b>“Service Provider Content”</b> shall mean the Platform, all the pages of the Platform, all the content contained in the Platform (excluding any third party content and advertisements), look and feel of the Platform, including text, images, graphics, photographs, video and audio, and furnished by Service Provider in connection with Platform Services, Transaction Support Services, Payment Facilitation Services and for the purpose of offering for sale of Tobacco products by the Vendor.</p>
+            <p><b>“Term”</b> shall have the meaning as set out in Section 14.1 hereto.</p>
+            <p><b>“Territory”</b> shall mean the territory within the boundaries of India including the State in which the Vendor is making available the Tobacco products on the Service Provider’s Platform.</p>
+            <p><b>“Transaction Support Services”</b> shall include services in relation to support the sale of the Tobacco products by the Vendor to Service Provider which shall include product listings, warehousing services, logistics management services, Payment Facilitation Services, customer support services and any other additional services that may be agreed between the parties.</p>
+            <b><u><li>INTERPRETATION</li></u></b>
+                <p>In this Agreement, unless the context otherwise requires:</p>
+                <p>(i) Words importing persons or parties shall include natural person, entity, partnership firm, organization, operation, Service Provider, HUF, voluntary association, LLP, joint venture, trust, limited organization, unlimited organization or any other organization having legal capacity;</p>
+                <p>(ii) Words importing the singular shall include the plural and vice versa, where the context so requires; </p>
+                <p>(iii) References to any law shall include such law as from time to time enacted, amended, supplemented or re-enacted;</p>
+                <p>(iv) Reference to one gender shall include a reference to the other genders;</p>
+                <p>(v) References to the words “include” or “including” shall be construed without limitation;</p>
+                <p>(vi) References to this Agreement or any other agreement, deed, instrument or document shall be construed as a reference to this Agreement , such other agreement, deed, instrument or document as the same may from time to time be amended, varied, supplemented or notated in accordance with the terms of this Agreement;</p>
+                <p>(vii) The headings and titles in this Agreement are indicative and shall not be deemed part thereof or be taken into consideration in the interpretation or construction of this Agreement;</p>
+                <p>(vii) The word ‘written’ and its multiple different iterations shall include writing in electronic form and ‘signed’ shall include electronic signature or any other electronic communication which signifies the sender’s or originator’s intention to be bound by such electronic communication.</p>
+                <b><u><li>SERVICES </li></u></b>
+                <p>3.1. The Vendor appoints the Service Provider and Service Provider accepts such appointment to make available the Service Provider Business to the Vendor for the sale of the Tobacco products through the Vendor’s Platform and in accordance with the terms of this Agreement and as further agreed in commercial understanding electronic document or any other similar or analogous electronic or other document and in accordance with various Platform rules and policies including privacy policy, Terms and conditions, Delivery Partner Terms and Conditions, etc.</p>
+                <p>3.2. Vendor agrees and acknowledges that Service Provider is free to provide Service Provider Business and in the Territory in any manner and for any consideration as may be decided by Service Provider in its sole and absolute discretion.</p>
+                <p>3.3. Service Provider in its sole and absolute discretion may refuse to provide any one or more of the Service Provider Business including Platform, Platform Services, Payment Facilitation Services and/or Transaction Support Services for any reason whatsoever, including, without limitation, in the event of providing such Service Provider Business to the Vendor can be detrimental to the reputation, goodwill and competitiveness of Service Provider or could cause any breach of any contractual commitments of the Service Provider and cause Service Provider to breach any applicable laws.</p>
+                <p>3.4. In the event of any conflict or inconsistency between the terms of this Agreement and any other ancillary document thereto, pursuant to the provisions set forth under this Agreement, the terms of this Agreement shall prevail to the extent of such conflict or inconsistency.</p>
+                <b><u><li>ADVERTISING, MARKETING AND SALES PROMOTION</li></u></b>
+                <p>4.1. Service Provider as the proprietor and owner of the Platform and Platform Services may at its sole discretion carry out advertising and marketing activities in relation to promotion of the Platform, Platform Services in any manner and to any extent as may be deemed fit by the Service Provider and for such purposes may engage in certain sales promotion activities to increase the sales of the Tobacco Products on the Platform. Service Provider and Vendor may agree on certain terms on which Vendor shall support such sales and marketing activities of Service Provider including providing discounts on the Tobacco Products or other free of cost products to the End Customers. </p>
+                <p>4.2. Service Provider may at its sole and absolute discretion on reasonable commercial efforts basis market, promote or advertise the Tobacco Products made available for sale by Vendor on the Platform in compliance with this Agreement. </p>
+                <p>4.3. Where Vendor believes or is notified by any other entity including any third party manufacturers of the Tobacco Products that any promotion plan/ activity undertaken by Service Provider is against any applicable law or in breach of any contractual obligation of Vendor or such third party manufacturer (in both cases supported by a written legal opinion from a reputed advocate), Vendor shall intimate the same to Service Provider and upon such intimation, Service Provider shall within reasonable time cease such plan/ activities.</p>
+                <p>4.4. Vendor agrees and acknowledges that Service Provider shall have the sole right (as to between Service Provider and Vendor) for the design, look and feel, architecture, layout, positioning and all aspects of the Platform including listing, positioning, indexing and placing the Tobacco products offered for sale on the Platform by the Vendor and the Vendor shall not question or dispute such exercise of right or discharge of responsibility by the Service Provider.</p>
+                <p>4.5. Service Provider shall be solely responsible at Service Provider’s sole discretion to sell or license any and all advertising and promotional time and space with respect to Platform including web-pages or such portions of the Platform that contains the details of the Tobacco products. Service Provider shall have the sole right and discretion to decide the style, placement and format of the advertisement and promotion and the price and/or any other consideration, if any, for the sale and license of such advertisement and promotion. Except for the facilitation of payment of sale consideration of the Product through Payment Facilitation Services, Service Provider and shall be entitled to retain any and all revenues generated from any sales or licenses of all such advertisements and promotions.</p>
+                <b><u><li>END CUSTOMER DATABASE </li></u></b>
+                <p>The End Customer Database shall be proprietary to the Service Provider. Service Provider shall alone retain all rights including all Intellectual Property Rights in the End Customer Database and unless specifically agreed to in writing by the Service Provider, no rights in or to the End Customer Database are deemed to have been granted to the Vendor. To the extent Vendor derives any rights in the End Customer Database by virtue of it undertaking the Vendor Business the Vendor shall hold such rights in trust for Service Provider and the Vendor shall do and undertake all such acts to exclusively assign such rights in the End Customer Database to the Service Provider. The Vendor further agrees that (a) all the End Customer Database shall be treated as Confidential Information of the Service Provider for the purposes of this Agreement; (b) Service Provider being the owner and proprietor of the End Customer Database shall be entitled to use, store and exploit the same in any manner as may be deem fit by the Service Provider and in accordance with Service Provider’s privacy policy as provided on the Platform from time to time; and (c) Vendor shall not use the End Customer Database other than selling the Tobacco products by availing Service Provider Business or required for law enforcement purposes and shall in no way sell, transfer or otherwise exploit the End Customer Database without the express written consent of the Service Provider.</p>
+                <b><u><li>CONSIDERATION AND PAYMENT TERMS</li></u></b>
+                <p><b>6.1. Payment Terms:</b></p>
+                    <p>(i) The Vendor shall intimate the Sale Price of the Tobacco products, which in no event shall be in excess of the maximum retail price in question, to be sold on the Platform, including any applicable taxes, fees, or shipping charges.</p>
+                    <p>(ii) The Service Provider shall display the Sale Prices set by the Vendor on the Platform and shall facilitate the collection of payments from the End Customers on behalf of the Vendor.</p>
+                    <p>(iii) The Vendor agrees to provide accurate and up-to-date Sale Pricing information to the Service Provider and promptly update any changes or adjustments as necessary. The Vendor, in no event, shall hold the Service Provider liable in case the Tobacco productsare sold at a different Sale Price due to reasons directly attributable to the Vendor, including, without limitation, failure to inform the Service Provider of the updated Sale Price within a reasonable period of time. For clarity, the Service Provider shall not be liable to compensate or rectify such foregoing loss incurred by the Vendor.</p>
+                    <p>(iv) Service Provider shall have the right to deduct and receive the Services Fees from the amounts due to the Vendor under Payments Facilitation Services. To the extent the Service Provider is unable to receive the Service Fees from the Payment Facilitation Services as aforesaid; the Vendor shall make all payments within ten (10) business days of receipt of the relevant invoice from the Service Provider.</p>
+                    <p>(v) Payment reimbursement of the sale proceeds to Vendor shall be done by the Service Provider in the following manner:</p>
+                    <p>(a) Vendor shall prepare a consolidated advice list of all orders delivered to the Service Provider, at 30th date of every month and submit it with the entire monthly invoices via email to the Service Provider. </p>
+                    <p>(b) The Service Provider will within 48 hours of receipt of advice process the amount due to Vendor and dispatch the Cheques / Online as decided between the Vendor and the Service Provider.</p>
+                    <p>(c) The Vendor shall provide accurate and up-to-date bank account or payment details to the Service Provider for the purpose of payment settlements / reimbursements. The Service Provider shall not be responsible for any delays or errors in payment settlement caused by incorrect or incomplete payment details provided by the Vendor or due to technical difficulties or glitches faced at the end of the bank.</p>
+                <p><b>6.2. Taxes</b></p>
+                <p>Each Party shall be responsible for any and all taxes on its business, and taxes based on its net income or gross receipts. However, Service Provider shall be entitled to additionally charge service tax or any other indirect or transaction taxes as applicable on one or more of the Service Provider Business and Service Fees.</p>
+                <p>The Vendor shall indemnify and hold the Service Provider harmless against any claims, penalties, or liabilities arising from the Vendor's failure to comply with tax obligations.</p>
+                <b><u><li>ADDITIONAL OBLIGATIONS OF SERVICE PROVIDER</li></u></b>
+                <p>7.1. Service Provider shall reasonably maintain the registration of domain name in relation to the Platform during the Term at its own costs free from any and all encumbrances, including encumbrances which may lead to any adverse effect on Service Provider’s registration of the domain name or its use of the Platform.</p>
+                <p>7.2. In order to process payments made by End Customers and to generally provide Payment Facilitation Services, Service Provider shall reasonably maintain appropriate contracts with payment gateways and shall comply with the applicable laws.</p>
+                <p>7.3. Service Provider shall ensure that it has or procures adequate technology as necessary to maintain the Platform and perform the Service Provider Business under this Agreement.</p>
+                <b><u><li>OBLIGATIONS, COVENANTS AND WARRANTIES OF VENDOR</li></u></b>
+                <p>8.1. Vendor shall not use the Service Provider Business for any purpose other than Vendor’s Business and in relation to the sale of its Tobacco Products.</p>
+                <p>8.2. Vendor shall manage and maintain sufficient inventory of the Tobacco Products which the Vendor offers to sell to End Customer on the Platform through Platform Services as purchased by the End Customer </p>
+                <p>8.3. Vendor shall deliver exactly the same Product to the Service Provider for availing Transaction Support Services from Service Provider in relation to the sale of Tobacco products to the End Customer.</p>
+                <p>8.4. Vendor shall offer the Tobacco products  for sale on the Platform on the Sale Price which shall be inclusive of all taxes, duties, levies, warehousing, packaging, shipping and logistics charges and all other charges. The Sale Price shall be in compliance with all applicable laws.</p>
+                <p>8.5. Vendor shall ensure that Vendor employs sufficient staff to meet and fulfil the requirements of this Agreement and to sell the Tobacco products to the End Customers through the Platform Services.</p>
+                <p>8.6. Vendor shall not print, emboss or otherwise display any brand name, trade name, and trademark, service mark on the Product, on the packing material and on the invoice other than those displayed while making the sale offer on the Platform while packing the Products for delivery to Service Provider to avail Transactional Support Services.</p>
+                <p>8.7. Vendor shall provide series of invoice numbers in relation to the Tobacco products sold to the End Customer(s) through Platform Services and such invoice number shall correspond to the books of accounts of the Vendor as maintained by the Vendor under applicable law. As a part of availing Transaction Support Services, the Vendor hereby authorizes Service Provider to issue the invoices containing invoice number from the aforesaid series to the End Customers on behalf of the Vendor for the sale of Tobacco products. Vendor acknowledges and agrees that Service Provider shall provide in the invoice all the necessary details of the taxes, duties and other statutory levies applicable on the sale and  delivery of the Product(s) to the Service Provider and it shall be the duty and obligation of the Vendor to correctly and timely pay or deposit such taxes etc. to the appropriate government authority and shall indemnify, defend and hold harmless Service Provider, Service Provider Affiliates and their respective shareholders, directors, officers, employees, contractors and agents in the event Vendor defaults in making the payment of such taxes etc.</p>
+                <p>8.8. The Vendor agrees to send to the Service Provider, the catalogue or the log book of the Tobacco products offered by the Vendor. Further, the Vendor agrees to all the Platform Services to be complied which are not limited to (a) presenting the selected Tobacco products to the Service Provider for the purpose of shooting (b) sending the line/merchandising sheet with Tobacco Product details to the Service Provider with timely updation about the availability of stock (c) Uploading the product details on the Service Provider’s Platform.</p>
+                <p>8.9. The Tobacco products offered to be sold by the Vendor on the Platform and subsequent delivery of the same to the Service Provider and Deliverables shall (a) exactly conform to the specifications and representations made by the Vendor on the Platform; (b) shall comply with all the applicable laws including that of the territory of the Vendor, the place from where Vendor dispatches the Tobacco products to the Service Provider and the place of final delivery to the End Customer; (c) not infringe any third party’s Intellectual Property Rights whether in India or anywhere in the world; and (d) not violate any international trade, import and export related laws including parallel imports.</p>
+                <p>8.10. Vendor shall at no point represent or hold itself out as an agent or representative or an Affiliate of the Service Provider. The sale and purchase transaction between Vendor and the End Customer shall be a bipartite contract between them and Service Provider is merely facilitating the transaction between Vendor and End Customer as an intermediary and a conduit by making available Service Provider Business to Vendor and End Customer.</p>
+                <p>8.11. Vendor shall provide such necessary assistance (at no additional direct cost to Service Provider) as may be required to facilitate Service Provider to carry out its obligations under this Agreement. </p>
+                <p>8.12. Vendor shall not do, cause or authorize to be done anything which will or may:   (i) impair, damage or be detrimental to the rights, reputation and goodwill associated with the Service Provider, shareholders or directors; (ii) bring the brand / trade name or the Platform into disrepute or any claim by third parties; or  (iii) may jeopardize or invalidate the brand / trade name, Platform registration or any rights associated thereto; </p>
+                <p>8.13. Vendor understands and acknowledges that the reputation of Service Provider is of utmost importance for its business and that the conduct of Vendor in the performance of this Agreement and otherwise would have material impact and bearing on such reputation of Service Provider. Further Vendor understands and acknowledges that the obligations and covenants placed on Vendor in this Section or elsewhere in the Agreement are essential for the maintenance of quality control and protection of good will, and to ensure timely payments to Vendor. Accordingly, Vendor acknowledges that no hardship or onerous obligation is being placed on Vendor under this Agreement. </p>
+                <p>8.14. Vendor ensures not to provide any description/image/text/graphic which is unlawful, illegal, intimidating, obnoxious, objectionable, obscene, vulgar, opposed to public policy, prohibited by law or morality. </p>
+                <p>8.15. That Vendor shall draw the invoice / bill directly in the name of the End Customer but will have to upload in Service Provider’s portal or Platform for the record purpose.</p>
+                <p>8.16. The Vendor understands and acknowledges that the Service Provider is merely an intermediary to the transaction taking place between the End Customer and the Vendor, and covenants that it shall, at its own cost, procure and maintain all such licenses, registrations, No – Objection Certificates (“NOCs”), permits, licenses and registrations of equivalent nature, whether mandatory under the Central, State or local laws, as may be required,, whether regulatory, statutory, general or specific, to conduct its Business as outlined in Recital 1 across the Territory and shall indemnify and hold harmless, the Service Provider, from any action, claims, proceedings arising as a result of non-compliance with any such applicable laws.</p>
+                <p>8.17. The Vendor acknowledges and agrees that in case the Vendor is of the knowledge that the Service Provider is required to obtain any license/registration in relation to the Platform Services availed by the Vendor for the purpose of compliance under the applicable laws of India, the Vendor shall intimate the Service Provider of the same within a reasonable period of time.</p>
+                <p>8.18. The Vendor acknowledges and agrees that in order to stay compliant under the laws of India, as outlined in this Agreement, the Vendor shall ensure that its place(s) of business undergo regular audits at reasonable intervals of time to avoid any notice or penalty from the statutory / regulatory authorities.</p>
+                <b><u><li>INTELLECTUAL PROPERTY</li></u></b>
+                <p>9.1. Service Provider shall retain sole title, interest and ownership in all the intellectual properties, know how or other proprietary rights in the Service Provider Content and Service Provider Business and no right or interest is granted or shall be deemed to be granted by Service Provider to the Vendor.</p>
+                <p>9.2. Platform: The Service Provider grants the Vendor a non-exclusive, non-transferable license to use the Platform and its associated intellectual property solely for the purpose of selling the Vendor's Tobacco products.</p>
+                <p>9.3. (i) Both parties agree to take reasonable measures to protect each other's intellectual property rights against unauthorized use, reproduction, or disclosure. (ii). The Service Provider agrees to promptly notify the Vendor of any suspected infringement of the Vendor's intellectual property rights discovered on the Platform, and the Vendor shall have the right to take appropriate action to enforce its rights. (iii). The Vendor agrees to promptly notify the Service Provider of any suspected infringement of the Service Provider's intellectual property rights discovered on the Platform, and the Service Provider shall have the right to take appropriate action to enforce its rights.</p>
+                <p>9.4. (i). The Vendor agrees to indemnify and hold the Service Provider harmless from any claims, damages, liabilities, and expenses arising out of or related to any infringement of third-party intellectual property rights caused by the sale Vendor's Tobacco products through the Platform.</p>
+                <p>9.5. (i). Upon termination of the Agreement, all licenses granted under this intellectual property clause shall automatically terminate, and each party shall cease using the other party's intellectual property rights. (ii). The provisions of this intellectual property clause shall survive the termination of the agreement to the extent necessary for the protection and maintaining the confidentiality of said intellectual property rights.</p>
+                <b><u><li>CONFIDENTIALITY </li></u></b>
+                <p>10.1. Each Party may disclose to the other such Confidential Information as may be necessary to further the performance of this Agreement. </p>
+                <p>10.2. The receiving Party undertakes to the disclosing Party: </p>
+                <p>(i) to keep confidential the disclosing Party’s Confidential Information;   
+                    (ii) not to disclose the Confidential Information in whole or in part to any other person without the disclosing Party’s prior written consent, except to the receiving Party’s employees, agents and subcontractors involved in the performance of this Agreement on a confidential and need to know basis and provided that employees, agents and sub-contractors are bound by written agreements of confidentiality which are at least as stringent as the provisions of this Agreement; and   
+                    (iii) to use the Confidential Information solely in connection with the performance of this Agreement.
+                    </p>
+                <p>10.3. The aforementioned confidentiality obligations shall not extend to Confidential Information which:</p>
+                <p>(i)Is already known to the receiving party at the time of disclosure, as evidenced by written records; 
+                    (ii) Becomes publicly available through no fault of the receiving party; 
+                    (iii) Is independently developed by the receiving party without reference to the disclosing party's Confidential Information; 
+                    (iv) Is lawfully obtained from a third party without breach of any confidentiality obligation; or 
+                    (v) is required by any court, government or other regulatory body to disclose, but only to the extent required by law, provided that the receiving Party gives the disclosing Party written notice as soon as practicable of such requirement and consult in good faith the disclosing party on the content and manner of any disclosure.</p>
+                <p>10.4. Service Provider and Vendor personal / sensitive personal data / information shall be governed by the Privacy Policy of the Platform, which terms (including all amendments, modifications, reinstatements and substitutions) shall be deemed to be incorporated herein by way of reference.</p>
+                <p>10.5. Upon termination or expiration of the agreement, or at any time upon written request of the disclosing party, the receiving party shall promptly return or destroy all tangible and intangible forms of the disclosing party's Confidential Information and provide written certification of its compliance with this obligation.</p>
+                <p>10.6. The Parties acknowledge that any unauthorized use or disclosure of Confidential Information may cause irreparable harm to the disclosing Party. In the event of a breach or threatened breach of this confidentiality clause, the disclosing Party shall be entitled to seek injunctive relief, in addition to any other remedies available at law or in equity.</p>
+                <b><u><li>RIGHTS OF THE SERVICE PROVIDER </li></u></b>
+                <p>11.1. Vendor agrees and acknowledges that the Service Provider, at all times during the continuance of this Agreement, shall have the right to remove/block/delete any text, graphic, image(s) uploaded on the online store by the Vendor without any prior intimation to Vendor in the event the said text, image, graphic is found to be in violation of law, breach of any of the terms of this Agreement, terms and conditions of Service Provider’s Platform. In such an event, the Service Provider reserve the right to forthwith remove/close the online store of the Vendor on the Platform without any prior intimation or liability to the Vendor.</p>
+                <p>11.2. Service Provider reserves the right to provide and display appropriate disclaimers and terms of use on Service Provider’s Platform portal.</p>
+                <p>11.3. At any time if the Service Provider believes that the services are being utilized by the Vendor in contravention of the terms and provisions of this Agreement or Terms and conditions of use of Service Provider Platform, the Service Provider shall have the right either at its sole discretion or upon the receipt of a request from the legal / statutory authorities or a court order to discontinue/terminate the said service(s) to the Vendor, without liability to refund the amount to the Vendor to forthwith remove/block/close the online store of the Vendor on the Platform and furnish such details about the Vendor and/or its End Customers upon a request received from the Legal/ Statutory Authorities or under a Court order.</p>
+                <p>11.4. Service Provider reserves right to change each and every policy/ rules / terms and conditions, further if any changes are required under the applicable laws of India.</p>
+                <b><u><li>INDEMNIFICATION AND LIMITATION OF LIABILITY </li></u></b>
+                <p>12.1. Vendor shall promptly on demand indemnify, defend and hold harmless the Service Provider and End Customer and their respective officers, directors, proprietors, partners, managers, members, trustees, shareholders, employees and agents (“Indemnified Parties”) for and against all claims, liabilities, costs and expenses (including reasonable attorney’s fees) incurred or to be incurred by the Indemnified Parties that arise out of, in any way relate to, or result from  any breach by the Vendor of any of the provisions of this Agreement, or breach of any laws by the Vendor, or negligence, fraud or wilful misconduct of the Vendor or its Affiliates and their respective officers, directors, shareholders, employees, contractors, sub-contractors, agents and personnel. For the avoidance of doubt, it is further clarified that the right to indemnification in connection with any of the aforesaid claims of cause of action is independent and in addition to other rights and remedies of the Indemnified Person that may be available at law or in equity.  </p>
+                <p>12.2. Service Provider’s Limitation of Liability:   
+                    Notwithstanding anything contrary containied in this agreement, in any event the Service Provider shall not be liable (whether in contract, warranty, tort (including, but not limited to, negligence), product liability or other theory), to the vendor or any other person or entity for cost of cover or for any indirect, incidental, special, consequential, punitive or exemplary damages (including damages for loss of revenues, loss profit or anticipated profits, loss of goodwill, loss of business or data) arising out of or in relation this agreement. Service Provider’s entire liability to Vendor under this Agreement or under any applicable law or equity shall be limited solely to actual and proven direct damages sustained by the Vendor as a result of the gross negligence or wilful misconduct of the Service Provider and its Affiliate and their respective directors, officers, employees and agents in the performance of their respective services and other obligations under this Agreement. In no event shall the Service Provider be liable, vicariously or otherwise, to the Vendor or any third party for any losses, damages, liabilities, costs (including reasonable legal costs) and expenses (including taxation) which are in the aggregate in excess of the (i) amounts paid by the Vendor to the Service Provider in the immediately preceding twelve month period under this Agreement – if such losses et al are due to Platform Services.
+                    </p>
+                <b><u><li>FURTHER REPRESENTATIONS AND WARRANTIES </li></u></b>
+                <p>13.1. The Vendor represents and warrants that all Tobacco Products offered for sale through the Platform: 
+                    (i) Are authentic, genuine, and free from defects; 
+                    (ii) Have been legally manufactured, packaged, labelled, transported and stored in accordance with all applicable laws and regulations; 
+                    (iii) Are safe for their intended use and comply with all applicable safety standards and requirements; 
+                    Are not counterfeit, adulterated, misbranded, or illegal in any way; and 
+                    Have not been subject to any recall or regulatory action.
+                    </p>
+                <p>13.2. Except as specified in this Agreement, neither party makes any warranty in connection with the subject matter of this Agreement. each Party hereby disclaims any and all implied warranties, including without limitation all implied warranties of vendor ability or fitness for a particular purpose. </p>
+                <p>13.3. Service Provider specifically disclaims any and all express or implied warranties with respect to the Platform, Platform Services and Payment Facilitation Services and these are provided on ‘as is’ basis</p>
+                <p>13.4. Vendor represents, warrants, undertakes and covenants that the Vendor is duly incorporated and has a valid existence under the laws of India and has the necessary authorisations and capacity to carry on its Business and perform its obligations as set forth under this Agreement.</p>
+                <p>13.5. Vendor represents, warrants, undertakes and covenants that the Vendor shall ensure that any and all information provided to the Service Provider in connection to its Tobacco products and/or Sale Price and other incidental information, is free of errors or discrepancies and shall not hold the Service Provider liable for any reason that is attributable to the Vendor.</p>
+                <p>13.6. Vendor represents, warrants, undertakes and covenants that any losses, expenses or costs incurred by the Service Provider due to reasons attributable to the Vendor shall be indemnified by the Vendor at its own cost as soon as practicably possible.</p>
+                <p>13.7. Vendor represents, warrants, undertakes and covenants that the Vendor shall assume all responsibilities and the risks attached with the Tobacco products, which shall be dispatched and delivered to the End Customer</p>
+                <p>13.8. Vendor represents, warrants, undertakes and covenants that the Vendor has obtained all approvals, licenses, registrations, NOCs, permits, consents or sanctions, if any, of the Government or any Government body or authority, whether Central, State or local, to conduct its Business as mentioned in Recital 1; and will at all times during the validity of this Agreement, keep all such foregoing obligations valid and subsisting.</p>
+                <p>13.9. Except to the extent disclosed to the Service Provider, the Vendor represents, warrants, undertakes and covenants that no litigation, arbitration, administrative or other proceedings by government, governmental authority, official or entity are pending or threatened against the Vendor or its assets, which, if adversely determined, might have an adverse effect on the Service Provider; and the Vendor has not taken any action / other steps / legal proceedings started by or against it in any court of law / other authorities for bribery, its insolvency, bankruptcy, winding up, dissolution, administration or re-organization or for the appointment of a receiver, administrator, administrative receiver, trustee or similar officer of the Service Provider or of any or all of its asse</p>
+                <b><u><li>TERM OF AGREEMENT </li></u></b>
+                <p>14.1. The effective date _________ of this LOU shall be the date on which the Merchant signs this LOU [whether digitally or otherwise] and relay the same to Speedyy. This LOU shall thereon have full force of a contract and shall bind both Merchant and Speedyy fully upon on-boarding of Merchant on Platform.</p>
+                <p>14.2. Either party shall have the right to terminate this Agreement and all then existing commercial terms by issuing a 30-day prior notice of termination in writing without any additional obligations or liabilities to each other. </p>
+                <p>14.3. Either party shall have a right to terminate this Agreement thereto upon any material breach of this Agreement by the other Party provided that where in the reasonable opinion of the non-breaching Party, such breach is capable of cure, the non-breaching Party shall not terminate this Agreement thereto without providing the breaching Party a cure period of [thirty (30) days] to cure such breach and provide the non-breaching Party with necessary documents satisfactorily evidencing cure of such breach.</p>
+                <p>14.4. Service Provider shall have the right to terminate this Agreement upon occurrence of any insolvency event in relation to Vendor. It is clarified that an insolvency event in relation to Vendor shall be deemed to have occurred upon occurrence of any of the following:     
+                    (i) Vendor has ceased to carry on or threatens to cease the Business; or     
+                    (ii) Vendor has passed an effective resolution or a binding order has been made for its winding up except under a scheme of amalgamation; or     
+                    (iii) Vendor has become insolvent or has entered into liquidation (unless such liquidation is for the purposes of a fully solvent reorganization); or   
+                    (vi) The Service Provider becomes aware that the Vendor has not obtained the requisite licenses to sell the Tobacco productson the Service Provider’s Platform.  
+                    (v) Vendor has entered into, or taken steps to enter into, administration, administrative receivership, receivership, a voluntary arrangement, a scheme of arrangement with creditors, any analogous or similar procedure in any jurisdiction or any other form of procedure relating to insolvency, reorganization or dissolution in any jurisdiction, or a petition is presented or other step is taken by any person with a view to any of those things. 
+                    </p>
+                <b><u><li>CONSEQUENCES OF TERMINATION </li></u></b>
+                <p>15.1. Upon expiry or termination of this Agreement all Confidential Information and any other materials which may have been provided by one Party to the other shall be forthwith returned and the returning Party shall certify such return and all copies thereof or any other material or information which cannot be returned, shall be destroyed completely; </p>
+                <p>15.2. Termination of this Agreement shall not relieve any Party of any of its obligations or liabilities and affect the rights and remedies of a Party, which have accrued prior to the date of termination.</p>
+                <p>15.3. The provisions of this Agreement contained in Sections 9 (Intellectual Property), 10 (Confidentiality), 12 (Indemnification), 13 (Representations and Warranties), 15 (Consequences of Termination), 16 (Governing Law) and 17 (Dispute Resolution), 18.2 (Notices) shall survive the expiry or early termination of this Agreement. </p>
+                <p>15.4. Termination of this Agreement shall not affect any obligations or duties of the Vendor and Service Provider towards the End Customer which obligations or duties accrued before the termination of this Agreement.  </p>
+                <b><u><li>GOVERNING LAW </li></u></b>
+                <p>This Agreement shall be governed by the laws of India.</p>
+                <b><u><li>DISPUTE RESOLUTION </li></u></b>
+                <p>17.1. Any dispute which arises between the Parties shall be attempted to be resolved by good faith discussions between the Parties. </p>
+                <p>17.2. Where the Parties are unable to resolve such disputes by good faith discussions within a period of thirty (30) business days from the date of a written notice by either Party notifying existence of such dispute, either Party shall be free to refer the dispute to arbitration in accordance with this Section. This Agreement and the rights and obligations of the Parties shall remain in full force and effect pending the award in such arbitration proceeding.</p>
+                <p>17.3. The arbitration proceedings shall be governed by the Arbitration and Conciliation Act, 1996 (as applicable in India) for the time being in force, and/or any statutory modification or re-enactment thereof.   </p>
+                <p>17.4. Place and seat of arbitration shall be Mumbai and the language of the arbitration shall be English</p>
+                <p>17.5. The arbitration shall be conducted by three (3) arbitrators. Each Party shall appoint one arbitrator each and the two appointed arbitrators shall appoint a presiding arbitrator. In case the Parties fail to appoint  their respective arbitrators within thirty (30) days from the submission of dispute for settlement through arbitration in accordance with Section 17.2 above, or the two appointed arbitrators fail to appoint the presiding arbitrator within thirty (30) days from the date of appointment of the later of the first two arbitrators, a sole arbitrator shall be appointed in accordance with the Indian Arbitration and Conciliation Act, 1996 by the appropriate court of law. </p>
+                <p>17.6. The award rendered shall be in writing and shall set out the facts of the dispute and the reasons for the arbitrator’s decision. The award shall apportion the costs of the arbitration as the arbitrator deems fair. </p>
+                <p>17.7. Notwithstanding anything contained in this Agreement, both Parties agree and acknowledges that the covenants and obligations with respect to the matters covered by this Agreement and set forth herein relate to special, unique and extraordinary matters, and that a violation of any of the terms of such covenants and obligations will cause irreparable loss and injury to the aggrieved Party. Therefore, notwithstanding the provisions of this Agreement, either Party shall be entitled to approach any appropriate forums for obtaining an injunction, restraining order or such other equitable relief as a court of competent jurisdiction may deem necessary or appropriate.</p>
+                <p>17.8. The costs of such arbitration shall be borne mutually by the Parties, except in case of an arbitral award to the contrary.</p>
+                <b><u><li>GENERAL CLAUSES</li></u></b>
+                <p>18.1. <b>Independent Contractors</b> </p>      
+                   <p>The relationship between Parties is on principal-to-principal basis. Nothing in this Agreement shall be deemed to constitute either Party a partner, joint venture agent or legal representative of the other Party, or to create any fiduciary, employer-employee relationship between the Parties.
+                    </p>
+                    <p>18.2. <b>Notices and Correspondences:</b> </p>
+                <p>Any notice, consent or waiver (including notice for Arbitration) required or permitted hereunder shall be effective only if it is in writing and shall be deemed received by the Party to which it is sent (i) upon delivery when delivered by hand, (ii) three (3) days after being sent, if sent with all sending expenses prepaid, by an express courier with a reliable system for tracking delivery, (iii) when transmitted, if sent by confirmed facsimile, or (iv) five (5) days (if Vendor is in India) or fourteen (14) days (if Vendor is outside of India) after the date sent, if sent by certified or registered mail, postage prepaid, return receipt requested, addressed as follows:</p>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th><u>To the Vendor:</u></th>
+                                <th><u>To the Service Provider:</u></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Complete Address: {{outletAddress}}</td>
+                                <td>Complete Address: {{outletAddress}}</td>
+                              </tr>
+                              <tr>
+                                <td>Contact No. {{ownerContactNumber}}</td>
+                                <td>Contact No. {{ownerContactNumber}}</td>
+                              </tr>
+                              <tr>
+                                <td>Email id: {{ownerEmailId}}</td>
+                                <td>Email id: {{ownerEmailId}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      <br>
+                <p>18.3. <b>General communications through electronic mode:</b></p>     
+                    <p>When the Vendor uses the Platform or send emails or other data, information or communication to Service Provider, Vendor agrees and understands that Vendor is communicating with Service Provider through electronic records and Vendor consents to receive communications via electronic records from Service Provider periodically and as and when required. Service Provider will communicate with Vendor by email at the designated electronic mail address provided by the Vendor at the time of registration.
+                    </p>
+                <p>18.4. <b>Assignment and Sub-Contracting</b></p>     
+                    <p>Vendor shall not assign any of its rights, obligations or responsibilities under this Agreement without the prior written consent of Service Provider and in absence of such consent any such assignment shall be null and void. All terms and conditions of this Agreement shall be binding upon and shall inure to the benefit of the parties hereto and their successors and authorized assignees. Vendor understands, acknowledges and agrees that Service Provider may subcontract one or more of the Service Provider Business to any third party including Affiliates. 
+                    </p>
+                <p>18.5. <b>Press Releases / Public Statement:</b></p>     
+                    <p>Unless required by law, the Vendor will not make any public announcement or issue any press release concerning the transactions contemplated by this Agreement without the prior consent of the Service Provider. 
+                    </p>
+                <p>18.6. <b>Amendment and evolution of Terms on periodic basis</b></p>      
+                    <p>Service Provider may amend this Agreement and Platform Policies at any time by posting a revised version on the Platform. All updates and amendments may be notified to Vendor on designated electronic mail address. Vendor is advised to regularly check for any amendments or updates to the terms and conditions contained in this Agreement and Platform Policies. Vendor’s using Platform, Platform Services or Service Provider Business after Service Provider’s amendment to this Agreement and Platform Policies shall be deemed to be Vendor’s unconditional and absolute acceptance of such amendments (effective from the date such amendments were made by the Service Provider). If Vendor does not agree to the change or amendments, Vendor can cease using the Service Provider Business (except for those Tobacco products which have been bought by the End Customers) and may terminate this Agreement as provided in Section 14.2.
+                    </p>
+                <p>18.7. <b>Severability</b></p>     
+                    <p>It is the intent of the Parties that in case any one or more of the provisions contained in this Agreement shall be held to be invalid or unenforceable in any respect, such provision shall be modified to the extent necessary to render it, as modified, valid and enforceable under applicable laws and such invalidity or unenforceability shall not affect the other provisions of this Agreement. 
+                    </p>
+                <p>18.8. <b>Waiver</b></p>     
+                    <p>Except as expressly provided in this Agreement, no waiver of any provision of this Agreement shall be effective unless set forth in a written instrument signed by the Party waiving such provision. No failure or delay by a Party in exercising any right, power or remedy under this Agreement shall operate as a waiver thereof, nor shall any single or partial exercise of the same preclude any further exercise thereof or the exercise of any other right, power or remedy. Without limiting the foregoing, no waiver by a Party of any breach by any other Party of any provision hereof shall be deemed to be a waiver of any preceding or subsequent breach of that or any other provision hereof. 
+                    </p>
+                <p>18.9. <b>Further Assurance</b></p>     
+                <p>Each Party shall co-operate with the other Party and execute and deliver to the other Party such instruments and documents and take such other actions as may be reasonably requested from time to time in order to carry out, evidence and confirm their rights hereunder and the intended purpose of this Agreement and to ensure the complete and prompt fulfillment, observance and performance of the provisions of this Agreement and generally that full effect is given to the provisions of this Agreement. 
+                    </p>
+                <p>18.10. <b>Covenants Reasonable</b></p>     
+                    <p>The Parties agree that, having regard to all the circumstances, the covenants contained herein are reasonable and necessary for the protection of the Parties. If any such covenant is held to be void as going beyond what is reasonable in all the circumstances, but would be valid if amended as to scope or duration or both, the covenant will apply with such minimum modifications regarding its scope and duration as may be necessary to make it valid and effective.  
+                    </p>
+                <p>18.11. <b>Independent Rights</b></p>     
+                   <p> Each of the rights of the Parties hereto under this Agreement are independent, cumulative and without prejudice to all other rights available to them, and the exercise or non-exercise of any such right shall not prejudice or constitute a waiver of any other right of the Party, whether under this Agreement or otherwise. 
+                    </p>
+                <p>18.12. <b>Counsel and Management Participation</b></p>     
+                    <p>Service Provider and Vendor acknowledge and confirm that the attorneys and management representatives have read, reviewed and approved this Agreement and that Service Provider and Vendor have had the benefit of its independent legal counsel’s advice with respect to the terms and provisions hereof and its rights and obligations hereunder.
+                    </p>
+                <b><u><li>FORCE MAJEURE </li></u></b>
+                <p>Neither Party shall be responsible or liable for any delay or failure to perform its obligations (other than an obligation to make payment) under this Agreement due to unforeseen circumstances or any event which is beyond that Party's reasonable control and without its fault or negligence, but not limited to, acts of God, war, riots, embargoes, strikes, lockouts, acts of any Government authority, delays in obtaining licenses or rejection of applications under the Statutes, failure of telephone connections or power failure, fire or floods.</p>
+                <b><u><li>COUNTERPARTS & NON – EXCLUSIVITY</li></u></b>
+                <p>This Agreement may be executed in two (2) counterparts, one to remain with each party and each of which shall be deemed an original and which shall together constitute one Agreement. The Parties have entered into this Agreement on a non – exclusive basis. The Service Provider is not restricted to provide the services set forth under this Agreement to any other vendor across the Territory.</p>
+                <p><b>IN WITNESS WHEREOF</b>, the parties hereto have executed this Agreement as of the day and year first written above</p>
+               
+            </ol>
+            <table>
+                <thead>
+                  <tr>
+                    <th>For the Vendor</th>
+                    <th>For the Service Provider</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Authorised Signatory: {{ownerName}}</td>
+                    <td>Authorised Signatory: {{ownerName}}</td>
+                  </tr>
+                  <tr>
+                    <td>Name: {{ownerName}}</td>
+                    <td>Name: {{ownerName}}</td>
+                  </tr>
+                  <tr>
+                    <td>Designation: Owner</td>
+                    <td>Designation: Owner</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              <h5>ANNEXURE – A</h5>
+              <h5>LIST OF TOBACCO PRODUCTS</h5>
+    </div>
+   
+</section>
+
+<!-- Flower LOU -->
+<section class="dialog-wrapper" *ngIf="service === 'Flower'">
+    <mat-icon class="d-flex justify-content-end w-100" [mat-dialog-close]="true">close</mat-icon>
+    <div class="dialog-wrapper__content">
+        <p class="sub-heading mt-3">
+        <h1>LETTER OF UNDERSTANDING</h1>
+        <p class="ms-3">This Letter of Understanding (“LOU”) is issued in favour of Techshack Pvt. Ltd., a company registered under the Companies Act, 1956, having its registered office at   Office no 1006, 10th floor, Hubtown Solaris NS Phadke road, Saiwadi Andheri (E) Mumbai 400069 (“Speedyy”) By <b><u>{{outletName}},
+                    {{outletAddress}}</u></b> <b> ("Merchant")</b> 
+                    in pursuance of our discussions and intent to avail the Services offered by Speedyy. </p>
+        <p><b>THE MERCHANT HEREBY AGREES AS FOLLOWS:</b>  
+           <br> Capitalized terms used but not defined herein shall have the meaning assigned to them under the Merchant Terms of Use available at (<b>“Merchant Terms to be made”</b>).</p>
+        <ol>
+            <li>Merchants understand that Speedyy is engaged in the business of inter alia operating an online platform under the name and style “Speedyy”, through its <b>Platform</b>, which enables transactions between Merchants and Buyers, dealing in Flowers, Plant, and Gifting products. The Platform is utilized by <b>Buyer(s)</b> to choose and place <b>Order(s)</b> from a variety of products listed and offered for sale by <b>Merchants</b> on the Platform, pursuant to which Speedyy enables Delivery of such Order(s) in select serviceable geographical area of the cities in India. The Merchant wishes to avail the <b>Services</b> enabled by Speedyy on a non-exclusive and contractual basis subject to the terms and conditions set out in the Merchant Terms, which includes, inter alia, warranties provided, obligations, intellectual property rights, confidentiality, responsibilities and grounds for termination.</li>
+            <li>The Merchant represents and warrants that – 
+               <br> <b>(i)</b> it is engaged in the business of selling Flowers, Plant, and Gifting products under the brand name and style "<b><u>{{outletName}}</u></b>" through its multiple outlets owned and managed by the Merchant
+               <br><b>(ii)</b> it has full power and capacity to enter into and perform its obligations under this LOU; 
+               <br><b>(iii)</b> has taken all necessary licenses applicable to its business and is fully compliant with the applicable laws including but not limited to provisions of the Food Safety and Standards Act, 2006 and rules and regulations prescribed thereunder (“FSSAI”), as amended from time to time and maintain the same during subsistence of this LOU; 
+               <br><b>(iv)</b> it shall not provide for sale on the platform, or for delivery pursuant to sales facilitated on the Platform, any items that may be unsafe, or misbranded or substandard or which contain extraneous matter or for which a license is required under any law, except in accordance with the conditions of the license; 
+               <br><b>(v)</b> Merchant undertakes that they shall not sale any product ordered through Speedyy app over or above the MRP mentioned on the said product, Merchant shall not sell any product which has crossed expired date and shall check the date is clearly mentioned on the product before delivery;
+               <br><b>(vi)</b> Merchants shall take good care as to follow norms for the product listed by the manufacturer to maintain its quality, for instance “to be stored in cool and dry place” or “keep relegated”, Merchants shall not tamper with the original packaging of the products and pass on the same as manufactured by the manufacturer;
+               <br><b>(vii)</b> Merchant shall Passover any schemes or benefits provided by the manufacturer to the user, like buy one get on free or any free merchandise listed along with the product;
+               <br><b>(viii)</b> all the information and contents provided by it, as required, to Speedyy are true, correct and accurate.</li>
+
+
+            <li>The Merchant undertakes that in case of any action from or on behalf of any consumers alleging unsafe, or misbranded or substandard items, Merchant undertakes to indemnify Speedyy from said action and loss incurred, if any, due to said action as the Speedyy is just a delivery platform and is not Merchant.</li>
+                <li>The parties hereby agree that the charges for utilizing the platform shall be established through a separate extension of this LOU, subject to mutual agreement. Any subsequent modifications to the charges shall be communicated and implemented only with the explicit consent of both parties.</li>
+            <li>Speedyy reserves the right to revise service charges rates charged by them as and when required. Change in the rates shall be intimated to Merchants in advance, in case of any disagreement it should be timely communicated by Merchants to Speedyy. In case disagreement, if any, is not communicated, the change in rate shall be considered as accepted by the Merchant and the same shall be applicable from the date notified.</li>
+            <li>The Merchant understands that Speedyy shall send consolidated reports of Orders placed and other details for the Settlement Period to the Merchant by electronic mail to <b><u>{{ownerEmailId}}</u></b>(Merchant’s mail ID).</li>
+            <li>The Merchant confirms and undertakes that it has read, understood and agrees to be bound by the terms set out in the Merchant Terms that are incorporated by reference herein and are deemed to be part of this LOU.</li>
+            <li>The effective date ______________ of this LOU shall be the date on which the Merchant signs this LOU [whether digitally or otherwise] and relay the same to Speedyy. This LOU shall thereon have full force of a contract and shall bind both Merchant and Speedyy fully upon on-boarding of Merchant on Platform.</li>
+            <li>The Merchant confirms and undertakes that the supporting documents provided by the Merchant along with this MOU are true and correct to their knowledge and understanding.</li>
+        </ol>
+
+        <div class="d-flex justify-content-start w-100 flex-column align-items-baseline ms-3"> <b>[Digitally] Signed by
+            the Merchant:</b>
+        <label>Name: <b><u>{{ownerName}}</u></b></label>
+        <label>Designation: <b><u>Owner</u></b></label>
+        <label>Date: <b><u>{{currentDate | date: 'dd/MM/yyyy'}}</u></b> </label>
+    </div>
+
+
+        <p class="mt-5"><b>Notes:</b>  
+         <ol>
+             <li><b>“Call Center Service Fee”</b> shall mean fee towards Call Centre Services provided by Speedyy to get an Order confirmation by Merchant more fully defined under clause VI (8)(xii)(a) of the Merchant Terms. Speedyy shall waive off Call Center Services Fee (a) as one-time convenience to the new Merchants for an initial period of two (2) weeks from the date of the LOU and (b) Call Centre Services up to 5% of Orders out of the total Orders (rounding decimals to the next whole number) in a Settlement Period [Illustration: 1.4 rounded to the next whole number will be 2 and 1.6 rounded to the next whole number will be 2];</li>
+             <li><b>“Merchant Cancellation Charges”</b> shall mean Service Fee with respect to Order that are cancelled by the Merchant due to failure to fulfil as a result of unavailability of the product/s in an Order or closure of the Merchant’s outlet or any other reason attributable to the Merchant. Merchant Cancellations (without any charge) will be permitted up to 0.5% of Orders out of the total Orders (rounding decimals to the next whole number) in a Settlement Period [Illustration: 1.4 rounded to the next whole number will be 2 and 1.6 rounded to the next whole number will be 2];</li>
+             <li><b>“Refund for Disputed Order/s”</b> shall mean refund paid to the Buyer, where the Buyer claimed partial or full refund, as applicable, for the reasons that are attributable to Merchant, including but not limited to, Buyer’s expectations not being met or  Buyer dissatisfaction in relation to, inter alia, the quality of the products, undelivered Orders, discrepancy in the product delivered which is not in accordance with the Order placed and/or those Orders for which Buyer requests for a refund or replacement.</li>
+             <li><b>“Marketing fees and such other charges”</b> shall mean the charges towards digital marketing services including but not limited to carousel connection with the Merchant’s listings and other related services availed by the Merchant on the Platform and shall be decided by Speedyy;</li>
+             <li><b>“Seller Protection for Cancellation other than Merchant Cancellation”</b> shall be an amount contributed by Speedyy in case of cancellation of Orders either through the Platform, or through calling customer care, by a Buyer (a) for no reason attributable to  Merchant, or (b) for no reason attributable to Speedyy, provided that the said Order has been accepted and confirmed for preparation by the Merchant. In case of Buyer Cancellation, Merchant will be paid and the same shall be accounted in the applicable Settlement Period.</li>
+             <li><b>“Refund on returned Item”</b> shall mean that the merchant agrees to accept the items returned by Customer/Speedyy due to cancellation and the payout for the same would be adjusted accordingly</li>
+         </ol>
+
+        <h2 class="d-flex justify-content-start w-100 flex-column align-items-baseline p-3"> <b>Assignment for Fund Transfer</b></h2>
+        <div class="d-flex flex-column align-items-baseline p-3">
+            <p>Date of signing MOU: <b><u>{{currentDate | date: 'dd/MM/yyyy'}}</u></b></p>
+            <p>To,</p>
+            <p>Area Sales Manager</p>
+            <p>Techshack Pvt. Ltd.India.</p>
+            <p>From,</p>
+            <p>Merchant Name: <b><u>{{outletName}}</u></b></p>
+            <p>Owner/ Partner / Manager Name: <b><u>{{ownerName}}</u></b></p>
+            <p>Designation: <b><u>owner</u></b></p>
+            <p>Dear Sir/ Madam,</p>
+            <p>We do herby request to you kindly transfer all the future payments / due / Net payable amount due to us from sale of our products through your application / platform in the account number <b><U>{{bankAccountNumber}}</U></b> Having IFSC code <b><u>{{ifscCode}}</u></b> in the
+                name of beneficiary
+                <b><u>{{outletName}}</u></b> and having Bank Name______________
+            </p>
+            <p>We are hereby attaching a copy of the self-attested Identity and address proof herewith.</p>
+            <p>Please do the needful at your end.</p>
+            <p>Thanking you.</p>
+            <p>You're faithfully,</p>
+            <div class="row align-items-center justify-content-between w-100">
+                <span class="col-7 align-items-baseline">
+                    <p>Mr. / Ms.<b><u>{{ownerName}}</u></b></p>
+                    <p>Designation: <b><u>owner</u></b></p>
+                    <p>Name of Store: <b><u>{{outletName}}</u></b></p>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pharmacy LOU -->
+<section class="dialog-wrapper" *ngIf="service === 'Pharmacy'">
+    <mat-icon class="d-flex justify-content-end w-100" [mat-dialog-close]="true">close</mat-icon>
+    <div class="dialog-wrapper__content">
+        <p class="sub-heading mt-3">
+        <h1>THE E-COMMERCE VENDOR AGREEMENT</h1>
+        <p class="ms-3">This E-Commerce Vendor Services Agreement (hereinafter referred to as <b>“Agreement”</b>) is made on the <b>{{currentDate | date: 'dd/MM/yyyy'}}</b> which shall construe the acceptance of this Agreement <b>(“Execution Date”)</b> by and between:</p>
+        <p><b><u>{{outletName}},</u></b> (Vendor Name), (CIN: [●]) a Vendor incorporated under the provisions of the Indian Companies Act, 1956 / 2013 and having its registered office at <b><u>{{outletAddress}}</u></b> (hereinafter referred to as “Vendor” which expression shall unless repugnant to the context and meaning thereof, include its heirs, legal representatives, successors, liquidators, receivers, administrators and permitted assigns), of One Part;</p>
+        <p><b>And</b></p>
+        <p><b>Techshack Private Limited,</b> (CIN: U74900MH2021PTC366653) An E-commerce Service Provider company incorporated under the provisions of the Indian Companies Act, 2013 and having its registered office at Office No 1006, 10th Floor, Hubtown Solaris N.S Phadke Road, Saiwadi, Andheri (E), Mumbai, Maharashtra – 400069 (hereinafter referred to as <b>“Service Provider”</b> which expression shall unless repugnant to the context and meaning thereof, include its successors, representatives, associates, affiliates, liquidators and assigns), of Other Part.</p>
+        <p> Vendor and Service Provider shall hereinafter be individually referred to as <b>“Party”</b> and collectively as <b>“Parties”</b>.</p>
+        <p><b>Whereas,</b></p>
+        <ol>
+            <li>Vendor is inter alia engaged in the business of selling various Tobacco products in the Territory of India <b>(“Business”);</b> </li>
+            <li>Service Provider is inter alia in the business of developing and operating E-commerce businesses for independent third party retailers and manufacturers and providing for those entities/persons Service Provider’s proprietary technology, design and development capabilities, order processing capabilities, customer service capabilities  and invoicing and payment management to enable Vendors to sell their  Medicinal Products  to end-customers and such services through the Service Provider’s Platform <b>(“Platform”)</b> along with Transaction Support Services (as defined hereunder) (collectively, <b>“Service Provider Business”</b>);</li>
+            <li>Vendor has approached Service Provider to avail Service Provider Business for the purpose of Vendor’s Business and Service Provider has agreed to make available Service Provider Business to Vendor by following mandatory documentation and payment of consideration amount as discussed amongst the parties;</li>
+            <li>Service Provider has made and is in the process of making substantial investment both monetary, knowhow and otherwise to establish its trade name among consumers and distributors so as to create a retail image connoting a specific manner in which the Medicinal Products can be presented on and sold through the Platform;</li>
+            <li>Both Service Provider and Vendor recognize that overall success of the Platform and trade names of the Service Provider depends on the end-users/end-customers of the Platform and the public in general perceives Platform as a trusted online marketplace to buy and sell products and services;</li>
+            <li>The Parties wish to enter into this Agreement to document and record their mutual understandings and agreements in relation to the terms and conditions on which Service Provider shall make available Service Provider Business to Vendor and Vendor shall avail Service Provider Business;</li>
+            <li>These recitals shall form part of the Agreement.</li>
+        </ol>
+        <p> <b>NOW THEREFORE, IN CONSIDERATION OF THE MUTUAL PROMISES AND OTHER CONSIDERATION, THE SUFFICIENCY OF WHICH IS ACKNOWLEDGED, THE PARTIES, INTENDING TO BE LEGALLY BOUND, AGREE AS FOLLOWS: </b> </p>
+        <ol>
+            <b><li><u>DEFINITIONS</u></li></b>
+            <p><b>"Medicinal Products"</b> refer to pharmaceutical products, including prescription and over-the-counter drugs, vitamins, supplements, and any other healthcare products.</p>
+            <p><b>“Confidential Information”</b> means and includes any and all information which is confidential to a Party including any (i) business information and business processes, (ii) any samples, formulations, specifications, data relating to manufacturing and quality control processes and procedures, (iii) advertising and marketing plans, (iv) any past, current or proposed development projects or plans for future development work, (v) technical, marketing, financial and commercial information whether relating to past or current or future, (vi) the commercial and business affairs of a Party, (vi) all customer related information including any rates and discounts and (vii) and with respect to the Service Provider shall include, without limitation, the End Customer Database, Intellectual Property, trade secrets, business know – how, etc. </p>
+            <p><b>“Deliverable(s)”</b> shall mean the specific materials, devices, products, services or other deliverables that are provided by Vendor to Service Provider during the course of performing Service Provider Business as per this Agreement and any related document thereto.</p>
+            <p><b>“End Customer”</b> hall mean the retail customers to whom Vendor offers to sell or sells or from whom Vendor receives offers to purchase the Medicinal Products  through the Platform.</p>
+            <p><b>“End Customer Database”</b> shall mean all data / information (as may be updated from time to time) about the persons/ entities including their names, addresses, contact details, queries, orders and other requests made available by such persons / entities on the Platform or otherwise captured by the Platform that shall further include the usage, behaviour, trends and other statistical information / data relating to such persons / entities, who (i) access the Platform or otherwise get invitation to the Platform or correspond with the Platform, (ii) place any order for Medicinal Products  on the Platform, or (iii) send any enquiry/ request with respect to the Platform, and shall include all analysis and records based on such aforementioned information, including the spending and other patterns of such persons/entitles and Medicinal Products . For the avoidance of doubt, any list, description or other grouping of consumers or customers or any derivative work from End Customer Database shall be deemed to be End Customer Database.</p>
+            <p><b>“Intellectual Property”</b> includes, without limitation, collectively or individually, the worldwide rights, whether existing now or in future, relating to the intangible property belong to the respective Party, including ideas, concepts, creations, discoveries,  inventions, improvements, know how, trade or business secrets; trademarks, service marks, domain names, designs, utility models, tools, devices, models, methods, patents, copyright (including all copyright in any designs and any moral rights), masks rights, design right, procedures, processes, systems, principles, algorithms, works of authorship, flowcharts, drawings, books, papers, models, sketches, formulas, teaching techniques, electronic codes, proprietary techniques, research projects, and other confidential and proprietary information, computer programming code, databases, software programs, data, documents, instruction manuals, records, memoranda, notes, user guides; in either printed or machine-readable form, whether or not copyrightable or patentable, or any written or verbal instructions or comments. The End Customer Database shall be considered to be the Intellectual Property of the Service Provider.</p>
+            <p><b>“Intellectual Property Rights”</b> means and includes (i) all rights, title or interest under any statute or under common law or under customary usage including in any Intellectual Property or any similar right, anywhere in the world, whether negotiable or not and whether registerable or not, (ii) any licenses, permissions and grants in Intellectual Property (iii) applications for any of the foregoing and the right to apply for them in any part of the world and (iv) all extensions and renewals thereto.</p>
+            <p><b>“Payment Facilitation Services”</b> shall mean facilitating the receipt of Sale Price on the Platform either along with Platform Services or otherwise (for example cash on delivery services).</p>
+            <p><b>“Platform”</b> refers to the online platform or Platform operated by the Service Provider, which provides a virtual marketplace for Vendors to promote, market, sell, and distribute their Medicinal Products to consumers.</p>
+            <p><b>“Platform Services”</b> means internet based electronic platform in the form of an intermediary to facilitate sale and purchase of goods and services through Platform.</p>
+            <p><b>“Product(s)”</b> shall mean any and all goods and related services of the Vendor for which Service Provider makes available Service Provider Business to the Vendor, more specifically listed out under Annexure – A of this Agreement.</p>
+            <p><b>“Sale Price”</b> shall be the price at which the Product is offered for sale by the Vendor on the Platform by using Platform Services to the End Customer. Parties agree that Sale Price is dynamic and volatile and may vary at different times and points of sale and therefore can be periodically and from time to time changed or revised by the Vendor in accordance with the terms of this Agreement.</p>
+            <p><b>“Service Fees”</b> shall mean the fees for availing either whole or part of the Service Provider Business in accordance with the terms of this Agreement and/or Commercial Terms <b>(the term as defined in the Agreement).</b></p>
+            <p><b>“Service Provider Business”</b> shall have the meaning as set out Recital 2 hereinabove and shall include Platform, Platform Services, Payment Facilitation Services and Transaction Support Services.</p>
+            <p><b>“Service Provider Content”</b> shall mean the Platform, all the pages of the Platform, all the content contained in the Platform (excluding any third party content and advertisements), look and feel of the Platform, including text, images, graphics, photographs, video and audio, and furnished by Service Provider in connection with Platform Services, Transaction Support Services, Payment Facilitation Services and for the purpose of offering for sale of Medicinal Products by the Vendor.</p>
+            <p><b>“Term”</b> shall have the meaning as set out in Section 14.1 hereto.</p>
+            <p><b>“Territory”</b> shall mean the territory within the boundaries of India including the State in which the Vendor is making available the Medicinal Products on the Service Provider’s Platform.</p>
+            <p><b>“Transaction Support Services”</b>  shall include services in relation to support the sale of the Medicinal Products by the Vendor to Service Provider which shall include product listings, warehousing services, logistics management services, Payment Facilitation Services, customer support services and any other additional services that may be agreed between the parties.</p>
+            <b><u><li>INTERPRETATION</li></u></b>
+                <p>In this Agreement, unless the context otherwise requires:</p>
+                <p>(i) Words importing persons or parties shall include natural person, entity, partnership firm, organization, operation, Service Provider, HUF, voluntary association, LLP, joint venture, trust, limited organization, unlimited organization or any other organization having legal capacity;</p>
+                <p>(ii) Words importing the singular shall include the plural and vice versa, where the context so requires;</p>
+                <p>(iii) References to any law shall include such law as from time to time enacted, amended, supplemented or re-enacted;</p>
+                <p>(iv) Reference to one gender shall include a reference to the other genders;</p>
+                <p>(v) References to the words “include” or “including” shall be construed without limitation;</p>
+                <p>(vi) References to this Agreement or any other agreement, deed, instrument or document shall be construed as a reference to this Agreement , such other agreement, deed, instrument or document as the same may from time to time be amended, varied, supplemented or notated in accordance with the terms of this Agreement;</p>
+                <p>(vii) The headings and titles in this Agreement are indicative and shall not be deemed part thereof or be taken into consideration in the interpretation or construction of this Agreement;</p>
+                <p>(vii) The word ‘written’ and its multiple different iterations shall include writing in electronic form and ‘signed’ shall include electronic signature or any other electronic communication which signifies the sender’s or originator’s intention to be bound by such electronic communication.</p>
+                <b><u><li>SERVICES </li></u></b>
+                <p>3.1. The Vendor appoints the Service Provider and Service Provider accepts such appointment to make available the Service Provider Business to the Vendor for the sale of the Medicinal Products through the Vendor’s Platform and in accordance with the terms of this Agreement and as further agreed in commercial understanding electronic document or any other similar or analogous electronic or other document and in accordance with various Platform rules and policies including privacy policy, Terms and conditions, Delivery Partner Terms and Conditions, etc.</p>
+                <p>3.2. Vendor agrees and acknowledges that Service Provider is free to provide Service Provider Business and in the Territory in any manner and for any consideration as may be decided by Service Provider in its sole and absolute discretion.</p>
+                <p>3.3. Service Provider in its sole and absolute discretion may refuse to provide any one or more of the Service Provider Business including Platform, Platform Services, Payment Facilitation Services and/or Transaction Support Services for any reason whatsoever, including, without limitation, in the event of providing such Service Provider Business to the Vendor can be detrimental to the reputation, goodwill and competitiveness of Service Provider or could cause any breach of any contractual commitments of the Service Provider and cause Service Provider to breach any applicable laws.</p>
+                <p>3.4. In the event of any conflict or inconsistency between the terms of this Agreement and any other ancillary document thereto, pursuant to the provisions set forth under this Agreement, the terms of this Agreement shall prevail to the extent of such conflict or inconsistency.</p>
+                <b><u><li>ADVERTISING, MARKETING AND SALES PROMOTION</li></u></b>
+                <p>4.1. Service Provider as the proprietor and owner of the Platform and Platform Services may at its sole discretion carry out advertising and marketing activities in relation to promotion of the Platform, Platform Services in any manner and to any extent as may be deemed fit by the Service Provider and for such purposes may engage in certain sales promotion activities to increase the sales of the Medical Products on the Platform. Service Provider and Vendor may agree on certain terms on which Vendor shall support such sales and marketing activities of Service Provider including providing discounts on the Medical Products or other free of cost products to the End Customers.</p>
+                <p>4.2. Service Provider may at its sole and absolute discretion on reasonable commercial efforts basis market, promote or advertise the Medical Products made available for sale by Vendor on the Platform in compliance with this Agreement.</p>
+                <p>4.3. Where Vendor believes or is notified by any other entity including any third party manufacturers of the Medical Products that any promotion plan/ activity undertaken by Service Provider is against any applicable law or in breach of any contractual obligation of Vendor or such third party manufacturer (in both cases supported by a written legal opinion from a reputed advocate), Vendor shall intimate the same to Service Provider and upon such intimation, Service Provider shall within reasonable time cease such plan/ activities.</p>
+                <p>4.4. Vendor agrees and acknowledges that Service Provider shall have the sole right (as to between Service Provider and Vendor) for the design, look and feel, architecture, layout, positioning and all aspects of the Platform including listing, positioning, indexing and placing the Medicinal Products offered for sale on the Platform by the Vendor and the Vendor shall not question or dispute such exercise of right or discharge of responsibility by the Service Provider.</p>
+                <p>4.5. Service Provider shall be solely responsible at Service Provider’s sole discretion to sell or license any and all advertising and promotional time and space with respect to Platform including web-pages or such portions of the Platform that contains the details of the Medicinal Products . Service Provider shall have the sole right and discretion to decide the style, placement and format of the advertisement and promotion and the price and/or any other consideration, if any, for the sale and license of such advertisement and promotion. Except for the facilitation of payment of sale consideration of the Product through Payment Facilitation Services, Service Provider and shall be entitled to retain any and all revenues generated from any sales or licenses of all such advertisements and promotions.</p>
+                <b><u><li>END CUSTOMER DATABASE </li></u></b>
+                <p>The End Customer Database shall be proprietary to the Service Provider. Service Provider shall alone retain all rights including all Intellectual Property Rights in the End Customer Database and unless specifically agreed to in writing by the Service Provider, no rights in or to the End Customer Database are deemed to have been granted to the Vendor. To the extent Vendor derives any rights in the End Customer Database by virtue of it undertaking the Vendor Business the Vendor shall hold such rights in trust for Service Provider and the Vendor shall do and undertake all such acts to exclusively assign such rights in the End Customer Database to the Service Provider. The Vendor further agrees that (a) all the End Customer Database shall be treated as Confidential Information of the Service Provider for the purposes of this Agreement; (b) Service Provider being the owner and proprietor of the End Customer Database shall be entitled to use, store and exploit the same in any manner as may be deem fit by the Service Provider and in accordance with Service Provider’s privacy policy as provided on the Platform from time to time; and (c) Vendor shall not use the End Customer Database other than selling the Medicinal Products  by availing Service Provider Business or required for law enforcement purposes and shall in no way sell, transfer or otherwise exploit the End Customer Database without the express written consent of the Service Provider.</p>
+                <b><u><li>CONSIDERATION AND PAYMENT TERMS</li></u></b>
+                <p><b>6.1. Payment Terms:</b></p>
+                    <p>(i) The Vendor shall intimate the Sale Price of the Medicinal Products, which in no event shall be in excess of the maximum retail price in question, to be sold on the Platform, including any applicable taxes, fees, or shipping charges.</p>
+                    <p>(ii) The Service Provider shall display the Sale Prices set by the Vendor on the Platform and shall facilitate the collection of payments from the End Customers on behalf of the Vendor.</p>
+                    <p>(iii) The Vendor agrees to provide accurate and up-to-date Sale Pricing information to the Service Provider and promptly update any changes or adjustments as necessary. The Vendor, in no event, shall hold the Service Provider liable in case the Medicinal Products are sold at a different Sale Price due to reasons directly attributable to the Vendor, including, without limitation, failure to inform the Service Provider of the updated Sale Price within a reasonable period of time. For clarity, the Service Provider shall not be liable to compensate or rectify such foregoing loss incurred by the Vendor.</p>
+                    <p>(iv) Service Provider shall have the right to deduct and receive the Services Fees from the amounts due to the Vendor under Payments Facilitation Services. To the extent the Service Provider is unable to receive the Service Fees from the Payment Facilitation Services as aforesaid; the Vendor shall make all payments within ten (10) business days of receipt of the relevant invoice from the Service Provider.</p>
+                    <p>(v) Payment reimbursement of the sale proceeds to Vendor shall be done by the Service Provider in the following manner</p>
+                    <p>(vi) Vendor shall prepare a consolidated advice list of all orders delivered to the Service Provider, at 30th date of every month and submit it with the entire monthly invoices via email to the Service Provider.</p>
+                    <p>(vii)The Service Provider will within 7 working days of receipt of advice process the amount due to Vendor and dispatch the Cheques / Online as decided between the Vendor and the Service Provider.</p>
+                    <p>(viii) The Vendor shall provide accurate and up-to-date bank account or payment details to the Service Provider for the purpose of payment settlements / reimbursements. The Service Provider shall not be responsible for any delays or errors in payment settlement caused by incorrect or incomplete payment details provided by the Vendor or due to technical difficulties or glitches faced at the end of the bank.</p>
+                <p><b>6.2. Taxes</b></p>
+                <p>Each Party shall be responsible for any and all taxes on its business, and taxes based on its net income or gross receipts. However, Service Provider shall be entitled to additionally charge service tax or any other indirect or transaction taxes as applicable on one or more of the Service Provider Business and Service Fees.</p>
+                <p>The Vendor shall indemnify and hold the Service Provider harmless against any claims, penalties, or liabilities arising from the Vendor's failure to comply with tax obligations.</p>
+                <b><u><li>ADDITIONAL OBLIGATIONS OF SERVICE PROVIDER</li></u></b>
+                <p>7.1. Service Provider shall reasonably maintain the registration of domain name in relation to the Platform during the Term at its own costs free from any and all encumbrances, including encumbrances which may lead to any adverse effect on Service Provider’s registration of the domain name or its use of the Platform.</p>
+                <p>7.2. In order to process payments made by End Customers and to generally provide Payment Facilitation Services, Service Provider shall reasonably maintain appropriate contracts with payment gateways and shall comply with the applicable laws.</p>
+                <p>7.3. Service Provider shall ensure that it has or procures adequate technology as necessary to maintain the Platform and perform the Service Provider Business under this Agreement.</p>
+                <b><u><li>OBLIGATIONS, COVENANTS AND WARRANTIES OF VENDOR</li></u></b>
+                <p>8.1. Vendor shall not use the Service Provider Business for any purpose other than Vendor’s Business and in relation to the sale of its Medical Products.</p>
+                <p>8.2. Vendor shall manage and maintain sufficient inventory of the Medical Products which the Vendor offers to sell to End Customer on the Platform through Platform Services as purchased by the End Customer.</p>
+                <p>8.3. Vendor shall deliver exactly the same Product to the Service Provider for availing Transaction Support Services from Service Provider in relation to the sale of Medical Medicinal Products to the End Customer.</p>
+                <p>8.4. Vendor shall offer the Medicinal Products for sale on the Platform on the Sale Price which shall be inclusive of all taxes, duties, levies, warehousing, packaging, shipping and logistics charges and all other charges. The Sale Price shall be in compliance with all applicable laws.</p>
+                <p>8.5. Vendor shall ensure that Vendor employs sufficient staff to meet and fulfil the requirements of this Agreement and to sell the Medicinal Products to the End Customers through the Platform Services.</p>
+                <p>8.6. Vendor shall not print, emboss or otherwise display any brand name, trade name, and trademark, service mark on the Product, on the packing material and on the invoice other than those displayed while making the sale offer on the Platform while packing the Products for delivery to Service Provider to avail Transactional Support Services.</p>
+                <p>8.7. Vendor shall provide series of invoice numbers in relation to the Medicinal Products sold to the End Customer(s) through Platform Services and such invoice number shall correspond to the books of accounts of the Vendor as maintained by the Vendor under applicable law. As a part of availing Transaction Support Services, the Vendor hereby authorizes Service Provider to issue the invoices containing invoice number from the aforesaid series to the End Customers on behalf of the Vendor for the sale of Medicinal Products. Vendor acknowledges and agrees that Service Provider shall provide in the invoice all the necessary details of the taxes, duties and other statutory levies applicable on the sale and  delivery of the Product(s) to the Service Provider and it shall be the duty and obligation of the Vendor to correctly and timely pay or deposit such taxes etc. to the appropriate government authority and shall indemnify, defend and hold harmless Service Provider, Service Provider Affiliates and their respective shareholders, directors, officers, employees, contractors and agents in the event Vendor defaults in making the payment of such taxes etc.</p>
+                <p>8.8. The Vendor agrees to send to the Service Provider, the catalogue or the log book of the Medicinal Products offered by the Vendor. Further the Vendor agrees to all the Platform Services to be complied which are not limited to (a) presenting the selected Medicinal Products to the Service Provider for the purpose of shooting (b) sending the line/merchandising sheet with Medicinal Product details to the Service Provider with timely updation about the availability of stock (c) Uploading the product details on the Service Provider’s Platform.</p>
+                <p>8.9. The Medicinal Products  offered to be sold by the Vendor on the Platform and subsequent delivery of the same to the Service Provider and Deliverables shall (a) exactly conform to the specifications and representations made by the Vendor on the Platform; (b) shall comply with all the applicable laws including that of the territory of the Vendor, the place from where Vendor dispatches the Medicinal Products  to the Service Provider and the place of final delivery to the End Customer; (c) not infringe any third party’s Intellectual Property Rights whether in India or anywhere in the world; and (d) not violate any international trade, import and export related laws including parallel imports.</p>
+                <p>8.10. Vendor shall at no point represent or hold itself out as an agent or representative or an Affiliate of the Service Provider. The sale and purchase transaction between Vendor and the End Customer shall be a bi partite contract between them and Service Provider is merely facilitating the transaction between Vendor and End Customer as an intermediary and a conduit by making available Service Provider Business to Vendor and End Customer.</p>
+                <p>8.11. Vendor shall provide such necessary assistance (at no additional direct cost to Service Provider) as may be required to facilitate Service Provider to carry out its obligations under this Agreement. </p>
+                <p>8.12. Vendor shall not do, cause or authorize to be done anything which will or may:   (i) impair, damage or be detrimental to the rights, reputation and goodwill associated with the Service Provider, shareholders or directors; (ii) bring the brand / trade name or the Platform into disrepute or any claim by third parties; or  (iii) may jeopardize or invalidate the brand / trade name, Platform registration or any rights associated thereto;</p>
+                <p>8.13. Vendor understands and acknowledges that the reputation of Service Provider is of utmost importance for its business and that the conduct of Vendor in the performance of this Agreement and otherwise would have material impact and bearing on such reputation of Service Provider. Further Vendor understands and acknowledges that the obligations and covenants placed on Vendor in this Section or elsewhere in the Agreement are essential for the maintenance of quality control and protection of good will, and to ensure timely payments to Vendor. Accordingly, Vendor acknowledges that no hardship or onerous obligation is being placed on Vendor under this Agreement.</p>
+                <p>8.14. Vendor ensures not to provide any description/image/text/graphic which is unlawful, illegal, intimidating, obnoxious, objectionable, obscene, vulgar, opposed to public policy, prohibited by law or morality.</p>
+                <p>8.15. That Vendor shall draw the invoice / bill directly in the name of the End Customer but will have to upload in Service Provider’s portal or Platform for the record purpose.</p>
+                <p>8.16. The Vendor understands and acknowledges that the Service Provider is merely an intermediary to the transaction taking place between the End Customer and the Vendor, and covenants that it shall, at its own cost, procure and maintain all such licenses, registrations, No – Objection Certificates (“NOCs”), permits, licenses and registrations of equivalent nature, whether mandatory under the Central, State or local laws, as may be required,, whether regulatory, statutory, general or specific, to conduct its Business as outlined in Recital 1 across the Territory and shall indemnify and hold harmless, the Service Provider, from any action, claims, proceedings arising as a result of non-compliance with any such applicable laws.</p>
+                <p>8.17. The Vendor acknowledges and agrees that in case the Vendor is of the knowledge that the Service Provider is required to obtain any license / registration in relation to the Platform Services availed by the Vendor for the purpose of compliance under the applicable laws of India, the Vendor shall intimate the Service Provider of the same within a reasonable period of time.</p>
+                <p>8.18. The Vendor acknowledges and agrees that in order to stay compliant under the laws of India, as outlined in this Agreement, the Vendor shall ensure that its place(s) of business undergo regular audits at reasonable intervals of time to avoid any notice or penalty from the statutory / regulatory authorities.</p>
+                <b><u><li>INTELLECTUAL PROPERTY</li></u></b>
+                <p>9.1. Service Provider shall retain sole title, interest and ownership in all the intellectual properties, know how or other proprietary rights in the Service Provider Content and Service Provider Business and no right or interest is granted or shall be deemed to be granted by Service Provider to the Vendor.</p>
+                <p>9.2. Platform The Service Provider grants the Vendor a non-exclusive, non-transferable license to use the Platform and its associated intellectual property solely for the purpose of selling the Vendor's Medicinal Products.</p>
+                <p>9.3. (i). Both parties agree to take reasonable measures to protect each other's intellectual property rights against unauthorized use, reproduction, or disclosure. (ii). The Service Provider agrees to promptly notify the Vendor of any suspected infringement of the Vendor's intellectual property rights discovered on the Platform, and the Vendor shall have the right to take appropriate action to enforce its rights.(iii). The Vendor agrees to promptly notify the Service Provider of any suspected infringement of the Service Provider's intellectual property rights discovered on the Platform, and the Service Provider shall have the right to take appropriate action to enforce its rights.</p>
+                <p>9.4. (i). The Vendor agrees to indemnify and hold the Service Provider harmless from any claims, damages, liabilities, and expenses arising out of or related to any infringement of third-party intellectual property rights caused by the sale Vendor's Medicinal Products through the Platform.</p>
+                <p>9.5. (i). Upon termination of the Agreement, all licenses granted under this intellectual property clause shall automatically terminate, and each party shall cease using the other party's intellectual property rights. (ii). The provisions of this intellectual property clause shall survive the termination of the agreement to the extent necessary for the protection and maintaining the confidentiality of said intellectual property rights.</p>
+                <b><u><li>CONFIDENTIALITY </li></u></b>
+                <p>10.1. Each Party may disclose to the other such Confidential Information as may be necessary to further the performance of this Agreement. </p>
+                <p>10.2. The receiving Party undertakes to the disclosing Party: </p>
+                <p>(i) to keep confidential the disclosing Party’s Confidential Information;   
+                    (ii) not to disclose the Confidential Information in whole or in part to any other person without the disclosing Party’s prior written consent, except to the receiving Party’s employees, agents and subcontractors involved in the performance of this Agreement on a confidential and need to know basis and provided that employees, agents and sub-contractors are bound by written agreements of confidentiality which are at least as stringent as the provisions of this Agreement; and   
+                    (iii) to use the Confidential Information solely in connection with the performance of this Agreement.
+                    </p>
+                <p>10.3. The aforementioned confidentiality obligations shall not extend to Confidential Information which:</p>
+                <p>(i)Is already known to the receiving party at the time of disclosure, as evidenced by written records; 
+                    (ii) Becomes publicly available through no fault of the receiving party; 
+                    (iii) Is independently developed by the receiving party without reference to the disclosing party's Confidential Information; 
+                    (iv) Is lawfully obtained from a third party without breach of any confidentiality obligation; or 
+                    (v) Is required by any court, government or other regulatory body to disclose, but only to the extent required by law, provided that the receiving Party gives the disclosing Party written notice as soon as practicable of such requirement and consult in good faith the disclosing party on the content and manner of any disclosure.</p>
+                <p>10.4. Service Provider and Vendor personal / sensitive personal data / information shall be governed by the Privacy Policy of the Platform, which terms (including all amendments, modifications, reinstatements and substitutions) shall be deemed to be incorporated herein by way of reference.</p>
+                <p>10.5. Upon termination or expiration of the agreement, or at any time upon written request of the disclosing party, the receiving party shall promptly return or destroy all tangible and intangible forms of the disclosing party's Confidential Information and provide written certification of its compliance with this obligation.</p>
+                <p>10.6. The Parties acknowledge that any unauthorized use or disclosure of Confidential Information may cause irreparable harm to the disclosing Party. In the event of a breach or threatened breach of this confidentiality clause, the disclosing Party shall be entitled to seek injunctive relief, in addition to any other remedies available at law or in equity.</p>
+                <b><u><li>RIGHTS OF THE SERVICE PROVIDER </li></u></b>
+                <p>11.1. Vendor agrees and acknowledges that the Service Provider, at all times during the continuance of this Agreement, shall have the right to remove/block/delete any text, graphic, image(s) uploaded on the online store by the Vendor without any prior intimation to Vendor in the event the said text, image, graphic is found to be in violation of law, breach of any of the terms of this Agreement, terms and conditions of Service Provider’s Platform. In such an event, the Service Provider reserve the right to forthwith remove/close the online store of the Vendor on the Platform without any prior intimation or liability to the Vendor.</p>
+                <p>11.2. Service Provider reserves the right to provide and display appropriate disclaimers and terms of use on Service Provider’s Platform portal.</p>
+                <p>11.3. At any time if the Service Provider believes that the services are being utilized by the Vendor in contravention of the terms and provisions of this Agreement or Terms and conditions of use of Service Provider Platform, the Service Provider shall have the right either at its sole discretion or upon the receipt of a request from the legal / statutory authorities or a court order to discontinue/terminate the said service(s) to the Vendor, without liability to refund the amount to the Vendor to forthwith remove/block/close the online store of the Vendor on the Platform and furnish such details about the Vendor and/or its End Customers upon a request received from the Legal/ Statutory Authorities or under a Court order.</p>
+                <p>11.4. Service Provider reserves right to change the each and every policy/ rules / terms and conditions, further if any changes are required under the applicable laws of India.</p>
+                <b><u><li>INDEMNIFICATION AND LIMITATION OF LIABILITY </li></u></b>
+                <p>12.1. Vendor shall promptly on demand indemnify, defend and hold harmless the Service Provider and End Customer and their respective officers, directors, proprietors, partners, managers, members, trustees, shareholders, employees and agents (“Indemnified Parties”) for and against all claims, liabilities, costs and expenses (including reasonable attorney’s fees) incurred or to be incurred by the Indemnified Parties that arise out of, in any way relate to, or result from  any breach by the Vendor of any of the provisions of this Agreement, or breach of any laws by the Vendor, or negligence, fraud or wilful misconduct of the Vendor or its Affiliates and their respective officers, directors, shareholders, employees, contractors, sub-contractors, agents and personnel. For the avoidance of doubt, it is further clarified that the right to indemnification in connection with any of the aforesaid claims of cause of action is independent and in addition to other rights and remedies of the Indemnified Person that may be available at law or in equity.</p>
+                <p>12.2. Service Provider’s Limitation of Liability:   
+                    Not with standing anything contrary contained in this agreement, in any event the Service Provider shall not be liable (whether in contract, warranty, tort (including, but not limited to, negligence), product liability or other theory), to the vendor or any other person or entity for cost of cover or for any indirect, incidental, special, consequential, punitive or exemplary damages (including damages for loss of revenues, loss profit or anticipated profits, loss of goodwill, loss of business or data) arising out of or in relation this agreement. Service Provider’s entire liability to Vendor under this Agreement or under any applicable law or equity shall be limited solely to actual and proven direct damages sustained by the Vendor as a result of the gross negligence or wilful misconduct of the Service Provider and its Affiliate and their respective directors, officers, employees and agents in the performance of their respective services and other obligations under this Agreement. In no event shall the Service Provider be liable, vicariously or otherwise, to the Vendor or any third party for any losses, damages, liabilities, costs (including reasonable legal costs) and expenses (including taxation) which are in the aggregate in excess of the (i) amounts paid by the Vendor to the Service Provider in the immediately preceding twelve month period under this Agreement – if such losses et al are due to Platform Services.
+                    </p>
+                <b><u><li>FURTHER REPRESENTATIONS AND WARRANTIES </li></u></b>
+                <p>13.1. The Vendor represents and warrants that all Medicines and Tobacco Products offered for sale through the Platform: 
+                    (i) Are authentic, genuine, and free from defects; 
+                    (ii) Have been legally manufactured, packaged, labelled, transported and stored in accordance with all applicable laws and regulations; 
+                    (iii) Are safe for their intended use and comply with all applicable safety standards and requirements;
+                    (iv) Are not counterfeit, adulterated, misbranded, or illegal in any way; and
+                    (v) Have not been subject to any recall or regulatory action.
+                    </p>
+                <p>13.2. Except as specified in this Agreement, neither party makes any warranty in connection with the subject matter of this Agreement. each Party hereby disclaims any and all implied warranties, including without limitation all implied warranties of vendor ability or fitness for a particular purpose.</p>
+                <p>13.3. Service Provider specifically disclaims any and all express or implied warranties with respect to the Platform, Platform Services and Payment Facilitation Services and these are provided on ‘as is’ basis.</p>
+                <p>13.4. Vendor represents, warrants, undertakes and covenants that the Vendor is duly incorporated and has a valid existence under the laws of India and has the necessary authorisations and capacity to carry on its Business and perform its obligations as set forth under this Agreement.</p>
+                <p>13.5. Vendor represents, warrants, undertakes and covenants that the Vendor shall ensure that any and all information provided to the Service Provider in connection to its Medicinal Products and/or Sale Price and other incidental information, is free of errors or discrepancies and shall not hold the Service Provider liable for any reason that is attributable to the Vendor.</p>
+                <p>13.6. Vendor represents, warrants, undertakes and covenants that any losses, expenses or costs incurred by the Service Provider due to reasons attributable to the Vendor shall be indemnified by the Vendor at its own cost as soon as practicably possible.</p>
+                <p>13.7. Vendor represents, warrants, undertakes and covenants that the Vendor shall assume all responsibilities and the risks attached with the Medicinal Products , which shall be dispatched and delivered to the End Customers.</p>
+                <p>13.8. Vendor represents, warrants, undertakes and covenants that the Vendor has obtained all approvals, licenses, registrations, NOCs, permits, consents or sanctions, if any, of the Government or any Government body or authority, whether Central, State or local, to conduct its Business as mentioned in Recital 1; and will at all times during the validity of this Agreement, keep all such foregoing obligations valid and subsisting.</p>
+                <p>13.9. Except to the extent disclosed to the Service Provider, the Vendor represents, warrants, undertakes and covenants that no litigation, arbitration, administrative or other proceedings by government, governmental authority, official or entity are pending or threatened against the Vendor or its assets, which, if adversely determined, might have an adverse effect on the Service Provider; and the Vendor has not taken any action / other steps / legal proceedings started by or against it in any court of law / other authorities for bribery, its insolvency, bankruptcy, winding up, dissolution, administration or re-organization or for the appointment of a receiver, administrator, administrative receiver, trustee or similar officer of the Service Provider or of any or all of its assets</p>
+                <b><u><li>TERM OF AGREEMENT </li></u></b>
+                <p>14.1. This Agreement shall commence on the Effective Date and shall be valid until termination through the provisions of this clause 14.<b>(“Term”).</b></p>
+                <p>14.2. Either party shall have the right to terminate this Agreement and all then existing commercial terms by issuing a 30-day prior notice of termination in writing without any additional obligations or liabilities to each other.</p>
+                <p>14.3. Either party shall have a right to terminate this Agreement thereto upon any material breach of this Agreement by the other Party provided that where in the reasonable opinion of the non-breaching Party, such breach is capable of cure, the non-breaching Party shall not terminate this Agreement thereto without providing the breaching Party a cure period of [thirty (30) days] to cure such breach and provide the non-breaching Party with necessary documents satisfactorily evidencing cure of such breach.</p>
+                <p>14.4. Service Provider shall have the right to terminate this Agreement upon occurrence of any insolvency event in relation to Vendor. It is clarified that an insolvency event in relation to Vendor shall be deemed to have occurred upon occurrence of any of the following:     
+                    (i) Vendor has ceased to carry on or threatens to cease the Business; or    
+                    (ii) Vendor has passed an effective resolution or a binding order has been made for its winding up except under a scheme of amalgamation; or     
+                    (iii) Vendor has become insolvent or has entered into liquidation (unless such liquidation is for the purposes of a fully solvent reorganization); or   
+                    (vi) The Service Provider becomes aware that the Vendor has not obtained the requisite licenses to sell the Medicinal Products on the Service Provider’s Platform.  
+                    (v) Vendor has entered into, or taken steps to enter into, administration, administrative receivership, receivership, a voluntary arrangement, a scheme of arrangement with creditors, any analogous or similar procedure in any jurisdiction or any other form of procedure relating to insolvency, reorganization or dissolution in any jurisdiction, or a petition is presented or other step is taken by any person with a view to any of those things. 
+                    </p>
+                <b><u><li>CONSEQUENCES OF TERMINATION </li></u></b>
+                <p>15.1. Upon expiry or termination of this Agreement all Confidential Information and any other materials which may have been provided by one Party to the other shall be forthwith returned and the returning Party shall certify such return and all copies thereof or any other material or information which cannot be returned, shall be destroyed completely;</p>
+                <p>15.2. Termination of this Agreement shall not relieve any Party of any of its obligations or liabilities and affect the rights and remedies of a Party, which have accrued prior to the date of termination.</p>
+                <p>15.3. The provisions of this Agreement contained in Sections 9 (Intellectual Property), 10 (Confidentiality), 12 (Indemnification), 13 (Representations and Warranties), 15 (Consequences of Termination), 16 (Governing Law) and 17 (Dispute Resolution), 18.2 (Notices) shall survive the expiry or early termination of this Agreement.</p>
+                <p>15.4. Termination of this Agreement shall not affect any obligations or duties of the Vendor and Service Provider towards the End Customer which obligations or duties accrued before the termination of this Agreement.</p>
+                <b><u><li>GOVERNING LAW </li></u></b>
+                <p>This Agreement shall be governed by the laws of India.</p>
+                <b><u><li>DISPUTE RESOLUTION </li></u></b>
+                <p>17.1. Any dispute which arises between the Parties shall be attempted to be resolved by good faith discussions between the Parties.</p>
+                <p>17.2. Where the Parties are unable to resolve such disputes by good faith discussions within a period of thirty (30) business days from the date of a written notice by either Party notifying existence of such dispute, either Party shall be free to refer the dispute to arbitration in accordance with this Section. This Agreement and the rights and obligations of the Parties shall remain in full force and effect pending the award in such arbitration proceeding.</p>
+                <p>17.3. The arbitration proceedings shall be governed by the Arbitration and Conciliation Act, 1996 (as applicable in India) for the time being in force, and/or any statutory modification or re-enactment thereof.</p>
+                <p>17.4. Place and seat of arbitration shall be Mumbai and the language of the arbitration shall be English.</p>
+                <p>17.5. The arbitration shall be conducted by three (3) arbitrators. Each Party shall appoint one arbitrator each and the two appointed arbitrators shall appoint a presiding arbitrator. In case the Parties fail to appoint  their respective arbitrators within thirty (30) days from the submission of dispute for settlement through arbitration in accordance with Section 17.2 above, or the two appointed arbitrators fail to appoint the presiding arbitrator with thirty (30) days from the date of appointment of the later of the first two arbitrators, a sole arbitrator shall be appointed in accordance with the Indian Arbitration and Conciliation Act, 1996 by the appropriate court of law.</p>
+                <p>17.6. The award rendered shall be in writing and shall set out the facts of the dispute and the reasons for the arbitrator’s decision. The award shall apportion the costs of the arbitration as the arbitrator deems fair.</p>
+                <p>17.7. Not with standing anything contained in this Agreement, both Parties agree and acknowledges that the covenants and obligations with respect to the matters covered by this Agreement and set forth herein relate to special, unique and extraordinary matters, and that a violation of any of the terms of such covenants and obligations will cause irreparable loss and injury to the aggrieved Party. Therefore, notwithstanding the provisions of this Agreement, either Party shall be entitled to approach any appropriate forums for obtaining an injunction, restraining order or such other equitable relief as a court of competent jurisdiction may deem necessary or appropriate.</p>
+                <p>17.8. The costs of such arbitration shall be borne mutually by the Parties, except in case of an arbitral award to the contrary.</p>
+                <b><u><li>GENERAL CLAUSES</li></u></b>
+                <p>18.1. <b>Independent Contractors</b> </p>      
+                   <p>The relationship between Parties is on principal-to-principal basis. Nothing in this Agreement shall be deemed to constitute either Party a partner, joint venture agent or legal representative of the other Party, or to create any fiduciary, employer-employee relationship between the Parties.
+                    </p>
+                    <p>18.2. <b>Notices and Correspondences:</b> </p>
+                <p>Notices: Any notice, consent or waiver (including notice for Arbitration) required or permitted hereunder shall be effective only if it is in writing and shall be deemed received by the Party to which it is sent (i) upon delivery when delivered by hand, (ii) three (3) days after being sent, if sent with all sending expenses prepaid, by an express courier with a reliable system for tracking delivery, (iii) when transmitted, if sent by confirmed facsimile, or (iv) five (5) days (if Vendor is in India) or fourteen (14) days (if Vendor is outside of India) after the date sent, if sent by certified or registered mail, postage prepaid, return receipt requested, addressed as follows:</p>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th><u>To the Vendor:</u></th>
+                                <th><u>To the Service Provider:</u></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Complete Address: {{outletAddress}}</td>
+                                <td>Complete Address: {{outletAddress}}</td>
+                              </tr>
+                              <tr>
+                                <td>Contact No. {{ownerContactNumber}}</td>
+                                <td>Contact No. {{ownerContactNumber}}</td>
+                              </tr>
+                              <tr>
+                                <td>Email id: {{ownerEmailId}}</td>
+                                <td>Email id: {{ownerEmailId}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      <br>
+                <p><b>General communications through electronic mode:</b></p>     
+                    <p>When the Vendor uses the Platform or send emails or other data, information or communication to  Service Provider, Vendor agrees and understands that Vendor is communicating with Service Provider through electronic records and Vendor consents to receive communications via electronic records from Service Provider periodically and as and when required. Service Provider will communicate with Vendor by email at the designated electronic mail address provided by the Vendor at the time of registration.
+                    </p>
+                <p>18.3. <b>Assignment and Sub-Contracting</b></p>     
+                    <p>Vendor shall not assign any of its rights, obligations or responsibilities under this Agreement without the prior written consent of Service Provider and in absence of such consent any such assignment shall be null and void. All terms and conditions of this Agreement shall be binding upon and shall inure to the benefit of the parties hereto and their successors and authorized assignees. Vendor understands, acknowledges and agrees that Service Provider may subcontract one or more of the Service Provider Business to any third party including Affiliates. 
+                    </p>
+                <p>18.4. <b>Press Releases / Public Statement:</b></p>     
+                    <p>Unless required by law, the Vendor will not make any public announcement or issue any press release concerning the transactions contemplated by this Agreement without the prior consent of the Service Provider. 
+                    </p>
+                <p>18.5. <b>Amendment and evolution of Terms on periodic basis</b></p>      
+                    <p>Service Provider may amend this Agreement and Platform Policies at any time by posting a revised version on the Platform. All updates and amendments may be notified to Vendor on designated electronic mail address. Vendor is advised to regularly check for any amendments or updates to the terms and conditions contained in this Agreement and Platform Policies. Vendor’s using Platform, Platform Services or Service Provider Business after Service Provider’s amendment to this Agreement and Platform Policies shall be deemed to be Vendor’s unconditional and absolute acceptance of such amendments (effective from the date such amendments were made by the Service Provider). If Vendor does not agree to the change or amendments, Vendor can cease using the Service Provider Business (except for those Medicinal Products  which have been bought by the End Customers) and may terminate this Agreement as provided in Section 14.2.
+                    </p>
+                <p>18.6. <b>Severability</b></p>     
+                    <p>It is the intent of the Parties that in case any one or more of the provisions contained in this Agreement shall be held to be invalid or unenforceable in any respect, such provision shall be modified to the extent necessary to render it, as modified, valid and enforceable under applicable laws and such invalidity or unenforceability shall not affect the other provisions of this Agreement. 
+                    </p>
+                <p>18.7. <b>Waiver</b></p>     
+                    <p>Except as expressly provided in this Agreement, no waiver of any provision of this Agreement shall be effective unless set forth in a written instrument signed by the Party waiving such provision. No failure or delay by a Party in exercising any right, power or remedy under this Agreement shall operate as a waiver thereof, nor shall any single or partial exercise of the same preclude any further exercise thereof or the exercise of any other right, power or remedy. Without limiting the foregoing, no waiver by a Party of any breach by any other Party of any provision hereof shall be deemed to be a waiver of any preceding or subsequent breach of that or any other provision hereof. 
+                    </p>
+                <p>18.8. <b>Further Assurance</b></p>     
+                <p>Each Party shall co-operate with the other Party and execute and deliver to the other Party such instruments and documents and take such other actions as may be reasonably requested from time to time in order to carry out, evidence and confirm their rights hereunder and the intended purpose of this Agreement and to ensure the complete and prompt fulfillment, observance and performance of the provisions of this Agreement and generally that full effect is given to the provisions of this Agreement. 
+                    </p>
+                <p>18.9. <b>Covenants Reasonable</b></p>     
+                    <p>The Parties agree that, having regard to all the circumstances, the covenants contained herein are reasonable and necessary for the protection of the Parties. If any such covenant is held to be void as going beyond what is reasonable in all the circumstances, but would be valid if amended as to scope or duration or both, the covenant will apply with such minimum modifications regarding its scope and duration as may be necessary to make it valid and effective.  
+                    </p>
+                <p>18.11. <b>Independent Rights</b></p>     
+                   <p> Each of the rights of the Parties hereto under this Agreement are independent, cumulative and without prejudice to all other rights available to them, and the exercise or non-exercise of any such right shall not prejudice or constitute a waiver of any other right of the Party, whether under this Agreement or otherwise. 
+                    </p>
+                <p>18.12. <b>Counsel and Management Participation</b></p>     
+                    <p>Service Provider and Vendor acknowledge and confirm that the attorneys and management representatives have read, reviewed and approved this Agreement and that Service Provider and Vendor have had the benefit of its independent legal counsel’s advice with respect to the terms and provisions hereof and its rights and obligations hereunder.
+                    </p>
+                <b><u><li>FORCE MAJEURE </li></u></b>
+                <p>Neither Party shall be responsible or liable for any delay or failure to perform its obligations (other than an obligation to make payment) under this Agreement due to unforeseen circumstances or any event which is beyond that Party's reasonable control and without its fault or negligence, but not limited to, acts of God, war, riots, embargoes, strikes, lockouts, acts of any Government authority, delays in obtaining licenses or rejection of applications under the Statutes, failure of telephone connections or power failure, fire or floods.</p>
+                <b><u><li>COUNTERPARTS & NON – EXCLUSIVITY</li></u></b>
+                <p>TThis Agreement may be executed in two (2) counterparts, one to remain with each party and each of which shall be deemed an original and which shall together constitute one Agreement. The Parties have entered into this Agreement on a non – exclusive basis. The Service Provider is not restricted to provide the services set forth under this Agreement to any other vendor across the Territory.</p>
+                <p><b>IN WITNESS WHEREOF</b>, the parties hereto have executed this Agreement as of the day and year first written above</p>
+               
+            </ol>
+            <table>
+                <thead>
+                  <tr>
+                    <th>For the Vendor</th>
+                    <th>For the Service Provider</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Authorised Signatory: {{ownerName}}</td>
+                    <td>Authorised Signatory: {{ownerName}}</td>
+                  </tr>
+                  <tr>
+                    <td>Name: {{ownerName}}</td>
+                    <td>Name: {{ownerName}}</td>
+                  </tr>
+                  <tr>
+                    <td>Designation: Owner</td>
+                    <td>Designation: Owner</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              <h5>ANNEXURE – A</h5>
+              <h5>LIST OF MEDICINAL PRODUCTS</h5>
+    </div>
+   
+</section>
+
+<!-- Pet LOU -->
+<section class="dialog-wrapper" *ngIf="service === 'Pet'">
+    <mat-icon class="d-flex justify-content-end w-100" [mat-dialog-close]="true">close</mat-icon>
+    <div class="dialog-wrapper__content">
+        <p class="sub-heading mt-3">
+        <h1>LETTER OF UNDERSTANDING</h1>
+        <p class="ms-3">This Letter of Understanding (“LOU”) is issued in favour of Techshack Pvt. Ltd., a company registered under the Companies Act, 1956, having its registered office at   Office no 1006, 10th floor, Hubtown Solaris NS Phadke road, Saiwadi Andheri (E) Mumbai 400069 (“Speedyy”) By <b><u>{{outletName}},
+                    {{outletAddress}}</u></b> <b> ("Merchant")</b> 
+                    in pursuance of our discussions and intent to avail the Services offered by Speedyy. </p>
+        <p><b>THE MERCHANT HEREBY AGREES AS FOLLOWS:</b>  
+           <br> Capitalized terms used but not defined herein shall have the meaning assigned to them under the Merchant Terms of Use available at (<b>“Merchant Terms to be made”</b>).</p>
+        <ol>
+            <li>Merchants understand that Speedyy is engaged in the business of inter alia operating an online platform under the name and style “Speedyy”, through its <b>Platform</b>, which enables transactions between Merchants and Buyers, dealing in groceries, food products and daily needs. The Platform is utilized by <b>Buyer(s)</b> to choose and place <b>Order(s)</b> from a variety of products listed and offered for sale by <b>Merchants</b> on the Platform, pursuant to which Speedyy enables Delivery of such Order(s) in select serviceable geographical area of the cities in India. The Merchant wishes to avail the <b>Services</b> enabled by Speedyy on a non-exclusive and contractual basis subject to the terms and conditions set out in the Merchant Terms, which includes, inter alia, warranties provided, obligations, intellectual property rights, confidentiality, responsibilities and grounds for termination.</li>
+            <li>The Merchant represents and warrants that – 
+               <br> <b>(i)</b> it is engaged in the business of selling Pet Food and Pet products under the brand name and style "<b><u>{{outletName}}</u></b>" through its multiple outlets owned and managed by the Merchant
+               <br><b>(ii)</b> it has full power and capacity to enter into and perform its obligations under this LOU; 
+               <br><b>(iii)</b> has taken all necessary licenses applicable to its business and is fully compliant with the applicable laws including but not limited to provisions of the Food Safety and Standards Act, 2006 and rules and regulations prescribed thereunder (“FSSAI”), as amended from time to time and maintain the same during subsistence of this LOU; 
+               <br><b>(iv)</b> it shall not provide for sale on the platform, or for delivery pursuant to sales facilitated on the Platform, any items that may be unsafe, or misbranded or substandard or which contain extraneous matter or for which a license is required under any law, except in accordance with the conditions of the license; 
+               <br><b>(v)</b> Merchant undertakes that they shall not sale any product ordered through Speedyy app over or above the MRP mentioned on the said product, Merchant shall not sell any product which has crossed expired date and shall check the date is clearly mentioned on the product before delivery;
+               <br><b>(vi)</b> Merchants shall take good care as to follow norms for the product listed by the manufacturer to maintain its quality, for instance “to be stored in cool and dry place” or “keep relegated”, Merchants shall not tamper with the original packaging of the products and pass on the same as manufactured by the manufacturer;
+               <br><b>(vii)</b> Merchant shall Passover any schemes or benefits provided by the manufacturer to the user, like buy one get on free or any free merchandise listed along with the product;
+               <br><b>(viii)</b> all the information and contents provided by it, as required, to Speedyy are true, correct and accurate.</li>
+
+
+            <li>The Merchant undertakes that in case of any action from or on behalf of any consumers alleging unsafe, or misbranded or substandard items, Merchant undertakes to indemnify Speedyy from said action and loss incurred, if any, due to said action as the Speedyy is just a delivery platform and is not Merchant.</li>
+                <li>The parties hereby agree that the charges for utilizing the platform shall be established through a separate extension of this LOU, subject to mutual agreement. Any subsequent modifications to the charges shall be communicated and implemented only with the explicit consent of both parties.</li>
+            <li>Speedyy reserves the right to revise service charges rates charged by them as and when required. Change in the rates shall be intimated to Merchants in advance, in case of any disagreement it should be timely communicated by Merchants to Speedyy. In case disagreement, if any, is not communicated, the change in rate shall be considered as accepted by the Merchant and the same shall be applicable from the date notified.</li>
+            <li>The Merchant understands that Speedyy shall send consolidated reports of Orders placed and other details for the Settlement Period to the Merchant by electronic mail to <b><u>{{ownerEmailId}}</u></b>(Merchant’s mail ID).</li>
+            <li>The Merchant confirms and undertakes that it has read, understood and agrees to be bound by the terms set out in the Merchant Terms that are incorporated by reference herein and are deemed to be part of this LOU.</li>
+            <li>The effective date ______________ of this LOU shall be the date on which the Merchant signs this LOU [whether digitally or otherwise] and relay the same to Speedyy. This LOU shall thereon have full force of a contract and shall bind both Merchant and Speedyy fully upon on-boarding of Merchant on Platform.</li>
+            <li>The Merchant confirms and undertakes that the supporting documents provided by the Merchant along with this MOU are true and correct to their knowledge and understanding.</li>
+        </ol>
+
+        <div class="d-flex justify-content-start w-100 flex-column align-items-baseline ms-3"> <b>[Digitally] Signed by
+            the Merchant:</b>
+        <label>Name: <b><u>{{ownerName}}</u></b></label>
+        <label>Designation: <b><u>Owner</u></b></label>
+        <label>Date: <b><u>{{currentDate | date: 'dd/MM/yyyy'}}</u></b> </label>
+    </div>
+
+
+        <p class="mt-5"><b>Notes:</b>  
+         <ol>
+             <li><b>“Call Center Service Fee”</b> shall mean fee towards Call Centre Services provided by Speedyy to get an Order confirmation by Merchant more fully defined under clause VI (8)(xii)(a) of the Merchant Terms. Speedyy shall waive off Call Center Services Fee (a) as one-time convenience to the new Merchants for an initial period of two (2) weeks from the date of the LOU and (b) Call Centre Services up to 5% of Orders out of the total Orders (rounding decimals to the next whole number) in a Settlement Period [Illustration: 1.4 rounded to the next whole number will be 2 and 1.6 rounded to the next whole number will be 2];</li>
+             <li><b>“Merchant Cancellation Charges”</b> shall mean Service Fee with respect to Order that are cancelled by the Merchant due to failure to fulfil as a result of unavailability of the product/s in an Order or closure of the Merchant’s outlet or any other reason attributable to the Merchant. Merchant Cancellations (without any charge) will be permitted up to 0.5% of Orders out of the total Orders (rounding decimals to the next whole number) in a Settlement Period [Illustration: 1.4 rounded to the next whole number will be 2 and 1.6 rounded to the next whole number will be 2];</li>
+             <li><b>“Refund for Disputed Order/s”</b> shall mean refund paid to the Buyer, where the Buyer claimed partial or full refund, as applicable, for the reasons that are attributable to Merchant, including but not limited to, Buyer’s expectations not being met or  Buyer dissatisfaction in relation to, inter alia, the quality of the products, undelivered Orders, discrepancy in the product delivered which is not in accordance with the Order placed and/or those Orders for which Buyer requests for a refund or replacement.</li>
+             <li><b>“Marketing fees and such other charges”</b> shall mean the charges towards digital marketing services including but not limited to carousel connection with the Merchant’s listings and other related services availed by the Merchant on the Platform and shall be decided by Speedyy;</li>
+             <li><b>“Seller Protection for Cancellation other than Merchant Cancellation”</b> shall be an amount contributed by Speedyy in case of cancellation of Orders either through the Platform, or through calling customer care, by a Buyer (a) for no reason attributable to  Merchant, or (b) for no reason attributable to Speedyy, provided that the said Order has been accepted and confirmed for preparation by the Merchant. In case of Buyer Cancellation, Merchant will be paid and the same shall be accounted in the applicable Settlement Period.</li>
+             <li><b>“Refund on returned Item”</b> shall mean that the merchant agrees to accept the items returned by Customer/Speedyy due to cancellation and the payout for the same would be adjusted accordingly</li>
+         </ol>
+
+        <h2 class="d-flex justify-content-start w-100 flex-column align-items-baseline p-3"> <b>Assignment for Fund Transfer</b></h2>
+        <div class="d-flex flex-column align-items-baseline p-3">
+            <p>Date of signing MOU: <b><u>{{currentDate | date: 'dd/MM/yyyy'}}</u></b></p>
+            <p>To,</p>
+            <p>Area Sales Manager</p>
+            <p>Techshack Pvt. Ltd.India.</p>
+            <p>From,</p>
+            <p>Merchant Name: <b><u>{{outletName}}</u></b></p>
+            <p>Owner/ Partner / Manager Name: <b><u>{{ownerName}}</u></b></p>
+            <p>Designation: <b><u>owner</u></b></p>
+            <p>Dear Sir/ Madam,</p>
+            <p>We do herby request to you kindly transfer all the future payments / due / Net payable amount due to us from sale of our products through your application / platform in the account number <b><U>{{bankAccountNumber}}</U></b> Having IFSC code <b><u>{{ifscCode}}</u></b> in the
+                name of beneficiary
+                <b><u>{{outletName}}</u></b> and having Bank Name______________
+            </p>
+            <p>We are hereby attaching a copy of the self-attested Identity and address proof herewith.</p>
+            <p>Please do the needful at your end.</p>
+            <p>Thanking you.</p>
+            <p>You're faithfully,</p>
+            <div class="row align-items-center justify-content-between w-100">
+                <span class="col-7 align-items-baseline">
+                    <p>Mr. / Ms.<b><u>{{ownerName}}</u></b></p>
+                    <p>Designation: <b><u>owner</u></b></p>
+                    <p>Name of Store: <b><u>{{outletName}}</u></b></p>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>

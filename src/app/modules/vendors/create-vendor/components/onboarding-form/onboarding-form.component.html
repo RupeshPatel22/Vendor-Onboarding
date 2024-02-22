@@ -1,0 +1,301 @@
+<form [formGroup]="onboardingForm" autocomplete="off" (keydown.enter)="$event.preventDefault()">
+    <div class="content mb-4">
+        <header class="heading heading--green">Onboarding Form
+            <p class="heading mt-2">Account Manager Details</p>
+        </header>
+
+        <label class="input-heading">SELECT SPEEDYY ACCOUNT MANAGER</label>
+        <div class="input-field">
+            <ng-select id="speedyyAccountManager" name="speedyyAccountManager" formControlName="speedyyAccountManager" 
+                [items]="speedyyAccountManagersList" bindLabel="name" bindValue="id" 
+                placeholder="Select account manager">
+            </ng-select>
+            <app-form-error-msg [control]="onboardingForm.controls.speedyyAccountManager"></app-form-error-msg>
+        </div>
+    </div>
+    <div class="content mb-4">
+        <header class="heading heading--green">Onboarding Form
+            <p class="mandatory-txt">(All fields are mandatory.)</p>
+            <p class="heading">Packaging Details</p>
+        </header>
+
+        <label class="input-heading">SELECT PACKAGING CHARGES</label>
+        <div class="input-field">
+            <ng-select id="packagingChargesType" name="packagingChargesType" formControlName="packagingChargesType" [items]="packagingChargesTypesList | keyvalue: originalOrder" bindLabel="value" bindValue="key" (change)="packagingChargesTypeChange($event.key)" placeholder="Select type">
+            </ng-select>
+            <app-form-error-msg [control]="onboardingForm.controls.packagingChargesType"></app-form-error-msg>
+        </div>
+        <div *ngIf="packagingChargesFields === 'item'">
+            <div class="input-field">
+                <div class="radio-btn">
+                    <div class="checkbox radio">
+                        <input type="radio" [value]="false" name="customItemLevalPackagingCharges" formControlName="customItemLevalPackagingCharges" (change)="customItemPackagingChargesSelectionChange()" />
+                    </div>&nbsp; &nbsp;
+                    <div class="radio-btn__name">Apply max charges to all items</div>
+                    <div class="checkbox radio">
+                        <input type="radio" [value]="true" name="customItemLevalPackagingCharges" formControlName="customItemLevalPackagingCharges" (change)="customItemPackagingChargesSelectionChange()" />
+                    </div>&nbsp; &nbsp;
+                    <div class="radio-btn__name">Custom</div>
+                </div>
+            </div>
+            <label class="input-heading">PLEASE NOTE THE SLAB</label>
+            <div class="input-field slab">
+                <div>
+                    <div class="slab__heading">ITEM PRICE (INR)</div>
+                    <div class="slab__content">0-50</div>
+                    <div class="slab__content">51-150</div>
+                    <div class="slab__content">151-300</div>
+                    <div class="slab__content">301-500</div>
+                    <div class="slab__content">501 and above</div>
+                </div>
+                <div>
+                    <div class="slab__heading">MAX. CHARGES</div>
+                    <div class="slab__content">5</div>
+                    <div class="slab__content">7</div>
+                    <div class="slab__content">10</div>
+                    <div class="slab__content">15</div>
+                    <div class="slab__content">20</div>
+                </div>
+            </div>
+
+            <div formArrayName="itemRows">
+                <div *ngFor="let itemRow of onboardingForm.controls['itemRows']['controls']; let i=index" [formGroupName]="i">
+                    <p class="item-heading">item {{i+1}}
+                        <mat-icon (click)="deleteItem(i)" *ngIf="!disableAll && onboardingForm.controls['itemRows']['controls'].length > 1" matTooltip="Delete">delete </mat-icon>
+                    </p>
+
+                    <label class="input-heading">ITEM NAME</label>
+                    <div class="input-field">
+                        <mat-form-field appearance="outline">
+                            <input matInput type="text" name="itemName" formControlName="itemName" placeholder="Enter item name">
+                        </mat-form-field>
+                        <app-form-error-msg [control]="onboardingForm.get('itemRows')['controls'][i]['controls']['itemName']">
+                        </app-form-error-msg>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="input-heading">ITEM PRICE</label>
+                            <div class="input-field">
+                                <mat-form-field appearance="outline">
+                                    <input matInput type="text" name="itemPrice" formControlName="itemPrice" placeholder="Enter item price">
+                                </mat-form-field>
+                                <app-form-error-msg [control]="onboardingForm.get('itemRows')['controls'][i]['controls']['itemPrice']">
+                                </app-form-error-msg>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="input-heading">PACKAGING CHARGES (in &#8377;)</label>
+                            <div class="input-field">
+                                <mat-form-field appearance="outline">
+                                    <input matInput type="text" name="itemPackagingCharges" formControlName="itemPackagingCharges" placeholder="Enter item packaging charges">
+                                </mat-form-field>
+                                <app-form-error-msg [control]="onboardingForm.get('itemRows')['controls'][i]['controls']['itemPackagingCharges']">
+                                </app-form-error-msg>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="input-heading">UPLOAD PICTURE OF PRODUCT FOR APPROVAL</label><span class="upload-format-info float-end">(.jpg, .jpeg, .png only)</span>
+                    <div class="input-field">
+                        <!-- <ngx-img ></ngx-img> -->
+                        <mat-form-field appearance="outline">
+                            <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files,'itemRows','itemDoc',i)" type="file" accept="all/*" #itemDoc>
+                            <input type="text" readonly matInput formControlName="itemDoc" />
+                            <button matSuffix *ngIf="!disableAll" (click)="itemDoc.click();" mat-raised-button class="upload-button">
+                                upload
+                            </button>
+                            <button matSuffix *ngIf="disableAll" (click)="viewFile('itemRows','itemDocUrl',i);" mat-raised-button class="upload-button">
+                                view
+                            </button>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <button type="button" *ngIf="!disableAll && onboardingForm.controls['itemRows']['controls'].length" (click)="addItem()" class="black-btn-2" mat-raised-button>
+                Add Item
+            </button>
+        </div>
+
+        <div *ngIf="packagingChargesFields === 'order'">
+            <label class="input-heading">PACKAGING CHARGES (in &#8377;)</label>
+            <h6 class="mandatory-txt mt-2 m-0"><i>Maximum packaging charges is upto 50 rupees*</i></h6>
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" name="orderLevelPackagingCharges" formControlName="orderLevelPackagingCharges" placeholder="Enter charges" pattern="^(0*([1-4][0-9](\.[0-9]{1,2})?|50(\.[0]{1,2})?))$|^(0?\.0[1-9]|0?\.[1-9]([0-9])?|[1-9](\.[0-9]{1,2})?)$">
+                </mat-form-field>
+                <app-form-error-msg [control]="onboardingForm.controls.orderLevelPackagingCharges"></app-form-error-msg>
+            </div>
+        </div>
+    </div>
+    <div class="content mb-4">
+        <header class="heading heading--green">Onboarding Form
+            <p class="mandatory-txt">(All fields are mandatory.)</p>
+            <p class="heading">Menu Details</p>
+        </header>
+        <div>
+            <label class="input-heading" *ngIf="service !== Services.Grocery">WHAT IS CUISINE TYPE?</label>
+            <div class="input-field" *ngIf="service !== Services.Grocery">
+                <ng-select id="cuisineType" name="cuisineType" formControlName="cuisineType" [items]="cuisines" bindLabel="name" bindValue="id" placeholder="Select type" [multiple]="true" [closeOnSelect]="false">
+                </ng-select>
+                <app-form-error-msg [control]="onboardingForm.controls.cuisineType"></app-form-error-msg>
+            </div>
+
+            <label class="input-heading" *ngIf="service === Services.Food">WHAT IS THE COST FOR TWO? (IN ₹)</label>
+            <div class="input-field" *ngIf="service === Services.Food">
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" name="cost" formControlName="cost" placeholder="Enter cost">
+                </mat-form-field>
+                <app-form-error-msg [control]="onboardingForm.controls.cost"></app-form-error-msg>
+            </div>
+
+            <label class="input-heading">DEFAULT PREP TIME (in mins)</label>
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                  <input matInput type="text" name="prepTime" formControlName="prepTime" placeholder="Enter prep time">
+                </mat-form-field>
+                <app-form-error-msg [control]="onboardingForm.controls.prepTime"></app-form-error-msg>
+              </div>              
+
+            <label class="input-heading" *ngIf="service === Services.Food">IS YOUR RESTAURANT PURE VEGETARIAN?</label>
+            <div class="input-field" *ngIf="service === Services.Food">
+                <div class="radio-btn">
+                    <div class="checkbox radio">
+                        <input type="radio" [value]="true" name="isPureVeg" formControlName="isPureVeg">
+                    </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                    <div class="radio-btn__name">Yes</div>
+                    <div class="checkbox radio">
+                        <input type="radio" [value]="false" name="isPureVeg" formControlName="isPureVeg">
+                    </div>&nbsp; &nbsp;&nbsp; &nbsp;
+                    <div class="radio-btn__name">No</div>
+                </div>
+            </div>
+
+            <label class="input-heading" *ngIf="service === Services.Grocery">Agreed Speedyy Charge Percentage</label>
+            <div class="input-field" *ngIf="service === Services.Grocery">
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" name="agreedSpeedyyChargePercentage" formControlName="agreedSpeedyyChargePercentage" placeholder="Enter agreed speedyy charge">
+                </mat-form-field>
+                <app-form-error-msg [control]="onboardingForm.controls.agreedSpeedyyChargePercentage">
+                </app-form-error-msg>
+            </div>
+        </div>
+
+        <!-- <label class="input-heading">SELECT MENU TYPE</label>
+        <div class="input-field">
+            <ng-select id="menuDocType" name="menuDocType" formControlName="menuDocType" [items]="docType" bindLabel="name" bindValue="id" placeholder="Select type" (change)="uploadFileTypeChange($event.id)">
+            </ng-select>
+            <app-form-error-msg [control]="onboardingForm.controls.menuDocType"></app-form-error-msg>
+        </div> -->
+
+        <div formArrayName="menuRows">
+            <div *ngFor="let menuRow of onboardingForm.controls['menuRows']['controls']; let i=index" [formGroupName]="i">
+                <label class="input-heading upload-menu">UPLOAD MENU
+                    <mat-icon (click)="deleteMenu(i)"
+                        *ngIf="!disableAll && onboardingForm.controls['menuRows']['controls'].length > 1"
+                        matTooltip="Delete">delete </mat-icon>
+                    <span class="upload-format-info float-end">{{allowedUploadFormat}}</span>
+                </label>
+
+                <div class="input-field">
+                    <mat-form-field appearance="outline">
+                        <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files,'menuRows','menuDoc',i)" type="file" accept="all/*" #menuDoc>
+                        <input type="text" readonly matInput formControlName="menuDoc" />
+                        <button matSuffix *ngIf="!disableAll" (click)="menuDoc.click();" mat-raised-button class="upload-button">
+                            upload
+                        </button>
+                        <button matSuffix *ngIf="disableAll" (click)="viewFile('menuRows','menuDocUrl',i);" mat-raised-button class="upload-button">
+                            view
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+            <button type="button" *ngIf="!disableAll" (click)="addMenu()" class="add-more-btn text-uppercase" mat-raised-button>
+                Add More Menu
+            </button>
+        </div>
+
+    </div>
+    <div class="content mb-4">
+        <header class="heading heading--green">Onboarding Form
+            <p class="mandatory-txt">(All fields are mandatory.)</p>
+            <p class="heading">Opening & Closing Time</p>
+        </header>
+
+        <label class="input-heading">SELECT DAYS</label>
+        <div class="input-field">
+            <ng-select id="slotType" name="slotType" formControlName="slotType" [items]="timeSlotTypesList | keyvalue: originalOrder" bindLabel="value" bindValue="key" (change)="slotTypeSelectionChange($event.key)" placeholder="Select type">
+            </ng-select>
+            <app-form-error-msg [control]="onboardingForm.controls.slotType"></app-form-error-msg>
+            <p class="item-heading--grey mt-1"><i> * you can only add 3 slots</i></p>
+        </div>
+        <section formGroupName="slotDays">
+            <ng-container *ngFor="let day of days | keyvalue: originalOrder;">
+                <div formArrayName="{{day.key}}" *ngIf="checkSlotControlExistInArray(day.key) || !disableAll">
+                    <p *ngIf="showDayTypeHeading" class="item-heading">{{day.value}}</p>
+                    <div *ngFor="let row of getFormArray(day.key)['controls']; let i=index" [formGroupName]="i">
+                        <p class="item-heading item-heading--grey">slot {{i+1}}
+                            <mat-icon (click)="deleteSlot(day.key,i)" matTooltip="Delete" *ngIf="!disableAll && getFormArray(day.key)['controls'].length > 1">delete </mat-icon>
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label class="input-heading">OPENING HOURS</label>
+                                <div class="input-field">
+                                    <mat-form-field appearance="outline">
+                                        <input matInput type="time" class="input-form-control" name="openingHours" formControlName="openingHours" placeholder="Enter opening hours">
+                                        <!-- <ngx-material-timepicker-toggle matSuffix [for]="openingHours">
+                                        </ngx-material-timepicker-toggle>
+                                        <ngx-material-timepicker #openingHours [enableKeyboardInput]="true"></ngx-material-timepicker> -->
+                                    </mat-form-field>
+                                    <app-form-error-msg [control]="getFormArray(day.key)['controls'][i]['controls']['openingHours']">
+                                    </app-form-error-msg>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="input-heading">CLOSING HOURS</label>
+                                <div class="input-field">
+                                    <mat-form-field appearance="outline">
+                                        <input matInput type="time" class="input-form-control" name="closingHours" formControlName="closingHours" placeholder="Enter closing hours">
+                                        <!-- <ngx-material-timepicker-toggle matSuffix [for]="closingHours">
+                                        </ngx-material-timepicker-toggle>
+                                        <ngx-material-timepicker #closingHours [enableKeyboardInput]="true"></ngx-material-timepicker> -->
+                                    </mat-form-field>
+                                    <app-form-error-msg [control]="getFormArray(day.key)['controls'][i]['controls']['closingHours']">
+                                    </app-form-error-msg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" *ngIf="!disableAll && getFormArray(day.key)['controls'].length < 3" (click)="addSlot(day.key)" class="add-more-btn text-uppercase" mat-raised-button>
+                    Add More Slot
+                </button>
+            </ng-container>
+        </section>
+
+
+
+        <footer class="btn-grp">
+            <button class="white-btn" mat-button (click)="previous()">
+                Back
+            </button>
+            <button *ngIf="showCompleteBtn && !disableAll" class="black-btn" mat-raised-button (click)="next()">
+                complete
+            </button>
+            <button *ngIf="!showCompleteBtn && currentOutletStatus === 'approvalPending'" class="white-btn red" mat-button (click)="sendComments(false)">
+                Reject
+            </button>
+            <button *ngIf="!showCompleteBtn && currentOutletStatus === 'approvalPending'" class="white-btn green" mat-button (click)="sendComments(true)">
+                Approve
+            </button>
+
+            <!-- button for admin role :- [showCompleteBtn is false when role is admin] -->
+            <button *ngIf="!showCompleteBtn && currentOutletStatus !== 'approvalPending'" class="black-btn" mat-raised-button (click)="goToHome()">
+                go to home
+            </button>
+
+            <!-- button for partner role :- [showCompleteBtn is true when role is partner] -->
+            <button *ngIf="showCompleteBtn && disableAll" class="black-btn" mat-raised-button (click)="goToHome()">
+                go to home
+            </button>
+        </footer>
+    </div>
+</form>

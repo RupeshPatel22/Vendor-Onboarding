@@ -1,0 +1,97 @@
+<div class="content">
+    <header class="heading">Bank Details
+        <p class="mandatory-txt">(All fields are mandatory.)</p>
+    </header>
+
+    <form [formGroup]="bankDetailsForm" autocomplete="off" (keydown.enter)="$event.preventDefault()">
+        <label class="input-heading">BENEFICIARY NAME</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="beneficiaryName" formControlName="beneficiaryName" placeholder="Enter beneficiary name">
+            </mat-form-field>
+            <app-form-error-msg [control]="bankDetailsForm.controls.beneficiaryName"></app-form-error-msg>
+        </div>
+        <label class="input-heading">ENTER ACCOUNT NO.</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="accountNumber" formControlName="accountNumber" placeholder="Enter account No.">
+            </mat-form-field>
+            <app-form-error-msg [control]="bankDetailsForm.controls.accountNumber"></app-form-error-msg>
+        </div>
+
+        <label class="input-heading">IFSC CODE</label>
+        <div class="input-field">
+            <mat-form-field appearance="outline">
+                <input matInput type="text" name="ifscCode" oninput="this.value = this.value.toUpperCase()" formControlName="ifscCode" placeholder="Enter IFSC code" (input)="ifscValueChanges()">
+                <a matSuffix (click)="verifyIFSC()">{{verifyIfscText}}</a>
+            </mat-form-field>
+            <app-form-error-msg [control]="bankDetailsForm.controls.ifscCode"></app-form-error-msg>
+        </div>
+
+        <!-- <div class="row "> -->
+        <!-- <div class="col-sm-6"> -->
+        <!-- <label class="input-heading">SELECT BANK DOC TYPE</label>
+                <div class="input-field">
+                    <ng-select id="bankDocType" name="bankDocType" formControlName="bankDocType" [items]="docType" bindLabel="name" bindValue="id" 
+                        placeholder="Select type" (change)="uploadFileTypeChange('bankDoc',$event.id)">
+                    </ng-select>
+                    <app-form-error-msg [control]="bankDetailsForm.controls.bankDocType"></app-form-error-msg>
+                </div> -->
+        <label class="input-heading">UPLOAD BANK DOCUMENT</label><span class="upload-format-info">{{allowedUploadFormat}}</span>
+        <p class="m-0 upload-format-info">(Cancelled cheque / Bank passbook first page)</p>
+        <div class="input-field">
+            <!-- <ngx-img></ngx-img> -->
+            <mat-form-field appearance="outline">
+                <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files,'bankDoc')" type="file" accept="all/*" #bankDoc>
+                <input type="text" readonly matInput formControlName="bankDoc" />
+                <button matSuffix *ngIf="!disableAll" (click)="bankDoc.click();" mat-raised-button class="upload-button">
+                    upload
+                </button>
+                <button matSuffix *ngIf="disableAll" (click)="viewFile('bankDocUrl');" mat-raised-button class="upload-button">
+                    view
+                </button>
+            </mat-form-field>
+            <!-- <input type="text" name="bankDoc" formControlName="bankDoc" placeholder="Enter name"> -->
+        </div>
+        <!-- </div> -->
+        <!-- <div class="col-sm-6"> -->
+        <!-- <label class="input-heading">SELECT KYC TYPE</label>
+                <div class="input-field">
+                    <ng-select id="kycDocType" name="kycDocType" formControlName="kycDocType" [items]="docType" bindLabel="name" bindValue="id" 
+                        placeholder="Select type" (change)="uploadFileTypeChange('kycDoc',$event.id)">
+                    </ng-select>
+                    <app-form-error-msg [control]="bankDetailsForm.controls.kycDocType"></app-form-error-msg>
+                </div> -->
+        <label class="input-heading">UPLOAD KYC DOCUMENT</label><span class="upload-format-info">{{allowedUploadFormat}}</span>
+        <p class="m-0 upload-format-info">(Aadhar / PAN / Driving Licence)</p>
+        <div class="input-field">
+            <!-- <ngx-img></ngx-img> -->
+            <mat-form-field appearance="outline">
+                <input [hidden]="true" (click)="$event.target.value = null" (change)="getFileUploadUrl($event.target.files,'kycDoc')" type="file" accept="all/*" #kycDoc>
+                <input type="text" readonly matInput formControlName="kycDoc" />
+                <button matSuffix *ngIf="!disableAll" (click)="kycDoc.click();" mat-raised-button class="upload-button">
+                    upload
+                </button>
+                <button matSuffix *ngIf="disableAll" (click)="viewFile('kycDocUrl');" mat-raised-button class="upload-button">
+                    view
+                </button>
+            </mat-form-field>
+            <!-- <input type="text" name="kycDoc" formControlName="kycDoc" placeholder="Enter name"> -->
+        </div>
+        <!-- </div> -->
+        <!-- </div> -->
+        <div class="checkbox e-sign  d-flex justify-content-baseline align-items-center ms-2">
+            <input type="checkbox" [disabled]="disableAll" [(ngModel)]="confirmationCheckbox" [ngModelOptions]="{standalone: true}" />
+            <span class="d-flex text-justify">I confirm that the details of my bank account are correct and I hereby authorize it to be used as the primary payment method.</span>
+        </div>
+        <footer class="btn-grp">
+            <button class="white-btn" mat-button (click)="previous()">
+                Back
+            </button>
+            <button class="black-btn" mat-raised-button (click)="next()">
+                {{buttonText}}
+            </button>
+        </footer>
+
+    </form>
+</div>

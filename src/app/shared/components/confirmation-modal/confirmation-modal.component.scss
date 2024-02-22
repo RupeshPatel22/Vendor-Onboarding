@@ -1,0 +1,44 @@
+.dialog-wrapper {
+  margin: 0 auto;
+  padding: 2em;
+  text-align: center;
+
+  .heading {
+    color: #0d1d28;
+    font-size: 1.5em;
+    font-weight: 600;
+
+    .sub-heading {
+      color: #acb8c1;
+      font-size: 0.7em;
+      font-weight: 400;
+      margin-top: 1em;
+    }
+  }
+
+  .black-btn {
+    width: 5em;
+    height: 3em;
+    font-size: 0.9em;
+    font-weight: 600;
+    background-color: #0d1d28;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    margin-right: 1em;
+  }
+
+  .white-btn {
+    width: 5.5em;
+    height: 3em;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #8d9da8;
+    text-transform: uppercase;
+    border-radius: 6px;
+    border: 1px solid #8d9da8;
+    letter-spacing: 1px;
+  }
+
+}
